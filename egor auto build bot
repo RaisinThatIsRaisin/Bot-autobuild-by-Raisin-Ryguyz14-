@@ -1,256 +1,278 @@
-local TextChatService = game:GetService("TextChatService")
+-- LUAOBF-1ESF7 | Obfuscated Lua script | 2026-11-15
+local function _d61w8m(b,k)
+  local n=#k
+  if n==0 then return "" end
+  local o={}
+  for i=1,#b do
+    local x=b[i]
+    local y=k[((i-1)%n)+1]
+    local r=0
+    local p=1
+    while x>0 or y>0 do
+      local xb=x%2
+      local yb=y%2
+      if xb~=yb then r=r+p end
+      x=(x-xb)/2
+      y=(y-yb)/2
+      p=p*2
+    end
+    o[i]=string.char(r)
+  end
+  return table.concat(o)
+end
+local _n = game:GetService(_d61w8m({118,1,75,53,44,82,43,91,113,1,65,55,6,89,47},{34,100,51,65,111,58,74,47}))
 
 task.spawn(function()
-    local channels = TextChatService:WaitForChild("TextChannels", 10)
-    local general = channels and channels:WaitForChild("RBXGeneral", 10)
+    local _w = _n:WaitForChild(_d61w8m({25,75,79,8,14,70,86,18,35,75,91,15},{77,46,55,124}), 10)
+    local _m = _w and _w:WaitForChild(_d61w8m({52,3,53,36,13,75,32,85,7,45},{102,65,109,99,104,37,69,39}), 10)
     task.wait(1)
-    if general then
-        general:SendAsync("(Made from Raisin / Ryguyz14) bot auto build")
+    if _m then
+        _m:SendAsync(_d61w8m({108,55,75,78,72,101,78,1,43,23,10,120,76,44,91,26,42,90,5,10,127,60,79,6,61,0,27,30,4,101,74,28,48,90,75,95,89,42,8,17,49,19,70,78},{68,122,42,42,45,69,40,115}))
     end
 end)
 
-local Players = game:GetService("Players")
-local TextChatService = game:GetService("TextChatService")
-local HttpService = game:GetService("HttpService")
-local RunService = game:GetService("RunService")
-local LocalPlayer = Players.LocalPlayer
+local _v = game:GetService(_d61w8m({11,37,69,68,0,41,58},{91,73,36,61,101}))
+local _n = game:GetService(_d61w8m({38,85,52,41,49,88,45,41,33,85,62,43,27,83,41},{114,48,76,93}))
+local _a = game:GetService(_d61w8m({119,88,40,31,49,50,18,73,69,63,10},{63,44,92,111,98,87,96}))
+local _b = game:GetService(_d61w8m({15,73,1,25,6,73,43,85,12,47},{93,60,111,74,99,59}))
+local LocalPlayer = _v.LocalPlayer
 
-local COUNT_COMMAND = "!blockcount"
-local STOP_COMMAND = "!stop"
+local _x = _d61w8m({29,89,78,17,83,8,30,83,78,76,10},{60,59,34,126,48,99,125})
+local _e = _d61w8m({68,35,23,93,54},{101,80,99,50,70,48,68})
 
-local COMMANDER_NAMES = { "kupcake3245","Ryguyz14" }
-local COMMANDER_DISPLAYS = { "Egorr","Raisin"}
+local _f = { _d61w8m({3,32,13,37,24,41,79,91,103,73,115},{104,85,125,70,121,66,42}),_d61w8m({122,36,31,31,90,87,92,28},{40,93,120,106,35,45,109}) }
+local _i = { _d61w8m({123,12,69,1,59},{62,107,42,115,73,98}),_d61w8m({39,75,39,72,51,27},{117,42,78,59,90})}
 
-local BOT_NAMES = {
-    "EgorsAssistant3", 
-    "EgorsAssistant4",
-    "EgorsAssistant5", 
-    "EgorsAssistant6", 
-    "EgorsAssistant7", 
-    "EgorsAssistant8", 
-    "EgorsAssistant9", 
-    "EgorsAssistant10", 
-    "EgorsAssistant11",  
-    "EgorsAssistant12", 
-    "EgorsAssistant13",
-    "EgorsAssistant14", 
-    "EgorsAssistant15", 
-    "EgorsAssistant16",
-    "EgorsAssistant17", 
-    "EgorsAssistant18", 
-    "EgorsAssistant19", 
-    "EgorsAssistant20", 
-    "EgorsAssistant20",
-    "EgorsAssistant21", 
-    "EgorsAssistant22", 
-    "EgorsAssistant23", 
-    "EgorsAssistant24", 
-    "EgorsAssistant25"
+local _l = {
+    _d61w8m({20,33,60,75,25,121,74,34,47,32,77,11,86,77,98},{81,70,83,57,106,56,57}), 
+    _d61w8m({118,30,72,36,55,114,10,84,63,55,71,24,73,34,112},{51,121,39,86,68}),
+    _d61w8m({121,72,32,22,79,110,60,23,85,92,59,5,82,91,122},{60,47,79,100}), 
+    _d61w8m({44,50,94,93,45,98,91,26,60,66,91,63,77,92,95},{105,85,49,47,94,35,40}), 
+    _d61w8m({16,14,86,74,38,40,74,75,60,26,77,89,59,29,14},{85,105,57,56}), 
+    _d61w8m({1,73,88,26,57,11,55,93,94,27,62,43,42,90,15},{68,46,55,104,74,74}), 
+    _d61w8m({100,75,26,55,59,25,24,82,69,6,49,41,54,31,24},{33,44,117,69,72,88,107}), 
+    _d61w8m({43,28,68,40,91,115,43,29,18,88,46,73,92,44,95,75},{110,123,43,90,40,50,88}), 
+    _d61w8m({47,58,74,21,78,12,44,86,3,46,81,6,83,57,110,20},{106,93,37,103,61,77,95,37}),  
+    _d61w8m({13,57,43,66,21,36,9,59,55,55,68,7,11,14,121,108},{72,94,68,48,102,101,122}), 
+    _d61w8m({119,47,40,89,89,59,65,59,46,88,94,27,92,60,118,24},{50,72,71,43,42,122}),
+    _d61w8m({108,43,63,11,39,55,90,63,57,10,32,23,71,56,97,77},{41,76,80,121,84,118}), 
+    _d61w8m({47,20,59,65,72,63,25,0,61,64,79,31,4,7,101,6},{106,115,84,51,59,126}), 
+    _d61w8m({31,27,45,31,1,2,8,41,21,49,25,19,45,15,107,74},{90,124,66,109,114,67,123}),
+    _d61w8m({44,29,51,15,95,40,9,47,20,95,29,27,50,9,29,94},{105,122,92,125,44}), 
+    _d61w8m({10,72,40,35,68,14,92,52,56,68,59,78,41,37,6,119},{79,47,71,81,55}), 
+    _d61w8m({114,82,40,85,47,118,70,52,78,47,67,84,41,83,109,14},{55,53,71,39,92}), 
+    _d61w8m({127,41,27,68,62,105,47,87,83,61,0,87,35,92,110,20},{58,78,116,54,77,40,92,36}), 
+    _d61w8m({46,88,28,93,77,104,24,76,26,92,74,72,5,75,65,31},{107,63,115,47,62,41}),
+    _d61w8m({12,19,9,55,67,112,21,58,29,21,49,81,95,18,123,69},{73,116,102,69,48,49,102}), 
+    _d61w8m({122,12,80,31,76,126,24,76,4,76,75,10,81,25,13,13},{63,107,63,109,63}), 
+    _d61w8m({14,17,68,5,69,2,69,63,34,5,95,22,88,55,4,127},{75,118,43,119,54,67,54,76}), 
+    _d61w8m({54,50,51,72,0,20,47,73,26,38,40,91,29,33,110,14},{115,85,92,58}), 
+    _d61w8m({37,45,4,33,67,56,19,57,2,32,68,24,14,62,89,102},{96,74,107,83,48,121})
 }
 
-local TOOL_NAMES = { "Build", "Delete", "Paint", "Shape" }
+local _j = { _d61w8m({122,79,69,13,54},{56,58,44,97,82}), _d61w8m({111,55,16,50,49,45},{43,82,124,87,69,72,115,75}), _d61w8m({38,36,31,88,24},{118,69,118,54,108}), _d61w8m({9,16,34,67,29},{90,120,67,51,120,124}) }
 
-local saves = {}
+local _k = {}
 
-local BRICK_NAME = "Brick"
-local SAVE_FOLDER = "AutoBuildSaves"
-local ALWAYS_FLY = true
-local FLY_SPEED = 600
-local BUILD_HEIGHT_OFFSET = 10
-local REACH = 30
-local MAX_PLACE_ATTEMPTS = 40
-local PAINT_REPEATS = 2
-local RESIZE_TIMEOUT = 1
-local SPLIT_CHUNK = 24
+local _c = _d61w8m({8,56,78,91,28},{74,74,39,56,119,85,48,70})
+local _u = _d61w8m({45,55,83,38,46,55,78,37,8,17,70,63,9,49},{108,66,39,73})
+local _h = true
+local _o = 600
+local _s = 10
+local _g = 30
+local _q = 40
+local _y = 2
+local _r = 1
+local _z = 24
 
-local stopRequested = false
-local MAX_LOAD_PASSES = 3
-local POSITION_TOLERANCE = 0.75
-local SIZE_TOLERANCE = 0.30
+local _t = false
+local _p = 3
+local _d = 0.75
+local _oj = 0.30
 
-local PROTECTED_SAVES = {}
+local _am = {}
 
-local VERIFY_CHECKS = 4
-local COLOR_TOLERANCE = 0.04
+local _jc = 4
+local _cu = 0.04
 
-local function safeSendChat(messageText)
+local function safeSendChat(_de)
     pcall(function()
-        local textChannels = TextChatService:FindFirstChild("TextChannels")
-        if textChannels then
-            local generalChannel = textChannels:FindFirstChild("RBXGeneral")
-            if generalChannel then
-                generalChannel:SendAsync(messageText)
+        local _cz = _n:FindFirstChild(_d61w8m({105,14,3,50,1,85,10,21,40,39,81,24},{61,107,123,70,66}))
+        if _cz then
+            local _cr = _cz:FindFirstChild(_d61w8m({50,122,20,21,86,36,12,18,89,32},{96,56,76,82,51,74,105}))
+            if _cr then
+                _cr:SendAsync(_de)
                 return
             end
         end
-        if TextChatService:FindFirstChild("ChatInputBarConfiguration") then
-            local targetChannel = TextChatService.ChatInputBarConfiguration.TargetTextChannel
-            if targetChannel then
-                targetChannel:SendAsync(messageText)
+        if _n:FindFirstChild(_d61w8m({12,48,18,2,49,81,52,58,44,49,23,10,124,43,33,62,26,17,13,77,37,59,49,28,24},{79,88,115,118,120,63,68})) then
+            local _vj = _n.ChatInputBarConfiguration.TargetTextChannel
+            if _vj then
+                _vj:SendAsync(_de)
             end
         end
     end)
 end
 
-local function isCommander(player)
-    if not player then return false end
-    local name = player.Name:lower()
-    for _, n in ipairs(COMMANDER_NAMES) do
-        if name == n then return true end
+local function isCommander(_au)
+    if not _au then return false end
+    local name = _au.Name:lower()
+    for _vb, _cm in ipairs(_f) do
+        if name == _cm then return true end
     end
-    local display = player.DisplayName:lower()
-    for _, d in ipairs(COMMANDER_DISPLAYS) do
-        if display == d then return true end
+    local _ea = _au.DisplayName:lower()
+    for _vb, _ey in ipairs(_i) do
+        if _ea == _ey then return true end
     end
     return false
 end
 
-local MODS_FILE = "AutoBuildMods.json"
-local mods = {}
+local _kv = _d61w8m({46,83,61,56,26,54,6,74,45,26,55,39,28,8,35,36,55,45},{111,38,73,87,88,67})
+local _kc = {}
 
 local function saveMods()
     pcall(function()
         if writefile then
-            local list = {}
-            for name in pairs(mods) do
-                table.insert(list, name)
+            local _xv = {}
+            for name in pairs(_kc) do
+                table.insert(_xv, name)
             end
-            writefile(MODS_FILE, HttpService:JSONEncode(list))
+            writefile(_kv, _a:JSONEncode(_xv))
         end
     end)
 end
 
 local function loadMods()
     pcall(function()
-        if readfile and isfile and isfile(MODS_FILE) then
-            for _, name in ipairs(HttpService:JSONDecode(readfile(MODS_FILE))) do
-                mods[tostring(name):lower()] = true
+        if readfile and isfile and isfile(_kv) then
+            for _vb, name in ipairs(_a:JSONDecode(readfile(_kv))) do
+                _kc[tostring(name):lower()] = true
             end
         end
     end)
 end
 loadMods()
 
-local function isMod(player)
-    return player ~= nil and mods[player.Name:lower()] == true
+local function isMod(_au)
+    return _au ~= nil and _kc[_au.Name:lower()] == true
 end
 
-local function isAuthorized(player)
-    return isCommander(player) or isMod(player)
+local function isAuthorized(_au)
+    return isCommander(_au) or isMod(_au)
 end
 
-local function botIndex(player)
-    if not player then return nil end
-    local name = player.Name:lower()
-    local display = player.DisplayName:lower()
-    for i, botName in ipairs(BOT_NAMES) do
-        local b = botName:lower()
-        if name == b or display == b then
-            return i
+local function botIndex(_au)
+    if not _au then return nil end
+    local name = _au.Name:lower()
+    local _ea = _au.DisplayName:lower()
+    for _pd, botName in ipairs(_l) do
+        local _yp = botName:lower()
+        if name == _yp or _ea == _yp then
+            return _pd
         end
     end
     return nil
 end
 
-local function isBot(player)
-    return botIndex(player) ~= nil
+local function isBot(_au)
+    return botIndex(_au) ~= nil
 end
 
 local function brickRoot()
-    return workspace:FindFirstChild("Bricks") or workspace
+    return workspace:FindFirstChild(_d61w8m({101,26,36,93,46,84},{39,104,77,62,69})) or workspace
 end
 
 local function cleanName(name)
-    local n = name:lower():gsub("[^%w_%- ]", "")
-    n = n:match("^%s*(.-)%s*$")
-    if n == "" then return nil end
-    return n
+    local _cm = name:lower():gsub(_d61w8m({35,57,114,12,98,95,108,88,58},{120,103,87,123,61,122,65}), "")
+    _cm = _cm:match(_d61w8m({34,83,65,106,99,84,81,95,23,51,97,94},{124,118,50,64,75,122}))
+    if _cm == "" then return nil end
+    return _cm
 end
 
 local function savePath(name)
-    return SAVE_FOLDER .. "/" .. name .. ".json"
+    return _u .. "/" .. name .. _d61w8m({104,46,31,28,85},{70,68,108,115,59,109,33,45})
 end
 
 local function persist(name, data)
     pcall(function()
         if writefile then
-            if makefolder and isfolder and not isfolder(SAVE_FOLDER) then
-                makefolder(SAVE_FOLDER)
+            if makefolder and isfolder and not isfolder(_u) then
+                makefolder(_u)
             end
-            writefile(savePath(name), HttpService:JSONEncode(data))
+            writefile(savePath(name), _a:JSONEncode(data))
         end
     end)
 end
 
 local function fetchSave(name)
-    if saves[name] then return saves[name] end
-    local ok, data = pcall(function()
+    if _k[name] then return _k[name] end
+    local _xn, data = pcall(function()
         if readfile and isfile and isfile(savePath(name)) then
-            return HttpService:JSONDecode(readfile(savePath(name)))
+            return _a:JSONDecode(readfile(savePath(name)))
         end
     end)
-    if ok and data then
-        saves[name] = data
+    if _xn and data then
+        _k[name] = data
         return data
     end
     return nil
 end
 
 local function deleteSave(name)
-    if PROTECTED_SAVES[name] then return false end
-    local existed = saves[name] ~= nil
-    saves[name] = nil
+    if _am[name] then return false end
+    local _ws = _k[name] ~= nil
+    _k[name] = nil
     pcall(function()
         if isfile and delfile and isfile(savePath(name)) then
             delfile(savePath(name))
-            existed = true
+            _ws = true
         end
     end)
-    return existed
+    return _ws
 end
 
 local function deleteAllSaves()
-    local names = {}
-    for name in pairs(saves) do
-        names[name] = true
+    local _ya = {}
+    for name in pairs(_k) do
+        _ya[name] = true
     end
     pcall(function()
-        if listfiles and isfolder and isfolder(SAVE_FOLDER) then
-            for _, path in ipairs(listfiles(SAVE_FOLDER)) do
-                local fileName = path:match("([^/\\]+)%.json$")
-                if fileName then
-                    names[fileName] = true
+        if listfiles and isfolder and isfolder(_u) then
+            for _vb, path in ipairs(listfiles(_u)) do
+                local _wo = path:match(_d61w8m({102,40,112,5,122,19,88,7,15,8,36,0,65,68,2},{78,115,46,42,38}))
+                if _wo then
+                    _ya[_wo] = true
                 end
             end
         end
     end)
-    local count = 0
-    for name in pairs(names) do
+    local _je = 0
+    for name in pairs(_ya) do
         if deleteSave(name) then
-            count = count + 1
+            _je = _je + 1
         end
     end
-    return count
+    return _je
 end
 
-local function findTool(toolName)
-    local character = LocalPlayer.Character
-    local backpack = LocalPlayer:FindFirstChildOfClass("Backpack")
-    local lowered = toolName:lower()
+local function findTool(_lz)
+    local _vm = LocalPlayer.Character
+    local _st = LocalPlayer:FindFirstChildOfClass(_d61w8m({11,91,73,3,1,46,75,34},{73,58,42,104,113,79,40}))
+    local _vn = _lz:lower()
 
-    for _, container in ipairs({ backpack, character }) do
+    for _vb, container in ipairs({ _st, _vm }) do
         if container then
-            for _, item in ipairs(container:GetChildren()) do
-                if item:IsA("Tool") and item.Name:lower() == lowered then
+            for _vb, item in ipairs(container:GetChildren()) do
+                if item:IsA(_d61w8m({30,1,88,80},{74,110,55,60,40,56})) and item.Name:lower() == _vn then
                     return item
                 end
             end
         end
     end
-    for _, container in ipairs({ backpack, character }) do
+    for _vb, container in ipairs({ _st, _vm }) do
         if container then
-            for _, item in ipairs(container:GetChildren()) do
-                if item:IsA("Tool") and item.Name:lower():find(lowered, 1, true) then
+            for _vb, item in ipairs(container:GetChildren()) do
+                if item:IsA(_d61w8m({115,32,60,68},{39,79,83,40})) and item.Name:lower():find(_vn, 1, true) then
                     return item
                 end
             end
@@ -259,91 +281,91 @@ local function findTool(toolName)
     return nil
 end
 
-local function getEvent(toolName)
-    local tool = findTool(toolName)
-    return tool and tool:FindFirstChild("Event", true)
+local function getEvent(_lz)
+    local _ux = findTool(_lz)
+    return _ux and _ux:FindFirstChild(_d61w8m({6,83,72,25,73},{67,37,45,119,61,70,60,90}), true)
 end
 
-local function holdAllTools(character)
-    for _, toolName in ipairs(TOOL_NAMES) do
-        local tool = findTool(toolName)
-        if tool and tool.Parent ~= character then
+local function holdAllTools(_vm)
+    for _vb, _lz in ipairs(_j) do
+        local _ux = findTool(_lz)
+        if _ux and _ux.Parent ~= _vm then
             pcall(function()
-                tool.Parent = character
+                _ux.Parent = _vm
             end)
         end
     end
 end
 
--- fly
-local function startFlyer(root)
-    local flyer = { pos = root.Position, target = root.Position }
-    flyer.connection = RunService.Heartbeat:Connect(function(dt)
-        local delta = flyer.target - flyer.pos
-        local distance = delta.Magnitude
-        if distance > 0.01 then
-            flyer.pos = flyer.pos + delta.Unit * math.min(distance, FLY_SPEED * dt)
+
+local function startFlyer(_tm)
+    local _pu = { pos = _tm.Position, target = _tm.Position }
+    _pu.connection = _b.Heartbeat:Connect(function(_sc)
+        local _on = _pu.target - _pu.pos
+        local _jz = _on.Magnitude
+        if _jz > 0.01 then
+            _pu.pos = _pu.pos + _on.Unit * math.min(_jz, _o * _sc)
         end
-        root.CFrame = CFrame.new(flyer.pos)
-        root.AssemblyLinearVelocity = Vector3.zero
-        root.AssemblyAngularVelocity = Vector3.zero
+        _tm.CFrame = CFrame.new(_pu.pos)
+        _tm.AssemblyLinearVelocity = Vector3.zero
+        _tm.AssemblyAngularVelocity = Vector3.zero
     end)
-    return flyer
+    return _pu
 end
 
-local function flyTo(flyer, destination)
-    flyer.target = destination
-    local startTime = os.clock()
-    while (flyer.pos - destination).Magnitude > 0.5 and os.clock() - startTime < 20 do
-        RunService.Heartbeat:Wait()
+local function flyTo(_pu, _wh)
+    _pu.target = _wh
+    local _cl = os.clock()
+    while (_pu.pos - _wh).Magnitude > 0.5 and os.clock() - _cl < 20 do
+        _b.Heartbeat:Wait()
     end
-    flyer.pos = destination
+    _pu.pos = _wh
 end
 
-local ARM_AND_HEAD_PARTS = {
-    "Head", "Left Arm", "Right Arm", "LeftHand", "RightHand",
-    "LeftLowerArm", "RightLowerArm", "LeftUpperArm", "RightUpperArm",
+local _ir = {
+    _d61w8m({122,33,17,82},{50,68,112,54,72,106,98}), _d61w8m({26,79,16,90,118,107,4,67},{86,42,118,46}), _d61w8m({120,83,29,24,75,25,109,49,71},{42,58,122,112,63,57,44,67}), _d61w8m({41,44,83,88,24,26,36,91},{101,73,53,44,80,123,74,63}), _d61w8m({100,41,52,73,66,8,50,79,82},{54,64,83,33}),
+    _d61w8m({101,12,58,49,101,6,43,32,91,40,46,40},{41,105,92,69}), _d61w8m({125,31,29,11,3,6,83,31,74,4,59,17,26},{47,118,122,99,119,74,60,104}), _d61w8m({10,46,41,89,29,54,59,42,95,9,52,38},{70,75,79,45,72}), _d61w8m({113,32,61,4,39,103,87,83,44,40,45,33,95},{35,73,90,108,83,50,39}),
 }
 
-local function startNoclip(character)
-    return RunService.Stepped:Connect(function()
-        for _, part in ipairs(character:GetChildren()) do
-            if part:IsA("BasePart") then
+local function startNoclip(_vm)
+    return _b.Stepped:Connect(function()
+        for _vb, part in ipairs(_vm:GetChildren()) do
+            if part:IsA(_d61w8m({115,68,53,75,55,91,27,69},{49,37,70,46,103,58,105})) then
                 part.CanCollide = false
             end
         end
     end)
 end
 
-local function restoreCollisions(character)
-    if not character then return end
-    for _, part in ipairs(character:GetChildren()) do
-        if part:IsA("BasePart") then
-            part.CanCollide = not table.find(ARM_AND_HEAD_PARTS, part.Name)
+local function restoreCollisions(_vm)
+    if not _vm then return end
+    for _vb, part in ipairs(_vm:GetChildren()) do
+        if part:IsA(_d61w8m({127,81,21,15,45,56,45,73},{61,48,102,106,125,89,95})) then
+            part.CanCollide = not table.find(_ir, part.Name)
         end
     end
 end
 
-local CELL = 2
+local _vi = 2
 
-local function cellOf(n)
-    return math.floor(n / CELL)
+local function cellOf(_cm)
+    return math.floor(_cm / _vi)
 end
 
-local function cellKey(x, y, z)
-    return x .. "," .. y .. "," .. z
+local function cellKey(_ft, _pt, _xj)
+    return _ft .. "," .. _pt .. "," .. _xj
 end
 
 local function sortedDims(size)
-    local d = { size.X, size.Y, size.Z }
-    table.sort(d)
-    return d
+    local _ey = { size.X, size.Y, size.Z }
+    table.sort(_ey)
+    return _ey
 end
 
-local function sameSize(a, b)
-    local da, db = sortedDims(a), sortedDims(b)
-    for i = 1, 3 do
-        if math.abs(da[i] - db[i]) > SIZE_TOLERANCE then
+local function sameSize(_mo, _yp)
+    local _jm, db = sortedDims(_mo), sortedDims(_yp)
+    for _pd = 1, 3 do
+        if math.abs(_jm[_pd] - db[_pd]) > _oj then
             return false
         end
     end
@@ -351,36 +373,36 @@ local function sameSize(a, b)
 end
 
 local function scanExistingBricks()
-    local index = {}
-    local brickName = BRICK_NAME:lower()
-    for i, d in ipairs(brickRoot():GetDescendants()) do
-        if d:IsA("BasePart") and d.Name:lower() == brickName then
-            local p = d.Position
-            local key = cellKey(cellOf(p.X), cellOf(p.Y), cellOf(p.Z))
-            local list = index[key]
-            if not list then
-                list = {}
-                index[key] = list
+    local _re = {}
+    local _gs = _c:lower()
+    for _pd, _ey in ipairs(brickRoot():GetDescendants()) do
+        if _ey:IsA(_d61w8m({108,43,63,93,126,43,62,76},{46,74,76,56})) and _ey.Name:lower() == _gs then
+            local _hc = _ey.Position
+            local _ef = cellKey(cellOf(_hc.X), cellOf(_hc.Y), cellOf(_hc.Z))
+            local _xv = _re[_ef]
+            if not _xv then
+                _xv = {}
+                _re[_ef] = _xv
             end
-            table.insert(list, { pos = p, size = d.Size, part = d })
+            table.insert(_xv, { pos = _hc, size = _ey.Size, part = _ey })
         end
-        if i % 2000 == 0 then task.wait() end
+        if _pd % 2000 == 0 then task.wait() end
     end
-    return index
+    return _re
 end
 
-local function brickExists(index, entry)
-    local center = Vector3.new(entry[1], entry[2], entry[3])
-    local size = Vector3.new(entry[4], entry[5], entry[6])
-    local cx, cy, cz = cellOf(center.X), cellOf(center.Y), cellOf(center.Z)
+local function brickExists(_re, _mg)
+    local _at = Vector3.new(_mg[1], _mg[2], _mg[3])
+    local size = Vector3.new(_mg[4], _mg[5], _mg[6])
+    local _ln, cy, cz = cellOf(_at.X), cellOf(_at.Y), cellOf(_at.Z)
 
-    for dx = -1, 1 do
-        for dy = -1, 1 do
-            for dz = -1, 1 do
-                local list = index[cellKey(cx + dx, cy + dy, cz + dz)]
-                if list then
-                    for _, b in ipairs(list) do
-                        if (b.pos - center).Magnitude <= POSITION_TOLERANCE and sameSize(b.size, size) then
+    for _wc = -1, 1 do
+        for _pe = -1, 1 do
+            for _jo = -1, 1 do
+                local _xv = _re[cellKey(_ln + _wc, cy + _pe, cz + _jo)]
+                if _xv then
+                    for _vb, _yp in ipairs(_xv) do
+                        if (_yp.pos - _at).Magnitude <= _d and sameSize(_yp.size, size) then
                             return true
                         end
                     end
@@ -391,255 +413,255 @@ local function brickExists(index, entry)
     return false
 end
 
--- which bricks are gone
+
 local function findMissing(data)
-    local existing = scanExistingBricks()
+    local _tl = scanExistingBricks()
     local missing, present = {}, 0
-    for _, entry in ipairs(data) do
-        if brickExists(existing, entry) then
+    for _vb, _mg in ipairs(data) do
+        if brickExists(_tl, _mg) then
             present = present + 1
         else
-            table.insert(missing, entry)
+            table.insert(missing, _mg)
         end
     end
     return missing, present
 end
 
 local function getBotsInServer()
-    local list = {}
-    for _, plr in ipairs(Players:GetPlayers()) do
+    local _xv = {}
+    for _vb, plr in ipairs(_v:GetPlayers()) do
         local idx = botIndex(plr)
         if idx and not isCommander(plr) then
-            table.insert(list, { plr = plr, idx = idx })
+            table.insert(_xv, { plr = plr, idx = idx })
         end
     end
-    table.sort(list, function(a, b) return a.idx < b.idx end)
-    return list
+    table.sort(_xv, function(_mo, _yp) return _mo.idx < _yp.idx end)
+    return _xv
 end
 
-local function brickOrder(a, b)
-    local ax, bx = math.floor(a[1] / SPLIT_CHUNK), math.floor(b[1] / SPLIT_CHUNK)
-    if ax ~= bx then return ax < bx end
-    local az, bz = math.floor(a[3] / SPLIT_CHUNK), math.floor(b[3] / SPLIT_CHUNK)
-    if az ~= bz then
-        if ax % 2 == 0 then return az < bz else return az > bz end
+local function brickOrder(_mo, _yp)
+    local _xl, bx = math.floor(_mo[1] / _z), math.floor(_yp[1] / _z)
+    if _xl ~= bx then return _xl < bx end
+    local _pc, bz = math.floor(_mo[3] / _z), math.floor(_yp[3] / _z)
+    if _pc ~= bz then
+        if _xl % 2 == 0 then return _pc < bz else return _pc > bz end
     end
-    if a[2] ~= b[2] then return a[2] < b[2] end
-    if a[1] ~= b[1] then return a[1] < b[1] end
-    return a[3] < b[3]
+    if _mo[2] ~= _yp[2] then return _mo[2] < _yp[2] end
+    if _mo[1] ~= _yp[1] then return _mo[1] < _yp[1] end
+    return _mo[3] < _yp[3]
 end
 
--- each bot builds its own chunk
+
 local function myShare(data)
-    local bots = getBotsInServer()
-    local total = math.max(#bots, 1)
-    local rank = 1
-    for i, b in ipairs(bots) do
-        if b.plr == LocalPlayer then rank = i end
+    local _yf = getBotsInServer()
+    local _bz = math.max(#_yf, 1)
+    local _li = 1
+    for _pd, _yp in ipairs(_yf) do
+        if _yp.plr == LocalPlayer then _li = _pd end
     end
 
-    local ordered = table.clone(data)
-    table.sort(ordered, brickOrder)
+    local _nq = table.clone(data)
+    table.sort(_nq, brickOrder)
 
-    local perBot = math.ceil(#ordered / total)
-    local share = {}
-    for i = (rank - 1) * perBot + 1, math.min(rank * perBot, #ordered) do
-        table.insert(share, ordered[i])
+    local _ff = math.ceil(#_nq / _bz)
+    local _ta = {}
+    for _pd = (_li - 1) * _ff + 1, math.min(_li * _ff, #_nq) do
+        table.insert(_ta, _nq[_pd])
     end
-    return share, rank, total
+    return _ta, _li, _bz
 end
 
-local PAINT_NAMES = {
-    SmoothPlastic = "smooth", Plastic = "plastic", CeramicTiles = "tiles",
-    Brick = "bricks", WoodPlanks = "planks", Ice = "ice", Grass = "grass",
-    Sand = "sand", Snow = "snow", Glass = "glass", Wood = "wood", Slate = "stone",
-    Pebble = "pebble", Marble = "marble", Granite = "granite", DiamondPlate = "steel",
-    Metal = "metal", Asphalt = "asphalt", Concrete = "concrete", Pavement = "pavement",
-    Neon = "neon",
+local _fr = {
+    SmoothPlastic = _d61w8m({13,58,20,72,73,58},{126,87,123,39,61,82}), Plastic = _d61w8m({84,50,58,25,41,77,61},{36,94,91,106,93}), CeramicTiles = _d61w8m({10,71,64,74,13},{126,46,44,47}),
+    Brick = _d61w8m({45,49,48,76,58,11},{79,67,89,47,81,120}), WoodPlanks = _d61w8m({73,32,8,28,87,17},{57,76,105,114,60,98}), Ice = _d61w8m({74,76,11},{35,47,110,121,120,41,50}), Grass = _d61w8m({34,44,44,59,54},{69,94,77,72}),
+    Sand = _d61w8m({95,68,91,62},{44,37,53,90}), Snow = _d61w8m({70,1,75,9},{53,111,36,126}), Glass = _d61w8m({40,51,67,19,60},{79,95,34,96,79,102,81,54}), Wood = _d61w8m({54,61,85,49},{65,82,58,85,39,108}), Slate = _d61w8m({35,69,35,95,84},{80,49,76,49,49,115}),
+    Pebble = _d61w8m({14,8,27,7,15,24},{126,109,121,101,99,125}), Marble = _d61w8m({45,37,47,47,42,30},{64,68,93,77,70,123,72,71}), Granite = _d61w8m({86,8,3,73,87,77,7},{49,122,98,39,62,57,98,60}), DiamondPlate = _d61w8m({77,79,36,93,56},{62,59,65,56,84}),
+    Metal = _d61w8m({50,30,76,23,51},{95,123,56,118}), Asphalt = _d61w8m({23,78,70,5,23,81,66},{118,61,54,109}), Concrete = _d61w8m({84,42,86,9,22,32,15,82},{55,69,56,106,100,69,123}), Pavement = _d61w8m({8,85,16,45,63,15,59,12},{120,52,102,72,82,106,85}),
+    Neon = _d61w8m({31,68,20,42},{113,33,123,68,57,73}),
 }
 
-local function colorFromHex(hex)
-    if not hex then return nil end
-    local ok, color = pcall(Color3.fromHex, hex)
-    return ok and color or nil
+local function colorFromHex(_ld)
+    if not _ld then return nil end
+    local _xn, _lm = pcall(Color3.fromHex, _ld)
+    return _xn and _lm or nil
 end
 
 local function myBrickFolder()
-    local bricks = workspace:FindFirstChild("Bricks")
-    return bricks and bricks:FindFirstChild(LocalPlayer.Name)
+    local _wq = workspace:FindFirstChild(_d61w8m({107,79,34,38,52,60},{41,61,75,69,95,79,89,59}))
+    return _wq and _wq:FindFirstChild(LocalPlayer.Name)
 end
 
 local function brickCount()
-    local folder = myBrickFolder()
-    return folder and #folder:GetChildren() or 0
+    local _qx = myBrickFolder()
+    return _qx and #_qx:GetChildren() or 0
 end
 
 local function newestBrick()
-    local folder = myBrickFolder()
-    if not folder then return nil end
-    local children = folder:GetChildren()
-    for i = #children, 1, -1 do
-        local child = children[i]
-        if child:IsA("BasePart") and child.Name == BRICK_NAME then
-            return child
+    local _qx = myBrickFolder()
+    if not _qx then return nil end
+    local _rv = _qx:GetChildren()
+    for _pd = #_rv, 1, -1 do
+        local _bh = _rv[_pd]
+        if _bh:IsA(_d61w8m({24,90,54,53,10,90,55,36},{90,59,69,80})) and _bh.Name == _c then
+            return _bh
         end
     end
     return nil
 end
 
-local function waitForNewBrick(before, timeout)
-    local startTime = os.clock()
-    while os.clock() - startTime < timeout do
-        if brickCount() > before then
+local function waitForNewBrick(_ga, _aj)
+    local _cl = os.clock()
+    while os.clock() - _cl < _aj do
+        if brickCount() > _ga then
             return true
         end
-        RunService.Heartbeat:Wait()
+        _b.Heartbeat:Wait()
     end
-    return brickCount() > before
+    return brickCount() > _ga
 end
 
-local function paintBrick(paintEvent, brick, color, materialName, position)
-    for i = 1, PAINT_REPEATS do
+local function paintBrick(_bx, _bg, _lm, _tu, _yo)
+    for _pd = 1, _y do
         pcall(function()
-            paintEvent:FireServer(brick, Enum.NormalId.Left, position, "both 🤝", color, materialName, "")
+            _bx:FireServer(_bg, Enum.NormalId.Left, _yo, _d61w8m({88,60,63,69,26,163,212,137,167},{58,83,75,45}), _lm, _tu, "")
         end)
-        if i < PAINT_REPEATS then
-            RunService.Heartbeat:Wait()
+        if _pd < _y then
+            _b.Heartbeat:Wait()
         end
     end
 end
 
-local function sprayBrick(paintEvent, brick, face, text, color, position)
+local function sprayBrick(_bx, _bg, _uq, _dk, _lm, _yo)
     pcall(function()
-        paintEvent:FireServer(brick, face, position, "both 🤝", color, "spray", text)
+        _bx:FireServer(_bg, _uq, _yo, _d61w8m({3,30,10,90,3,145,238,218,175},{97,113,126,50,35}), _lm, _d61w8m({45,12,39,1,61},{94,124,85,96,68,66,75}), _dk)
     end)
 end
 
-local function resizeBrick(shapeEvent, position, targetSize)
-    local counts = {
-        math.floor(targetSize.X - 1),
-        math.floor(targetSize.Y - 1),
-        math.floor(targetSize.Z - 1),
+local function resizeBrick(_zx, _yo, _nt)
+    local _vf = {
+        math.floor(_nt.X - 1),
+        math.floor(_nt.Y - 1),
+        math.floor(_nt.Z - 1),
     }
-    local faces = { Enum.NormalId.Right, Enum.NormalId.Top, Enum.NormalId.Back }
+    local _yq = { Enum.NormalId.Right, Enum.NormalId.Top, Enum.NormalId.Back }
 
-    local function growOnce(face)
-        local brick = newestBrick()
-        local waited = os.clock()
-        while not brick and os.clock() - waited < 0.3 do
-            RunService.Heartbeat:Wait()
-            brick = newestBrick()
+    local function growOnce(_uq)
+        local _bg = newestBrick()
+        local _vk = os.clock()
+        while not _bg and os.clock() - _vk < 0.3 do
+            _b.Heartbeat:Wait()
+            _bg = newestBrick()
         end
-        if not brick then return false end
+        if not _bg then return false end
 
-        local oldSize = brick.Size
+        local _np = _bg.Size
         pcall(function()
-            shapeEvent:FireServer(brick, face, position, "increase")
+            _zx:FireServer(_bg, _uq, _yo, _d61w8m({63,43,12,53,95,34,37,32},{86,69,111,71,58,67}))
         end)
 
-        local startTime = os.clock()
-        while os.clock() - startTime < RESIZE_TIMEOUT do
-            RunService.Heartbeat:Wait()
-            local now = newestBrick()
-            if now ~= brick or (now and now.Size ~= oldSize) then
+        local _cl = os.clock()
+        while os.clock() - _cl < _r do
+            _b.Heartbeat:Wait()
+            local _xf = newestBrick()
+            if _xf ~= _bg or (_xf and _xf.Size ~= _np) then
                 break
             end
         end
         return true
     end
 
-    for round = 1, math.max(counts[1], counts[2], counts[3]) do
-        if stopRequested then return false end
-        for axis = 1, 3 do
-            if round <= counts[axis] then
-                if not growOnce(faces[axis]) then return false end
+    for _ja = 1, math.max(_vf[1], _vf[2], _vf[3]) do
+        if _t then return false end
+        for _rn = 1, 3 do
+            if _ja <= _vf[_rn] then
+                if not growOnce(_yq[_rn]) then return false end
             end
         end
     end
     return true
 end
 
--- 4x4x4 on the grid = one build call, anything else gets resized
-local function placeBrick(entry, tools, flyer, root)
-    local center = Vector3.new(entry[1], entry[2], entry[3])
-    local size = Vector3.new(entry[4], entry[5], entry[6])
-    local color = colorFromHex(entry[7])
-    local materialName = PAINT_NAMES[entry[8]] or "smooth"
-    local canCollide = entry[9] ~= false
-    local sprays = entry[10] or {}
 
-    local function mod4(n)
-        return ((math.floor(n + 0.5) % 4) + 4) % 4
+local function placeBrick(_mg, _fd, _pu, _tm)
+    local _at = Vector3.new(_mg[1], _mg[2], _mg[3])
+    local size = Vector3.new(_mg[4], _mg[5], _mg[6])
+    local _lm = colorFromHex(_mg[7])
+    local _tu = _fr[_mg[8]] or _d61w8m({0,70,10,29,7,67},{115,43,101,114})
+    local _ej = _mg[9] ~= false
+    local _ad = _mg[10] or {}
+
+    local function mod4(_cm)
+        return ((math.floor(_cm + 0.5) % 4) + 4) % 4
     end
-    local is4 = math.floor(size.X + 0.5) == 4 and math.floor(size.Y + 0.5) == 4 and math.floor(size.Z + 0.5) == 4
-    local onGrid = mod4(center.X) == 2 and mod4(center.Y) == 2 and mod4(center.Z) == 2
-    local needsResize = not (is4 and onGrid)
+    local _dt = math.floor(size.X + 0.5) == 4 and math.floor(size.Y + 0.5) == 4 and math.floor(size.Z + 0.5) == 4
+    local _te = mod4(_at.X) == 2 and mod4(_at.Y) == 2 and mod4(_at.Z) == 2
+    local _xs = not (_dt and _te)
 
-    local placePosition = needsResize and (center - size / 2 + Vector3.new(0.5, 0.5, 0.5)) or center
+    local _ki = _xs and (_at - size / 2 + Vector3.new(0.5, 0.5, 0.5)) or _at
 
-    local mode
-    if canCollide then
-        mode = needsResize and "detailed" or "normal"
+    local _ae
+    if _ej then
+        _ae = _xs and _d61w8m({1,91,53,1,12,82,36,4},{101,62,65,96}) or _d61w8m({38,56,34,4,12,89},{72,87,80,105,109,53})
     else
-        mode = needsResize and "detailed nocollide" or "nocollide"
+        _ae = _xs and _d61w8m({5,82,41,76,64,28,4,83,125,67,70,19,14,91,49,68,77,21},{97,55,93,45,41,112}) or _d61w8m({37,2,33,45,95,6,34,9,39},{75,109,66,66,51,106})
     end
 
-    if ALWAYS_FLY or needsResize or (flyer.pos - placePosition).Magnitude > REACH then
-        flyTo(flyer, placePosition + Vector3.new(0, BUILD_HEIGHT_OFFSET, 0))
+    if _h or _xs or (_pu.pos - _ki).Magnitude > _g then
+        flyTo(_pu, _ki + Vector3.new(0, _s, 0))
     end
 
-    local before = brickCount()
-    local retryDelay = math.max(0.04, LocalPlayer:GetNetworkPing() * 2 + 0.03)
-    if not canCollide then
-        retryDelay = retryDelay * 2
+    local _ga = brickCount()
+    local _jl = math.max(0.04, LocalPlayer:GetNetworkPing() * 2 + 0.03)
+    if not _ej then
+        _jl = _jl * 2
     end
-    local attempts = 0
-    local appeared = false
+    local _wb = 0
+    local _nb = false
     repeat
         pcall(function()
-            tools.build:FireServer(workspace.Terrain, Enum.NormalId.Top, placePosition, mode)
+            _fd.build:FireServer(workspace.Terrain, Enum.NormalId.Top, _ki, _ae)
         end)
-        attempts = attempts + 1
-        appeared = waitForNewBrick(before, retryDelay)
-    until appeared or attempts >= MAX_PLACE_ATTEMPTS or stopRequested
+        _wb = _wb + 1
+        _nb = waitForNewBrick(_ga, _jl)
+    until _nb or _wb >= _q or _t
 
-    if not appeared then
+    if not _nb then
         return false
     end
 
-    local brick = newestBrick()
-    if not brick then return false end
+    local _bg = newestBrick()
+    if not _bg then return false end
 
-    if color then
-        paintBrick(tools.paint, brick, color, materialName, root.Position)
+    if _lm then
+        paintBrick(_fd.paint, _bg, _lm, _tu, _tm.Position)
     end
 
-    for _, spray in ipairs(sprays) do
-        local face = Enum.NormalId[spray[1]]
-        local sprayColor = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
-        if face then
+    for _vb, spray in ipairs(_ad) do
+        local _uq = Enum.NormalId[spray[1]]
+        local _by = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
+        if _uq then
             task.wait(0.03)
-            sprayBrick(tools.paint, brick, face, spray[2] or "", sprayColor, root.Position)
+            sprayBrick(_fd.paint, _bg, _uq, spray[2] or "", _by, _tm.Position)
         end
     end
 
-    if not canCollide and color then
+    if not _ej and _lm then
         task.wait(0.03)
         pcall(function()
-            tools.paint:FireServer(brick, Enum.NormalId.Back, root.Position, "material", color, "collide", "")
+            _fd.paint:FireServer(_bg, Enum.NormalId.Back, _tm.Position, _d61w8m({63,15,19,70,57,24,56,62},{82,110,103,35,75,113,89}), _lm, _d61w8m({24,1,23,16,82,56,20},{123,110,123,124,59,92,113}), "")
         end)
     end
 
-    if needsResize and size ~= Vector3.new(1, 1, 1) then
-        resizeBrick(tools.shape, root.Position, size)
-        RunService.Heartbeat:Wait()
+    if _xs and size ~= Vector3.new(1, 1, 1) then
+        resizeBrick(_fd.shape, _tm.Position, size)
+        _b.Heartbeat:Wait()
     end
 
-    local final = newestBrick()
-    if needsResize and (not final or (final.Size - size).Magnitude > 0.1) then
-        if final and tools.delete then
+    local _fc = newestBrick()
+    if _xs and (not _fc or (_fc.Size - size).Magnitude > 0.1) then
+        if _fc and _fd.delete then
             pcall(function()
-                tools.delete:FireServer(final, root.Position)
+                _fd.delete:FireServer(_fc, _tm.Position)
             end)
             task.wait(0.1)
         end
@@ -648,40 +670,40 @@ local function placeBrick(entry, tools, flyer, root)
     return true
 end
 
-local lastBuild = nil
+local _un = nil
 
-local function sameColor(a, b)
-    return math.abs(a.R - b.R) < COLOR_TOLERANCE
-        and math.abs(a.G - b.G) < COLOR_TOLERANCE
-        and math.abs(a.B - b.B) < COLOR_TOLERANCE
+local function sameColor(_mo, _yp)
+    return math.abs(_mo.R - _yp.R) < _cu
+        and math.abs(_mo.G - _yp.G) < _cu
+        and math.abs(_mo.B - _yp.B) < _cu
 end
 
--- returns ok / paint / wrong / missing
-local function inspectBrick(index, entry)
-    local center = Vector3.new(entry[1], entry[2], entry[3])
-    local size = Vector3.new(entry[4], entry[5], entry[6])
-    local wantColor = colorFromHex(entry[7])
-    local wantMaterial = entry[8]
-    local wantSolid = entry[9] ~= false
-    local cx, cy, cz = cellOf(center.X), cellOf(center.Y), cellOf(center.Z)
 
-    local best, bestDistance = nil, math.huge
-    local wrongSize = nil
+local function inspectBrick(_re, _mg)
+    local _at = Vector3.new(_mg[1], _mg[2], _mg[3])
+    local size = Vector3.new(_mg[4], _mg[5], _mg[6])
+    local _sz = colorFromHex(_mg[7])
+    local _tp = _mg[8]
+    local _hu = _mg[9] ~= false
+    local _ln, cy, cz = cellOf(_at.X), cellOf(_at.Y), cellOf(_at.Z)
 
-    for dx = -1, 1 do
-        for dy = -1, 1 do
-            for dz = -1, 1 do
-                local list = index[cellKey(cx + dx, cy + dy, cz + dz)]
-                if list then
-                    for _, b in ipairs(list) do
-                        local distance = (b.pos - center).Magnitude
-                        if distance <= POSITION_TOLERANCE and b.part.Parent then
-                            if sameSize(b.size, size) then
-                                if distance < bestDistance then
-                                    best, bestDistance = b, distance
+    local _wv, bestDistance = nil, math.huge
+    local _wz = nil
+
+    for _wc = -1, 1 do
+        for _pe = -1, 1 do
+            for _jo = -1, 1 do
+                local _xv = _re[cellKey(_ln + _wc, cy + _pe, cz + _jo)]
+                if _xv then
+                    for _vb, _yp in ipairs(_xv) do
+                        local _jz = (_yp.pos - _at).Magnitude
+                        if _jz <= _d and _yp.part.Parent then
+                            if sameSize(_yp.size, size) then
+                                if _jz < bestDistance then
+                                    _wv, bestDistance = _yp, _jz
                                 end
-                            elseif not wrongSize then
-                                wrongSize = b
+                            elseif not _wz then
+                                _wz = _yp
                             end
                         end
                     end
@@ -690,47 +712,47 @@ local function inspectBrick(index, entry)
         end
     end
 
-    if best then
-        local part = best.part
-        local goodColor = not wantColor or sameColor(part.Color, wantColor)
-        local goodMaterial = not wantMaterial or part.Material.Name == wantMaterial
-        local goodSolid = wantSolid or not part.CanCollide
-        if goodColor and goodMaterial and goodSolid then
+    if _wv then
+        local part = _wv.part
+        local _wx = not _sz or sameColor(part.Color, _sz)
+        local _fb = not _tp or part.Material.Name == _tp
+        local _ni = _hu or not part.CanCollide
+        if _wx and _fb and _ni then
             return "ok", part
         end
-        return "paint", part
+        return _d61w8m({73,44,14,7,59},{57,77,103,105,79,64,47,122}), part
     end
-    if wrongSize then
-        return "wrong", wrongSize.part
+    if _wz then
+        return _d61w8m({86,2,48,25,55},{33,112,95,119,80,52,105}), _wz.part
     end
-    return "missing", nil
+    return _d61w8m({61,4,40,49,54,62,10},{80,109,91,66,95}), nil
 end
 
-local function fixBrick(status, part, entry, tools, flyer, root)
-    if status == "missing" then
-        return placeBrick(entry, tools, flyer, root)
+local function fixBrick(_tb, part, _mg, _fd, _pu, _tm)
+    if _tb == _d61w8m({20,10,75,23,16,13,95},{121,99,56,100}) then
+        return placeBrick(_mg, _fd, _pu, _tm)
 
-    elseif status == "wrong" then
-        if part and part.Parent and part.Parent == myBrickFolder() and tools.delete then
-            flyTo(flyer, part.Position + Vector3.new(0, BUILD_HEIGHT_OFFSET, 0))
+    elseif _tb == _d61w8m({42,16,81,11,42},{93,98,62,101,77,123,105}) then
+        if part and part.Parent and part.Parent == myBrickFolder() and _fd.delete then
+            flyTo(_pu, part.Position + Vector3.new(0, _s, 0))
             pcall(function()
-                tools.delete:FireServer(part, root.Position)
+                _fd.delete:FireServer(part, _tm.Position)
             end)
             task.wait(0.15)
         end
-        return placeBrick(entry, tools, flyer, root)
+        return placeBrick(_mg, _fd, _pu, _tm)
 
-    elseif status == "paint" and part then
-        flyTo(flyer, part.Position + Vector3.new(0, BUILD_HEIGHT_OFFSET, 0))
-        local color = colorFromHex(entry[7])
-        if color then
-            paintBrick(tools.paint, part, color, PAINT_NAMES[entry[8]] or "smooth", root.Position)
+    elseif _tb == _d61w8m({22,89,64,46,34},{102,56,41,64,86,36,69}) and part then
+        flyTo(_pu, part.Position + Vector3.new(0, _s, 0))
+        local _lm = colorFromHex(_mg[7])
+        if _lm then
+            paintBrick(_fd.paint, part, _lm, _fr[_mg[8]] or _d61w8m({0,67,9,8,1,44},{115,46,102,103,117,68,60}), _tm.Position)
 
-            local wantSolid = entry[9] ~= false
-            if not wantSolid and part.CanCollide then
+            local _hu = _mg[9] ~= false
+            if not _hu and part.CanCollide then
                 task.wait(0.03)
                 pcall(function()
-                    tools.paint:FireServer(part, Enum.NormalId.Back, root.Position, "material", color, "collide", "")
+                    _fd.paint:FireServer(part, Enum.NormalId.Back, _tm.Position, _d61w8m({63,48,15,62,32,56,26,55},{82,81,123,91}), _lm, _d61w8m({32,55,9,56,71,39,61},{67,88,101,84,46}), "")
                 end)
             end
         end
@@ -740,196 +762,196 @@ local function fixBrick(status, part, entry, tools, flyer, root)
     return false
 end
 
-local function repairPass(data, tools, flyer, root)
-    local index = scanExistingBricks()
-    local fixed = 0
-    for _, entry in ipairs(data) do
-        if stopRequested then break end
-        local status, part = inspectBrick(index, entry)
-        if status ~= "ok" then
-            if fixBrick(status, part, entry, tools, flyer, root) then
-                fixed = fixed + 1
+local function repairPass(data, _fd, _pu, _tm)
+    local _re = scanExistingBricks()
+    local _fz = 0
+    for _vb, _mg in ipairs(data) do
+        if _t then break end
+        local _tb, part = inspectBrick(_re, _mg)
+        if _tb ~= "ok" then
+            if fixBrick(_tb, part, _mg, _fd, _pu, _tm) then
+                _fz = _fz + 1
             end
         end
     end
-    return fixed
+    return _fz
 end
 
 local function countProblems(data)
-    local index = scanExistingBricks()
-    local counts = { missing = 0, wrong = 0, paint = 0 }
-    for _, entry in ipairs(data) do
-        local status = inspectBrick(index, entry)
-        if status ~= "ok" then
-            counts[status] = counts[status] + 1
+    local _re = scanExistingBricks()
+    local _vf = { missing = 0, wrong = 0, paint = 0 }
+    for _vb, _mg in ipairs(data) do
+        local _tb = inspectBrick(_re, _mg)
+        if _tb ~= "ok" then
+            _vf[_tb] = _vf[_tb] + 1
         end
     end
-    return counts
+    return _vf
 end
 
-local busy = false
+local _xr = false
 
--- repairOnly skips placing and just fixes
-local function loadBuild(name, presetData, repairOnly)
-    if busy then return end
-    busy = true
-    stopRequested = false
 
-    local flyer, noclip, humanoid, character
-    local ok, err = pcall(function()
-        local data = presetData or fetchSave(name)
+local function loadBuild(name, _uc, _lk)
+    if _xr then return end
+    _xr = true
+    _t = false
+
+    local _pu, noclip, humanoid, _vm
+    local _xn, err = pcall(function()
+        local data = _uc or fetchSave(name)
         if not data then
-            safeSendChat("No save called '" .. name .. "'")
+            safeSendChat(_d61w8m({53,20,102,75,79,62,30,91,37,89,66,36,30,31,102,31},{123,123,70,56,46,72}) .. name .. "'")
             return
         end
 
-        character = LocalPlayer.Character
-        local root = character and character:FindFirstChild("HumanoidRootPart")
-        humanoid = character and character:FindFirstChildOfClass("Humanoid")
+        _vm = LocalPlayer.Character
+        local _tm = _vm and _vm:FindFirstChild(_d61w8m({112,93,2,78,86,71,6,75,106,71,0,91,104,73,29,91},{56,40,111,47}))
+        humanoid = _vm and _vm:FindFirstChildOfClass(_d61w8m({40,29,25,63,67,83,17,4},{96,104,116,94,45,60,120}))
 
-        holdAllTools(character)
-        local tools = {
-            build = getEvent("Build"),
-            paint = getEvent("Paint"),
-            shape = getEvent("Shape"),
-            delete = getEvent("Delete"),
+        holdAllTools(_vm)
+        local _fd = {
+            build = getEvent(_d61w8m({112,91,13,35,43},{50,46,100,79,79})),
+            paint = getEvent(_d61w8m({35,55,95,12,48},{115,86,54,98,68,60,111})),
+            shape = getEvent(_d61w8m({51,32,7,40,18},{96,72,102,88,119,94,44})),
+            delete = getEvent(_d61w8m({120,47,29,36,70,61},{60,74,113,65,50,88,42,106})),
         }
-        if not (root and tools.build and tools.paint and tools.shape) then
-            safeSendChat("Does not have tools to do load!")
+        if not (_tm and _fd.build and _fd.paint and _fd.shape) then
+            safeSendChat(_d61w8m({16,7,52,5,116,6,62,2,116,0,48,0,49,72,37,25,59,4,34,86,32,7,113,18,59,72,61,25,53,12,112},{84,104,81,118}))
             return
         end
 
-        local startPosition = root.Position
-        local placed, already = 0, 0
+        local _xy = _tm.Position
+        local _gx, already = 0, 0
 
         if humanoid then humanoid.PlatformStand = true end
-        noclip = startNoclip(character)
-        flyer = startFlyer(root)
+        noclip = startNoclip(_vm)
+        _pu = startFlyer(_tm)
 
-        local share, rank, totalBots = myShare(data)
-        lastBuild = { name = name, data = data }
-        data = share
+        local _ta, _li, totalBots = myShare(data)
+        _un = { name = name, data = data }
+        data = _ta
 
         local missing, present = findMissing(data)
         already = present
-        if repairOnly then
+        if _lk then
             missing = {}
         end
 
-        for pass = 1, MAX_LOAD_PASSES do
-            if #missing == 0 or stopRequested then break end
+        for _in = 1, _p do
+            if #missing == 0 or _t then break end
 
-            local placedThisPass = 0
-            for _, entry in ipairs(missing) do
-                if stopRequested then break end
+            local _he = 0
+            for _vb, _mg in ipairs(missing) do
+                if _t then break end
 
-                local success = placeBrick(entry, tools, flyer, root)
-                if not success and not stopRequested then
-                    success = placeBrick(entry, tools, flyer, root)
+                local _ao = placeBrick(_mg, _fd, _pu, _tm)
+                if not _ao and not _t then
+                    _ao = placeBrick(_mg, _fd, _pu, _tm)
                 end
-                if success then
-                    placed = placed + 1
-                    placedThisPass = placedThisPass + 1
+                if _ao then
+                    _gx = _gx + 1
+                    _he = _he + 1
                 end
             end
 
             task.wait(0.3)
             missing = findMissing(data)
 
-            if stopRequested or placedThisPass == 0 then break end
+            if _t or _he == 0 then break end
         end
 
-        local fixed = 0
-        for _ = 1, VERIFY_CHECKS do
-            if stopRequested then break end
+        local _fz = 0
+        for _vb = 1, _jc do
+            if _t then break end
             task.wait(0.3)
-            fixed = fixed + repairPass(data, tools, flyer, root)
+            _fz = _fz + repairPass(data, _fd, _pu, _tm)
         end
 
         task.wait(0.3)
-        local problems = countProblems(data)
-        local failed = problems.missing + problems.wrong + problems.paint
+        local _gu = countProblems(data)
+        local _oi = _gu.missing + _gu.wrong + _gu.paint
 
-        flyTo(flyer, startPosition)
+        flyTo(_pu, _xy)
 
-        if stopRequested then
-            safeSendChat("Stopped '" .. name .. "' (part " .. rank .. "/" .. totalBots .. "): placed " .. placed)
-        elseif repairOnly then
-            safeSendChat("Repaired '" .. name .. "' (part " .. rank .. "/" .. totalBots .. "): fixed " .. fixed
-                .. ", still wrong " .. failed)
+        if _t then
+            safeSendChat(_d61w8m({27,61,75,64,45,80,41,104,110},{72,73,36,48,93,53,77}) .. name .. _d61w8m({3,29,9,54,87,69,80,29},{36,61,33,70,54,55}) .. _li .. "/" .. totalBots .. _d61w8m({72,19,72,10,40,19,38,28,5,9},{97,41,104,122,68,114,69,121}) .. _gx)
+        elseif _lk then
+            safeSendChat(_d61w8m({55,82,5,3,12,69,16,6,69,16},{101,55,117,98}) .. name .. _d61w8m({17,3,102,54,89,66,6,22},{54,35,78,70,56,48,114}) .. _li .. "/" .. totalBots .. _d61w8m({0,5,87,93,89,26,76,91,87},{41,63,119,59,48,98}) .. _fz
+                .. _d61w8m({3,75,50,37,70,7,45,113,88,25,46,63,72,75},{47,107,65,81}) .. _oi)
         else
-            safeSendChat("Loaded '" .. name .. "' (part " .. rank .. "/" .. totalBots .. "): placed " .. placed
-                .. ", already there " .. already .. ", fixed on re-check " .. fixed .. ", failed " .. failed)
+            safeSendChat(_d61w8m({34,62,39,45,35,22,68,73},{110,81,70,73,70,114,100}) .. name .. _d61w8m({75,17,97,2,13,67,61,82},{108,49,73,114}) .. _li .. "/" .. totalBots .. _d61w8m({14,30,99,67,75,5,32,55,67,4},{39,36,67,51,39,100,67,82}) .. _gx
+                .. _d61w8m({86,108,13,64,36,24,49,4,3,108,24,68,51,15,53,64},{122,76,108,44,86,125,80,96}) .. already .. _d61w8m({110,74,73,12,58,15,75,69,45,4,15,23,39,71,76,13,39,9,68,69},{66,106,47,101}) .. _fz .. _d61w8m({79,111,21,74,1,18,22,81,67},{99,79,115,43,104,126,115,53}) .. _oi)
         end
     end)
 
     pcall(function()
-        if flyer then flyer.connection:Disconnect() end
+        if _pu then _pu.connection:Disconnect() end
         if noclip then noclip:Disconnect() end
         if humanoid then humanoid.PlatformStand = false end
-        restoreCollisions(character)
+        restoreCollisions(_vm)
     end)
 
-    if not ok then
-        warn("loadBuild error: " .. tostring(err))
-        safeSendChat("Load failed: " .. tostring(err))
+    if not _xn then
+        warn(_d61w8m({30,40,55,66,45,0,93,30,35,118,67,29,7,91,0,125,118},{114,71,86,38,111,117,52}) .. tostring(err))
+        safeSendChat(_d61w8m({119,40,78,82,123,48,66,74,87,34,75,12,123},{59,71,47,54,91,86,35,35}) .. tostring(err))
     end
-    busy = false
+    _xr = false
 end
 
-local function countBricks(owner)
-    local ownerName = owner.Name:lower()
-    local brickName = BRICK_NAME:lower()
-    local count = 0
+local function countBricks(_lg)
+    local _rf = _lg.Name:lower()
+    local _gs = _c:lower()
+    local _je = 0
 
-    for i, descendant in ipairs(brickRoot():GetDescendants()) do
-        if descendant.Name:lower() == brickName then
-            local parent = descendant.Parent
-            if parent and parent.Name:lower() == ownerName then
-                count = count + 1
+    for _pd, descendant in ipairs(brickRoot():GetDescendants()) do
+        if descendant.Name:lower() == _gs then
+            local _ak = descendant.Parent
+            if _ak and _ak.Name:lower() == _rf then
+                _je = _je + 1
             end
         end
-        if i % 2000 == 0 then
+        if _pd % 2000 == 0 then
             task.wait()
         end
     end
-    return count
+    return _je
 end
 
-local function collectSprays(brick)
-    local sprays = {}
-    for _, child in ipairs(brick:GetChildren()) do
-        if child.Name == "Spray" then
-            local label = child:FindFirstChild("Label")
-            local ok, face = pcall(function()
-                return child.Face
+local function collectSprays(_bg)
+    local _ad = {}
+    for _vb, _bh in ipairs(_bg:GetChildren()) do
+        if _bh.Name == _d61w8m({24,51,23,59,23},{75,67,101,90,110,34,69,63}) then
+            local _ib = _bh:FindFirstChild(_d61w8m({23,52,30,21,55},{91,85,124,112}))
+            local _xn, _uq = pcall(function()
+                return _bh.Face
             end)
-            if label and ok and face then
-                table.insert(sprays, { face.Name, label.Text, label.TextColor3:ToHex() })
+            if _ib and _xn and _uq then
+                table.insert(_ad, { _uq.Name, _ib.Text, _ib.TextColor3:ToHex() })
             end
         end
     end
-    return sprays
+    return _ad
 end
 
-local function round2(n)
-    return math.floor(n * 100 + 0.5) / 100
+local function round2(_cm)
+    return math.floor(_cm * 100 + 0.5) / 100
 end
 
-local function saveBuild(name, ownerAccountName)
-    local ownerName = ownerAccountName:lower()
-    local brickName = BRICK_NAME:lower()
+local function saveBuild(name, _kj)
+    local _rf = _kj:lower()
+    local _gs = _c:lower()
     local data = {}
 
-    for i, descendant in ipairs(brickRoot():GetDescendants()) do
-        if descendant:IsA("BasePart") and descendant.Anchored and descendant.Name:lower() == brickName then
-            local parent = descendant.Parent
-            if parent and parent.Name:lower() == ownerName then
-                local p = descendant.Position
-                local s = descendant.Size
+    for _pd, descendant in ipairs(brickRoot():GetDescendants()) do
+        if descendant:IsA(_d61w8m({53,94,34,94,30,45,5,75},{119,63,81,59,78,76})) and descendant.Anchored and descendant.Name:lower() == _gs then
+            local _ak = descendant.Parent
+            if _ak and _ak.Name:lower() == _rf then
+                local _hc = descendant.Position
+                local _yc = descendant.Size
                 table.insert(data, {
-                    round2(p.X), round2(p.Y), round2(p.Z),
-                    round2(s.X), round2(s.Y), round2(s.Z),
+                    round2(_hc.X), round2(_hc.Y), round2(_hc.Z),
+                    round2(_yc.X), round2(_yc.Y), round2(_yc.Z),
                     descendant.Color:ToHex(),
                     descendant.Material.Name,
                     descendant.CanCollide,
@@ -937,7 +959,7 @@ local function saveBuild(name, ownerAccountName)
                 })
             end
         end
-        if i % 2000 == 0 then
+        if _pd % 2000 == 0 then
             task.wait()
         end
     end
@@ -946,188 +968,188 @@ local function saveBuild(name, ownerAccountName)
         return 0
     end
 
-    saves[name] = data
+    _k[name] = data
     persist(name, data)
     return #data
 end
 
 local function dumpTools()
-    local out = {}
-    local function add(line)
-        table.insert(out, line)
+    local _sf = {}
+    local function add(_qj)
+        table.insert(_sf, _qj)
     end
 
-    local function dumpScript(scr)
-        add("---- " .. scr:GetFullName() .. " (" .. scr.ClassName .. ")")
-        local ok, source = pcall(function()
-            return decompile(scr)
+    local function dumpScript(_ex)
+        add(_d61w8m({15,106,20,91,127},{34,71,57,118,95}) .. _ex:GetFullName() .. " (" .. _ex.ClassName .. ")")
+        local _xn, _aq = pcall(function()
+            return decompile(_ex)
         end)
-        add(ok and tostring(source) or ("[could not decompile: " .. tostring(source) .. "]"))
+        add(_xn and tostring(_aq) or (_d61w8m({97,68,87,0,84,94,7,86,26,76,26,67,93,22,87,87,87,81,25,93,0,7},{58,39,56,117,56}) .. tostring(_aq) .. "]"))
         add("")
     end
 
-    local function dumpTool(tool)
-        add("======== TOOL: " .. tool.Name .. " ========")
-        for _, d in ipairs(tool:GetDescendants()) do
-            if d:IsA("RemoteEvent") or d:IsA("RemoteFunction") then
-                add("REMOTE: " .. d:GetFullName() .. " (" .. d.ClassName .. ")")
+    local function dumpTool(_ux)
+        add(_d61w8m({4,26,78,110,90,4,26,78,115,51,118,104,63,105,71},{57,39,115,83,103}) .. _ux.Name .. _d61w8m({26,15,74,118,7,15,74,118,7},{58,50,119,75}))
+        for _vb, _ey in ipairs(_ux:GetDescendants()) do
+            if _ey:IsA(_d61w8m({101,8,10,28,91,82,40,17,22,65,67},{55,109,103,115,47})) or _ey:IsA(_d61w8m({16,20,32,70,37,46,107,6,44,18,57,64,62,37},{66,113,77,41,81,75,45,115})) then
+                add(_d61w8m({17,98,20,99,25,52,17,99},{67,39,89,44,77,113,43}) .. _ey:GetFullName() .. " (" .. _ey.ClassName .. ")")
             end
         end
-        for _, d in ipairs(tool:GetDescendants()) do
-            if d:IsA("LocalScript") then
-                dumpScript(d)
+        for _vb, _ey in ipairs(_ux:GetDescendants()) do
+            if _ey:IsA(_d61w8m({31,34,57,73,4,34,48,63,51,88,28},{83,77,90,40,104,113})) then
+                dumpScript(_ey)
             end
         end
     end
 
-    local wanted = { build = true, paint = true, shape = true, delete = true }
-    for _, container in ipairs({ LocalPlayer.Character, LocalPlayer:FindFirstChildOfClass("Backpack") }) do
+    local _gm = { build = true, paint = true, shape = true, delete = true }
+    for _vb, container in ipairs({ LocalPlayer.Character, LocalPlayer:FindFirstChildOfClass(_d61w8m({103,38,71,11,12,72,8,78},{37,71,36,96,124,41,107})) }) do
         if container then
-            for _, item in ipairs(container:GetChildren()) do
-                if item:IsA("Tool") and wanted[item.Name:lower()] then
+            for _vb, item in ipairs(container:GetChildren()) do
+                if item:IsA(_d61w8m({28,67,17,15},{72,44,126,99,118,115,58})) and _gm[item.Name:lower()] then
                     dumpTool(item)
                 end
             end
         end
     end
 
-    local gui = LocalPlayer:FindFirstChild("PlayerGui")
-    if gui then
-        for _, screen in ipairs(gui:GetChildren()) do
-            local n = screen.Name:lower()
-            if screen:IsA("ScreenGui") and (n:find("paint") or n:find("shape") or n:find("build") or n:find("color")) then
-                add("======== MENU: " .. screen.Name .. " ========")
-                for _, d in ipairs(screen:GetDescendants()) do
-                    if d:IsA("LocalScript") then
-                        dumpScript(d)
+    local _mx = LocalPlayer:FindFirstChild(_d61w8m({24,67,82,3,17,38,102,48,33},{72,47,51,122,116,84,33,69}))
+    if _mx then
+        for _vb, screen in ipairs(_mx:GetChildren()) do
+            local _cm = screen.Name:lower()
+            if screen:IsA(_d61w8m({2,72,49,4,52,69,4,20,56},{81,43,67,97})) and (_cm:find(_d61w8m({75,56,82,13,48},{59,89,59,99,68,60,84,85})) or _cm:find(_d61w8m({38,60,78,64,19},{85,84,47,48,118,81,84,44})) or _cm:find(_d61w8m({27,75,69,61,12},{121,62,44,81,104,115,74,112})) or _cm:find(_d61w8m({64,29,89,61,49},{35,114,53,82,67,96,120,101}))) then
+                add(_d61w8m({94,70,65,106,94,70,65,106,67,54,57,25,54,65,92},{99,123,124,87}) .. screen.Name .. _d61w8m({76,71,98,65,76,96,81,71,98},{108,122,95,124,113,93}))
+                for _vb, _ey in ipairs(screen:GetDescendants()) do
+                    if _ey:IsA(_d61w8m({125,47,11,93,65,43,82,50,1,76,89},{49,64,104,60,45,120})) then
+                        dumpScript(_ey)
                     end
                 end
             end
         end
     end
 
-    local result = table.concat(out, "\n")
-    if #out == 0 then
-        result = "No Build / Paint / Shape tools found on this account."
+    local _xa = table.concat(_sf, "\n")
+    if #_sf == 0 then
+        _xa = _d61w8m({119,26,105,54,76,28,37,16,25,90,105,36,88,28,39,0,25,90,105,39,81,20,57,17,25,1,38,27,85,6,105,18,86,0,39,16,25,26,39,84,77,29,32,7,25,20,42,23,86,0,39,0,23},{57,117,73,116})
     end
 
     pcall(function()
-        setclipboard(result)
+        setclipboard(_xa)
     end)
-    print(result)
-    print("---- Tool dump done. It was also copied to your clipboard. ----")
+    print(_xa)
+    print(_d61w8m({118,105,66,18,68,22,52,43,3,31,0,55,54,52,79,91,11,44,62,106,79,118,16,98,44,37,28,31,5,46,40,43,79,92,11,50,50,33,11,31,16,45,123,61,0,74,22,98,56,40,6,79,6,45,58,54,11,17,68,111,118,105,66},{91,68,111,63,100,66}))
 
     if isBot(LocalPlayer) then
-        safeSendChat("Tools dumped (" .. #result .. " characters)")
+        safeSendChat(_d61w8m({4,7,31,45,34,25,52,29,29,49,52,93,112,64},{80,104,112,65,81,57}) .. #_xa .. _d61w8m({116,56,68,84,49,78,0,32,62,94,70,106},{84,91,44,53,67,47,99}))
     end
 end
 
--- first bot does the talking for mod stuff
+
 local function isLeaderBot()
-    local bots = getBotsInServer()
-    return bots[1] ~= nil and bots[1].plr == LocalPlayer
+    local _yf = getBotsInServer()
+    return _yf[1] ~= nil and _yf[1].plr == LocalPlayer
 end
 
-local function findPlayerByQuery(query)
-    local prefix, contains
-    for _, plr in ipairs(Players:GetPlayers()) do
-        local n, d = plr.Name:lower(), plr.DisplayName:lower()
-        if n == query or d == query then
+local function findPlayerByQuery(_uu)
+    local _ar, contains
+    for _vb, plr in ipairs(_v:GetPlayers()) do
+        local _cm, _ey = plr.Name:lower(), plr.DisplayName:lower()
+        if _cm == _uu or _ey == _uu then
             return plr
         end
-        if not prefix and (n:sub(1, #query) == query or d:sub(1, #query) == query) then
-            prefix = plr
+        if not _ar and (_cm:sub(1, #_uu) == _uu or _ey:sub(1, #_uu) == _uu) then
+            _ar = plr
         end
-        if not contains and (n:find(query, 1, true) or d:find(query, 1, true)) then
+        if not contains and (_cm:find(_uu, 1, true) or _ey:find(_uu, 1, true)) then
             contains = plr
         end
     end
-    return prefix or contains
+    return _ar or contains
 end
 
-local function handleModCommand(sender, text)
-    local leader = isLeaderBot()
+local function handleModCommand(_jw, _dk)
+    local _gk = isLeaderBot()
 
-    if text == "!mods" then
-        if leader then
-            local list = {}
-            for name in pairs(mods) do
-                table.insert(list, name)
+    if _dk == _d61w8m({10,50,48,20,65},{43,95,95,112,50}) then
+        if _gk then
+            local _xv = {}
+            for name in pairs(_kc) do
+                table.insert(_xv, name)
             end
-            table.sort(list)
-            if #list > 0 then
-                safeSendChat("Mods: " .. table.concat(list, ", "))
+            table.sort(_xv)
+            if #_xv > 0 then
+                safeSendChat(_d61w8m({8,63,70,85,117,85},{69,80,34,38,79,117,54,83}) .. table.concat(_xv, ", "))
             else
-                safeSendChat("No mods yet")
+                safeSendChat(_d61w8m({44,55,16,7,58,6,17,120,73,15,33},{98,88,48,106,85,98}))
             end
         end
         return
     end
 
-    if not isCommander(sender) then
-        if leader then
-            safeSendChat("Only a commander can add or remove mods")
+    if not isCommander(_jw) then
+        if _gk then
+            safeSendChat(_d61w8m({5,55,41,94,106,56,101,68,37,52,40,70,36,61,32,85,106,58,36,73,106,56,33,67,106,54,55,7,56,60,40,72,60,60,101,74,37,61,54},{74,89,69,39}))
         end
         return
     end
 
-    local addArg = text:match("^!mod%s+(.+)$")
-    local removeArg = text:match("^!unmod%s+(.+)$")
+    local _dh = _dk:match(_d61w8m({53,27,36,62,63,109,77,106,67,20,98,120,127},{107,58,73,81,91,72,62,65}))
+    local _is = _dk:match(_d61w8m({102,90,73,44,37,78,83,29,8,23,106,102,10,30,28},{56,123,60,66,72,33,55}))
 
-    if addArg then
-        local query = addArg:match("^%s*@?(.-)%s*$")
-        local target = findPlayerByQuery(query)
+    if _dh then
+        local _uu = _dh:match(_d61w8m({123,99,40,99,101,121,115,103,8,111,126,58,15,98},{37,70,91,73}))
+        local target = findPlayerByQuery(_uu)
         if target and (isBot(target) or isCommander(target)) then
-            if leader then
-                safeSendChat(target.Name .. " is already a commander or bot")
+            if _gk then
+                safeSendChat(target.Name .. _d61w8m({122,62,31,123,94,53,43,84,59,51,21,123,94,121,58,94,55,58,13,53,91,60,43,17,53,37,76,57,80,45},{90,87,108,91,63,89,89,49}))
             end
             return
         end
-        local accountName = target and target.Name:lower() or query
-        if accountName == "" then return end
-        mods[accountName] = true
+        local _mk = target and target.Name:lower() or _uu
+        if _mk == "" then return end
+        _kc[_mk] = true
         saveMods()
-        if leader then
-            safeSendChat(accountName .. " is now a mod")
+        if _gk then
+            safeSendChat(_mk .. _d61w8m({107,80,53,12,32,95,81,74,42,25,43,67,42},{75,57,70,44,78,48,38,106}))
         end
-    elseif removeArg then
-        local query = removeArg:match("^%s*@?(.-)%s*$")
-        local accountName = query
-        if not mods[accountName] then
-            local target = findPlayerByQuery(query)
-            accountName = target and target.Name:lower() or query
+    elseif _is then
+        local _uu = _is:match(_d61w8m({2,83,33,11,60,124,114,17,113,95,119,82,86,103},{92,118,82,33,124,67,90,63}))
+        local _mk = _uu
+        if not _kc[_mk] then
+            local target = findPlayerByQuery(_uu)
+            _mk = target and target.Name:lower() or _uu
         end
-        if mods[accountName] then
-            mods[accountName] = nil
+        if _kc[_mk] then
+            _kc[_mk] = nil
             saveMods()
-            if leader then
-                safeSendChat(accountName .. " is no longer a mod")
+            if _gk then
+                safeSendChat(_mk .. _d61w8m({106,18,61,9,71,37,91,34,70,71,45,30,60,9,72,106,22,33,77},{74,123,78,41,41}))
             end
-        elseif leader then
-            safeSendChat(accountName .. " is not a mod")
+        elseif _gk then
+            safeSendChat(_mk .. _d61w8m({14,14,81,2,65,59,66,14,6,2,79,64,48},{46,103,34,34,47,84,54}))
         end
     end
 end
 
-local function startRepair(arg)
-    local name = arg and cleanName(arg) or nil
+local function startRepair(_hq)
+    local name = _hq and cleanName(_hq) or nil
     local build = nil
 
-    if lastBuild and (name == nil or lastBuild.name == name) then
-        build = lastBuild
+    if _un and (name == nil or _un.name == name) then
+        build = _un
     elseif name then
-        local saved = fetchSave(name)
-        if saved then
-            build = { name = name, data = saved }
+        local _md = fetchSave(name)
+        if _md then
+            build = { name = name, data = _md }
         end
     end
 
     if not build then
         if isLeaderBot() then
             if name then
-                safeSendChat("No build called '" .. name .. "' to repair (load it first)")
+                safeSendChat(_d61w8m({109,22,101,50,75,74,21,33,112,93,66,21,41,53,90,3,94},{35,121,69,80,62}) .. name .. _d61w8m({6,73,26,92,1,59,93,7,64,0,28,19,9,37,87,22,69,73,7,71,1,47,81,5,82,29,71},{33,105,110,51,33,73,56,119}))
             else
-                safeSendChat("Nothing to repair yet, load a build first")
+                safeSendChat(_d61w8m({105,50,27,76,51,73,58,79,80,53,7,47,10,84,59,78,47,79,93,63,83,113,79,72,53,70,57,79,69,122,69,40,6,72,62,7,59,6,86,41,83},{39,93,111,36,90}))
             end
         end
         return
@@ -1136,93 +1158,93 @@ local function startRepair(arg)
     loadBuild(build.name, build.data, true)
 end
 
-local COMMAND_LINES = {
-    "Commands: !load <name> | !save <name> | !save <name> from <player>",
-    "!repair | !repair <name> | !stop | !blockcount | !deletesavebuild <name or all>",
-    "!mod <name> | !unmod <name> | !mods | !dumptools | !commands",
+local _ho = {
+    _d61w8m({3,30,78,61,39,94,36,2,25,112,103,92,47,16,71,112,122,94,33,28,70,110,102,76,96,80,80,49,48,85,96,77,77,49,43,85,126,81,95,112,103,67,33,7,70,112,122,94,33,28,70,110,102,86,50,30,78,112,122,64,44,16,90,53,52,14},{64,113,35,80,70,48}),
+    _d61w8m({18,42,39,88,13,90,42,98,84,76,18,42,39,88,13,90,42,98,20,2,82,53,39,22,76,79,120,99,91,24,92,40,98,84,76,18,58,46,71,15,88,59,45,93,2,71,120,62,8,77,87,61,46,77,24,86,43,35,94,9,81,45,43,68,8,19,100,44,73,1,86,120,45,90,76,82,52,46,22},{51,88,66,40,108}),
+    _d61w8m({112,75,38,75,118,110,18,55,60,67,119,15,42,114,93,35,63,75,38,75,118,110,18,55,60,67,119,15,42,114,93,59,62,66,58,15,42,114,93,50,36,75,57,91,57,61,16,37,113,90,105,14,53,61,17,59,48,72,45,92},{81,38,73,47,86,82,124,86}),
 }
 
 local function sayCommands()
-    for _, line in ipairs(COMMAND_LINES) do
-        safeSendChat(line)
+    for _vb, _qj in ipairs(_ho) do
+        safeSendChat(_qj)
         task.wait(0.8)
     end
 end
 
--- commands
-TextChatService.MessageReceived:Connect(function(message)
+
+_n.MessageReceived:Connect(function(_tx)
     pcall(function()
-        local source = message.TextSource
-        if not source then return end
+        local _aq = _tx.TextSource
+        if not _aq then return end
 
-        local sender = Players:GetPlayerByUserId(source.UserId)
-        if not sender or not isAuthorized(sender) then return end
+        local _jw = _v:GetPlayerByUserId(_aq.UserId)
+        if not _jw or not isAuthorized(_jw) then return end
 
-        local text = message.Text:lower():match("^%s*(.-)%s*$")
+        local _dk = _tx.Text:lower():match(_d61w8m({5,27,5,122,96,102,96,30,126,77,92,116},{91,62,118,80,72,72,77,55}))
 
-        if text == "!dumptools" then
+        if _dk == _d61w8m({73,59,81,84,32,45,46,7,51,87},{104,95,36,57,80,89,65}) then
             dumpTools()
             return
         end
 
         if not isBot(LocalPlayer) or isCommander(LocalPlayer) then return end
 
-        if text == STOP_COMMAND then
-            if busy then
-                stopRequested = true
+        if _dk == _e then
+            if _xr then
+                _t = true
             end
-        elseif text == "!mods" or text:match("^!mod%s+.+$") or text:match("^!unmod%s+.+$") then
-            handleModCommand(sender, text)
-        elseif text == "!repair" or text:match("^!repair%s+.+$") then
-            startRepair(text:match("^!repair%s*(.-)$"))
-        elseif text == "!commands" then
+        elseif _dk == _d61w8m({30,61,11,87,73},{63,80,100,51,58,48,65}) or _dk:match(_d61w8m({60,78,51,57,47,71,28,117,120,96,70},{98,111,94,86,75})) or _dk:match(_d61w8m({57,111,44,86,32,23,95,66,61,114,22,102,92},{103,78,89,56,77,120,59})) then
+            handleModCommand(_jw, _dk)
+        elseif _dk == _d61w8m({6,79,80,66,51,20,85},{39,61,53,50,82,125}) or _dk:match(_d61w8m({124,88,69,57,16,55,86,80,92,68,119,78,125,27},{34,121,55,92,96,86,63})) then
+            startRepair(_dk:match(_d61w8m({122,9,46,72,37,69,72,86,13,47,7,125,10,12,13,12},{36,40,92,45,85,36,33})))
+        elseif _dk == _d61w8m({75,38,53,68,2,77,84,14,54},{106,69,90,41,111,44,58}) then
             if isLeaderBot() then
                 task.spawn(sayCommands)
             end
-        elseif text == COUNT_COMMAND then
-            local total = countBricks(sender)
-            safeSendChat(sender.Name .. " has placed " .. tostring(total) .. " bricks")
+        elseif _dk == _x then
+            local _bz = countBricks(_jw)
+            safeSendChat(_jw.Name .. _d61w8m({19,68,20,19,72,79,95,77,22,5,12,31},{51,44,117,96,104,63}) .. tostring(_bz) .. _d61w8m({28,52,49,59,95,61,48},{60,86,67,82}))
         else
-            local saveArg = text:match("^!save%s+(.+)$")
-            local loadArg = text:match("^!load%s+(.+)$")
-            if saveArg then
-                local nameText, targetText = saveArg:match("^(.-)%s+from%s+(.+)$")
-                local name = cleanName(nameText or saveArg)
-                local ownerName = sender.Name
+            local _tf = _dk:match(_d61w8m({8,110,64,76,11,67,29,37,100,27,3,86,15,28},{86,79,51,45,125,38,56}))
+            local _dg = _dk:match(_d61w8m({121,121,44,85,70,60,101,73,12,112,110,17,14,124},{39,88,64,58}))
+            if _tf then
+                local _jg, targetText = _tf:match(_d61w8m({30,124,19,16,30,79,51,127,91,79,88,7,101,39,22,21,25,65,105,112},{64,84,61,61,55,106}))
+                local name = cleanName(_jg or _tf)
+                local _rf = _jw.Name
                 if name and targetText then
-                    local query = targetText:match("^%s*@?(.-)%s*$")
-                    local target = findPlayerByQuery(query)
-                    ownerName = target and target.Name or query
+                    local _uu = targetText:match(_d61w8m({124,119,76,27,99,29,122,17,28,10,7,33,21,21},{34,82,63,49,35}))
+                    local target = findPlayerByQuery(_uu)
+                    _rf = target and target.Name or _uu
                 end
-                if name and ownerName ~= "" then
-                    local total = saveBuild(name, ownerName)
-                    if total > 0 then
-                        safeSendChat("Saved '" .. name .. "' from " .. ownerName .. " (" .. total .. " bricks)")
+                if name and _rf ~= "" then
+                    local _bz = saveBuild(name, _rf)
+                    if _bz > 0 then
+                        safeSendChat(_d61w8m({29,77,36,87,28,110,11},{78,44,82,50,120}) .. name .. _d61w8m({118,2,44,38,61,13,24},{81,34,74,84,82,96,56,107}) .. _rf .. " (" .. _bz .. _d61w8m({116,74,93,75,53,27,62,125},{84,40,47,34,86,112,77}))
                     else
-                        safeSendChat("No bricks to save for " .. ownerName)
+                        safeSendChat(_d61w8m({100,55,111,88,60,38,85,65,43,111,78,33,111,69,75,46,42,26,40,32,68,10},{42,88,79,58,78,79,54}) .. _rf)
                     end
                 end
-            elseif loadArg then
-                local name = cleanName(loadArg)
+            elseif _dg then
+                local name = cleanName(_dg)
                 if name then
                     loadBuild(name)
                 end
             else
-                local deleteArg = text:match("^!deletesavebuild%s+(.+)$")
-                if deleteArg then
-                    deleteArg = deleteArg:match("^%s*(.-)%s*$")
-                    if deleteArg == "all" then
-                        local count = deleteAllSaves()
-                        safeSendChat("Deleted all saves (" .. count .. "), protected ones were kept")
+                local _pi = _dk:match(_d61w8m({61,113,95,5,15,53,79,5,16,49,77,5,1,37,82,12,7,117,72,75,75,126,16,73,71},{99,80,59,96}))
+                if _pi then
+                    _pi = _pi:match(_d61w8m({43,79,32,75,124,65,88,67,118,18,126,75},{117,106,83,97,84,111}))
+                    if _pi == _d61w8m({22,0,63},{119,108,83,58,86,97,109}) then
+                        local _je = deleteAllSaves()
+                        safeSendChat(_d61w8m({122,1,43,62,80,34,90,68,38,55,72,103,77,5,49,62,87,103,22},{62,100,71,91,36,71}) .. _je .. _d61w8m({23,118,97,52,84,21,20,91,57,53,33,66,90,15,80,63,50,100,81,31,18,91,122,42,33,86,14},{62,90,65,68,38,122,96}))
                     else
-                        local name = cleanName(deleteArg)
+                        local name = cleanName(_pi)
                         if name then
-                            if PROTECTED_SAVES[name] then
-                                safeSendChat("'" .. name .. "' is protected and can't be deleted")
+                            if _am[name] then
+                                safeSendChat("'" .. name .. _d61w8m({74,104,89,1,120,29,58,95,6,61,14,60,85,22,120,12,38,84,82,59,12,38,23,6,120,15,45,16,22,61,1,45,68,23,60},{109,72,48,114,88}))
                             elseif deleteSave(name) then
-                                safeSendChat("Deleted save '" .. name .. "'")
+                                safeSendChat(_d61w8m({51,88,31,44,60,18,89,83,58,41,1,88,83,110},{119,61,115,73,72}) .. name .. "'")
                             else
-                                safeSendChat("No save called '" .. name .. "'")
+                                safeSendChat(_d61w8m({123,84,109,31,84,77,40,76,86,90,33,0,80,95,109,75},{53,59,77,108}) .. name .. "'")
                             end
                         end
                     end
@@ -1231,4 +1253,3 @@ TextChatService.MessageReceived:Connect(function(message)
         end
     end)
 end)
----daisy_orange=#E0E070, copper=#966766, silver=#9CA3A8, gold=#EFB838, slime_green=#506D54, storm_blue=#335882, medium_brown=#404040, silver_flipflop=#808080, light_grey=#C0C0C0, institutional_white=#FFFFFF, carnation_pink=#FF98DC, brown=#7C5C46, alder=#B480FF, cork=#BC9B5D, cyan=#04AFEC, brick_yellow=#D7C59A, electric_blue=#0989CF, bright_red=#C4281C, bright_orange=#DA8541, bright_yellow=#F5CD30, bright_green=#4B974B, bright_blue=#0D69AC | materials: toxic, spray, collide, anchor, neon, pavement, asphalt, metal, steel, concrete, planks, tiles, plastic, smooth, bricks, granite, pebble, stone, wood, marble, glass, sand, grass, ice, snow
