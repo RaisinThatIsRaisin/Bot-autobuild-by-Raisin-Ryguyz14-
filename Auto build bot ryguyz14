@@ -57,6 +57,8 @@ local PROTECTED_SAVES = {}
 
 local VERIFY_CHECKS = 2
 local COLOR_TOLERANCE = 0.02
+local BURST_PER_FRAME = 8
+local SPLIT_BIG = true
 
 local function safeSendChat(messageText)
     pcall(function()
@@ -500,48 +502,116 @@ local function sprayBrick(paintEvent, brick, face, text, color, position)
     end)
 end
 
-local function resizeBrick(shapeEvent, position, targetSize)
-    local counts = {
-        math.floor(targetSize.X - 1),
-        math.floor(targetSize.Y - 1),
-        math.floor(targetSize.Z - 1),
-    }
+-- brick = the brick that was just placed, corner = its fixed low corner
+local function resizeBrick(shapeEvent, position, targetSize, brick, corner)
     local faces = { Enum.NormalId.Right, Enum.NormalId.Top, Enum.NormalId.Back }
+    local want = {
+        math.floor(targetSize.X + 0.5),
+        math.floor(targetSize.Y + 0.5),
+        math.floor(targetSize.Z + 0.5),
+    }
 
-    local function growOnce(face)
-        local brick = newestBrick()
-        local waited = os.clock()
-        while not brick and os.clock() - waited < 0.3 do
-            RunService.Heartbeat:Wait()
-            brick = newestBrick()
+    local function live()
+        if brick and brick.Parent then return brick end
+        local folder = myBrickFolder()
+        if folder then
+            for _, child in ipairs(folder:GetChildren()) do
+                if child:IsA("BasePart") and child.Name == BRICK_NAME then
+                    if ((child.Position - child.Size / 2) - corner).Magnitude < 0.6 then
+                        brick = child
+                        return brick
+                    end
+                end
+            end
         end
-        if not brick then return false end
+        return nil
+    end
 
-        local oldSize = brick.Size
-        pcall(function()
-            shapeEvent:FireServer(brick, face, position, "increase")
-        end)
+    local function steps()
+        local b = live()
+        if not b then return nil end
+        local s = b.Size
+        return {
+            want[1] - math.floor(s.X + 0.5),
+            want[2] - math.floor(s.Y + 0.5),
+            want[3] - math.floor(s.Z + 0.5),
+        }
+    end
+
+    local function done(r)
+        return r and r[1] <= 0 and r[2] <= 0 and r[3] <= 0
+    end
+
+    local rem = steps()
+    if not rem then return false end
+    local total = math.max(rem[1], 0) + math.max(rem[2], 0) + math.max(rem[3], 0)
+
+    -- fast way: fire every grow at once, then wait for the server to catch up
+    if total > 1 then
+        local b = live()
+        local fired = 0
+        for round = 1, math.max(rem[1], rem[2], rem[3]) do
+            for axis = 1, 3 do
+                if round <= rem[axis] then
+                    pcall(function()
+                        shapeEvent:FireServer(b, faces[axis], position, "increase")
+                    end)
+                    fired = fired + 1
+                    if fired % BURST_PER_FRAME == 0 then
+                        RunService.Heartbeat:Wait()
+                    end
+                end
+            end
+            if stopRequested then return false end
+        end
 
         local startTime = os.clock()
-        while os.clock() - startTime < RESIZE_TIMEOUT do
+        local limit = RESIZE_TIMEOUT + total * 0.05
+        while os.clock() - startTime < limit do
             RunService.Heartbeat:Wait()
-            local now = newestBrick()
-            if now ~= brick or (now and now.Size ~= oldSize) then
-                break
-            end
+            if done(steps()) or stopRequested then break end
         end
-        return true
     end
 
-    for round = 1, math.max(counts[1], counts[2], counts[3]) do
+    -- slow way for whatever is still missing: one grow, wait for it, repeat
+    local stuck = 0
+    for _ = 1, 200 do
         if stopRequested then return false end
+        rem = steps()
+        if not rem then return false end
+        if done(rem) then break end
+
+        local progressed = false
         for axis = 1, 3 do
-            if round <= counts[axis] then
-                if not growOnce(faces[axis]) then return false end
+            if rem[axis] > 0 then
+                local b = live()
+                if not b then return false end
+                local oldSize = b.Size
+                pcall(function()
+                    shapeEvent:FireServer(b, faces[axis], position, "increase")
+                end)
+                local startTime = os.clock()
+                while os.clock() - startTime < RESIZE_TIMEOUT do
+                    RunService.Heartbeat:Wait()
+                    local now = live()
+                    if now ~= b or (now and now.Size ~= oldSize) then
+                        progressed = true
+                        break
+                    end
+                end
             end
         end
+
+        if progressed then
+            stuck = 0
+        else
+            stuck = stuck + 1
+            if stuck >= 3 then break end
+        end
     end
-    return true
+
+    rem = steps()
+    return rem ~= nil and rem[1] == 0 and rem[2] == 0 and rem[3] == 0
 end
 
 -- 4x4x4 on the grid = one build call, anything else gets resized
@@ -573,39 +643,53 @@ local function placeBrick(entry, tools, flyer, root)
         flyTo(flyer, placePosition + Vector3.new(0, BUILD_HEIGHT_OFFSET, 0))
     end
 
-    local before = brickCount()
+    -- catch the exact brick the server makes for us, so we never touch any other brick
+    local placed = nil
+    local hooked = nil
+    local function hook()
+        if hooked then return end
+        local folder = myBrickFolder()
+        if folder then
+            hooked = folder.ChildAdded:Connect(function(child)
+                if child.Name == BRICK_NAME and not placed then
+                    placed = child
+                end
+            end)
+        end
+    end
+    hook()
+
     local retryDelay = math.max(0.04, LocalPlayer:GetNetworkPing() * 2 + 0.03)
     if not canCollide then
         retryDelay = retryDelay * 2
     end
     local attempts = 0
-    local appeared = false
     repeat
         pcall(function()
             tools.build:FireServer(workspace.Terrain, Enum.NormalId.Top, placePosition, mode)
         end)
         attempts = attempts + 1
-        appeared = waitForNewBrick(before, retryDelay)
-    until appeared or attempts >= MAX_PLACE_ATTEMPTS or stopRequested
+        local waitStart = os.clock()
+        while not placed and os.clock() - waitStart < retryDelay do
+            RunService.Heartbeat:Wait()
+            if not hooked then
+                hook()
+                if hooked and not placed then
+                    placed = newestBrick()
+                end
+            end
+        end
+    until placed or attempts >= MAX_PLACE_ATTEMPTS or stopRequested
 
-    if not appeared then
+    if hooked then hooked:Disconnect() end
+
+    local brick = placed
+    if not brick then
         return false
     end
 
-    local brick = newestBrick()
-    if not brick then return false end
-
     if color then
         paintBrick(tools.paint, brick, color, materialName, root.Position)
-    end
-
-    for _, spray in ipairs(sprays) do
-        local face = Enum.NormalId[spray[1]]
-        local sprayColor = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
-        if face then
-            task.wait(0.03)
-            sprayBrick(tools.paint, brick, face, spray[2] or "", sprayColor, root.Position)
-        end
     end
 
     if not canCollide and color then
@@ -616,29 +700,75 @@ local function placeBrick(entry, tools, flyer, root)
     end
 
     if needsResize and size ~= Vector3.new(1, 1, 1) then
-        resizeBrick(tools.shape, root.Position, size)
-        RunService.Heartbeat:Wait()
+        local corner = placePosition - Vector3.new(0.5, 0.5, 0.5)
+        local good = resizeBrick(tools.shape, root.Position, size, brick, corner)
+        if not good then
+            -- only now, after it really failed to grow, remove this one brick
+            if tools.delete and brick.Parent then
+                pcall(function()
+                    tools.delete:FireServer(brick, root.Position)
+                end)
+                task.wait(0.1)
+            end
+            return false
+        end
     end
 
-    local final = newestBrick()
-    if needsResize and (not final or (final.Size - size).Magnitude > 0.1) then
-        if final and tools.delete then
-            pcall(function()
-                tools.delete:FireServer(final, root.Position)
-            end)
-            task.wait(0.1)
+    -- spray goes on last, once the brick is its final size
+    for _, spray in ipairs(sprays) do
+        local face = Enum.NormalId[spray[1]]
+        local sprayColor = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
+        if face then
+            task.wait(0.03)
+            sprayBrick(tools.paint, brick, face, spray[2] or "", sprayColor, root.Position)
         end
-        return false
     end
     return true
 end
 
 local lastBuild = nil
 
+-- every brick the build wants, so repair never deletes a brick that belongs to it
+local expectedKeys = {}
+
+local function brickKey(pos, size)
+    local d = { size.X, size.Y, size.Z }
+    table.sort(d)
+    return math.floor(pos.X * 2 + 0.5) .. "," .. math.floor(pos.Y * 2 + 0.5) .. "," .. math.floor(pos.Z * 2 + 0.5)
+        .. "|" .. math.floor(d[1] + 0.5) .. "," .. math.floor(d[2] + 0.5) .. "," .. math.floor(d[3] + 0.5)
+end
+
 local function sameColor(a, b)
     return math.abs(a.R - b.R) < COLOR_TOLERANCE
         and math.abs(a.G - b.G) < COLOR_TOLERANCE
         and math.abs(a.B - b.B) < COLOR_TOLERANCE
+end
+
+-- sprays the saved brick has that the real brick does not have yet
+local function missingSprays(part, entry)
+    local wanted = entry[10] or {}
+    if #wanted == 0 then return {} end
+
+    local have = {}
+    for _, child in ipairs(part:GetChildren()) do
+        if child.Name == "Spray" then
+            local label = child:FindFirstChild("Label")
+            local ok, face = pcall(function()
+                return child.Face
+            end)
+            if label and ok and face then
+                have[face.Name .. "|" .. label.Text] = true
+            end
+        end
+    end
+
+    local lacking = {}
+    for _, spray in ipairs(wanted) do
+        if not have[spray[1] .. "|" .. (spray[2] or "")] then
+            table.insert(lacking, spray)
+        end
+    end
+    return lacking
 end
 
 -- returns ok / paint / wrong / missing
@@ -680,7 +810,7 @@ local function inspectBrick(index, entry)
         local goodColor = not wantColor or sameColor(part.Color, wantColor)
         local goodMaterial = not wantMaterial or part.Material.Name == wantMaterial
         local goodSolid = wantSolid or not part.CanCollide
-        if goodColor and goodMaterial and goodSolid then
+        if goodColor and goodMaterial and goodSolid and #missingSprays(part, entry) == 0 then
             return "ok", part
         end
         return "paint", part
@@ -696,7 +826,8 @@ local function fixBrick(status, part, entry, tools, flyer, root)
         return placeBrick(entry, tools, flyer, root)
 
     elseif status == "wrong" then
-        if part and part.Parent and part.Parent == myBrickFolder() and tools.delete then
+        if part and part.Parent and part.Parent == myBrickFolder() and tools.delete
+            and not expectedKeys[brickKey(part.Position, part.Size)] then
             flyTo(flyer, part.Position + Vector3.new(0, BUILD_HEIGHT_OFFSET, 0))
             pcall(function()
                 tools.delete:FireServer(part, root.Position)
@@ -707,6 +838,7 @@ local function fixBrick(status, part, entry, tools, flyer, root)
 
     elseif status == "paint" and part then
         flyTo(flyer, part.Position + Vector3.new(0, BUILD_HEIGHT_OFFSET, 0))
+        local lacking = missingSprays(part, entry)
         local color = colorFromHex(entry[7])
         if color then
             paintBrick(tools.paint, part, color, PAINT_NAMES[entry[8]] or "smooth", root.Position)
@@ -717,6 +849,14 @@ local function fixBrick(status, part, entry, tools, flyer, root)
                 pcall(function()
                     tools.paint:FireServer(part, Enum.NormalId.Back, root.Position, "material", color, "collide", "")
                 end)
+            end
+        end
+        for _, spray in ipairs(lacking) do
+            local face = Enum.NormalId[spray[1]]
+            local sprayColor = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
+            if face then
+                task.wait(0.03)
+                sprayBrick(tools.paint, part, face, spray[2] or "", sprayColor, root.Position)
             end
         end
         task.wait(0.1)
@@ -754,6 +894,52 @@ end
 
 local busy = false
 
+-- big bricks lined up with the 4-stud grid are built from 4x4x4 bricks instead of
+-- being grown stud by stud (one build call each, much faster)
+local function expandBig(data)
+    if not SPLIT_BIG then return data end
+    local out = {}
+    for _, e in ipairs(data) do
+        local sx, sy, sz = math.floor(e[4] + 0.5), math.floor(e[5] + 0.5), math.floor(e[6] + 0.5)
+        local sprays = e[10]
+        local split = false
+        local cx0, cy0, cz0
+
+        if sx % 4 == 0 and sy % 4 == 0 and sz % 4 == 0 and sx >= 4 and sy >= 4 and sz >= 4
+            and math.abs(e[4] - sx) < 0.05 and math.abs(e[5] - sy) < 0.05 and math.abs(e[6] - sz) < 0.05
+            and (sprays == nil or #sprays == 0) then
+            cx0, cy0, cz0 = e[1] - sx / 2, e[2] - sy / 2, e[3] - sz / 2
+            local function aligned(n)
+                return math.abs(n - 4 * math.floor(n / 4 + 0.5)) < 0.05
+            end
+            if aligned(cx0) and aligned(cy0) and aligned(cz0) then
+                local cells = (sx / 4) * (sy / 4) * (sz / 4)
+                local calls = sx + sy + sz - 3
+                split = cells > 1 and cells <= calls / 2
+            end
+        end
+
+        if split then
+            cx0 = 4 * math.floor(cx0 / 4 + 0.5)
+            cy0 = 4 * math.floor(cy0 / 4 + 0.5)
+            cz0 = 4 * math.floor(cz0 / 4 + 0.5)
+            for i = 0, sx / 4 - 1 do
+                for j = 0, sy / 4 - 1 do
+                    for k = 0, sz / 4 - 1 do
+                        table.insert(out, {
+                            cx0 + i * 4 + 2, cy0 + j * 4 + 2, cz0 + k * 4 + 2,
+                            4, 4, 4, e[7], e[8], e[9], {},
+                        })
+                    end
+                end
+            end
+        else
+            table.insert(out, e)
+        end
+    end
+    return out
+end
+
 -- repairOnly skips placing and just fixes
 local function loadBuild(name, presetData, repairOnly)
     if busy then return end
@@ -766,6 +952,12 @@ local function loadBuild(name, presetData, repairOnly)
         if not data then
             safeSendChat("No save called '" .. name .. "'")
             return
+        end
+
+        data = expandBig(data)
+        table.clear(expectedKeys)
+        for _, e in ipairs(data) do
+            expectedKeys[brickKey(Vector3.new(e[1], e[2], e[3]), Vector3.new(e[4], e[5], e[6]))] = true
         end
 
         character = LocalPlayer.Character
