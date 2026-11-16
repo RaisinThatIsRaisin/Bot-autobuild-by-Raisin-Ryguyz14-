@@ -30,7 +30,10 @@ local BOT_NAMES = {
     "Raisin_helper6",
     "Raisin_helper7",
     "Raisin_helper8",
-    "Raisin_helper9"
+    "Raisin_helper9",
+    "Raisin_helper10",
+    "Raisin_helper11",
+    "Raisin_helper12",
 }
 
 local TOOL_NAMES = { "Build", "Delete", "Paint", "Shape" }
