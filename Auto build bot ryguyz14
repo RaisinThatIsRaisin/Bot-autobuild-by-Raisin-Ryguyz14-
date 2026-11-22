@@ -16,7 +16,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
 local COUNT_COMMAND = "!blockcount"
-local STOP_COMMAND = "!stop"
+local STOP_COMMAND = "!sb"
 
 local COMMANDER_NAMES = { "ryguyz16", "ryguyz14" }
 local COMMANDER_DISPLAYS = { "raisin", "noob" }
@@ -162,14 +162,16 @@ local function savePath(name)
 end
 
 local function persist(name, data)
-    pcall(function()
-        if writefile then
-            if makefolder and isfolder and not isfolder(SAVE_FOLDER) then
-                makefolder(SAVE_FOLDER)
-            end
-            writefile(savePath(name), HttpService:JSONEncode(data))
+    local ok = pcall(function()
+        if not writefile then
+            error("file writing is unavailable")
         end
+        if makefolder and isfolder and not isfolder(SAVE_FOLDER) then
+            makefolder(SAVE_FOLDER)
+        end
+        writefile(savePath(name), HttpService:JSONEncode(data))
     end)
+    return ok
 end
 
 local function fetchSave(name)
@@ -1100,35 +1102,46 @@ local function saveBuild(name, ownerAccountName)
     local ownerName = ownerAccountName:lower()
     local brickName = BRICK_NAME:lower()
     local data = {}
+    local root = brickRoot()
 
-    for i, descendant in ipairs(brickRoot():GetDescendants()) do
-        if descendant:IsA("BasePart") and descendant.Anchored and descendant.Name:lower() == brickName then
-            local parent = descendant.Parent
-            if parent and parent.Name:lower() == ownerName then
-                local p = descendant.Position
-                local s = descendant.Size
-                table.insert(data, {
-                    round2(p.X), round2(p.Y), round2(p.Z),
-                    round2(s.X), round2(s.Y), round2(s.Z),
-                    descendant.Color:ToHex(),
-                    descendant.Material.Name,
-                    descendant.CanCollide,
-                    collectSprays(descendant),
-                })
+    local function belongsToOwner(descendant)
+        local parent = descendant.Parent
+        while parent and parent ~= root do
+            if parent.Name:lower() == ownerName then
+                return true
             end
+            parent = parent.Parent
+        end
+        return false
+    end
+
+    for i, descendant in ipairs(root:GetDescendants()) do
+        if descendant:IsA("BasePart") and descendant.Name:lower() == brickName
+            and belongsToOwner(descendant) then
+            local p = descendant.Position
+            local s = descendant.Size
+            table.insert(data, {
+                round2(p.X), round2(p.Y), round2(p.Z),
+                round2(s.X), round2(s.Y), round2(s.Z),
+                descendant.Color:ToHex(),
+                descendant.Material.Name,
+                descendant.CanCollide,
+                collectSprays(descendant),
+            })
         end
         if i % 2000 == 0 then
             task.wait()
         end
     end
 
-    if #data == 0 then
-        return 0
+
+        if #data == 0 then
+        return 0, false
     end
 
     saves[name] = data
-    persist(name, data)
-    return #data
+    local jsonSaved = persist(name, data)
+    return #data, jsonSaved
 end
 
 local function dumpTools()
@@ -1207,6 +1220,241 @@ local function isLeaderBot()
     local bots = getBotsInServer()
     return bots[1] ~= nil and bots[1].plr == LocalPlayer
 end
+
+-- The first bot gets a two-page UI for importing a saved-build JSON array.
+local function createBuildImportUI()
+    local playerGui = LocalPlayer:WaitForChild("PlayerGui")
+    local oldGui = playerGui:FindFirstChild("BuildImportUI")
+    if oldGui then oldGui:Destroy() end
+
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "BuildImportUI"
+    gui.ResetOnSpawn = false
+    gui.Enabled = isLeaderBot()
+    gui.Parent = playerGui
+
+    local frame = Instance.new("Frame")
+    frame.Name = "Panel"
+    frame.Size = UDim2.fromOffset(420, 320)
+    frame.Position = UDim2.new(0, 20, 0.5, -160)
+    frame.BackgroundColor3 = Color3.fromRGB(24, 8, 12)
+    frame.BorderSizePixel = 0
+    frame.Active = true
+    frame.Parent = gui
+
+    local function addGlow(object, color, thickness, transparency)
+        local stroke = Instance.new("UIStroke")
+        stroke.Color = color
+        stroke.Thickness = thickness
+        stroke.Transparency = transparency or 0
+        stroke.Parent = object
+        return stroke
+    end
+
+    local function addRound(object, radius)
+        local corner = Instance.new("UICorner")
+        corner.CornerRadius = UDim.new(0, radius)
+        corner.Parent = object
+    end
+
+    addGlow(frame, Color3.fromRGB(255, 25, 55), 3, 0.15)
+    addRound(frame, 10)
+
+    local function addText(className, name, text, size, position)
+        local object = Instance.new(className)
+        object.Name = name
+        object.Size = size
+        object.Position = position
+        object.Text = text
+        object.TextColor3 = Color3.fromRGB(245, 245, 245)
+        object.BackgroundColor3 = Color3.fromRGB(52, 57, 67)
+        object.BorderSizePixel = 0
+        object.Font = Enum.Font.SourceSans
+        object.TextSize = 18
+        object.Parent = frame
+        return object
+    end
+
+    local title = addText("TextLabel", "Title", "Import build JSON", UDim2.new(1, -24, 0, 32), UDim2.fromOffset(12, 8))
+    title.BackgroundTransparency = 1
+    title.Font = Enum.Font.SourceSansBold
+    title.TextSize = 22
+    title.TextColor3 = Color3.fromRGB(255, 55, 85)
+    title.TextStrokeColor3 = Color3.fromRGB(255, 0, 35)
+    title.TextStrokeTransparency = 0.25
+    title.Active = true
+
+    local UserInputService = game:GetService("UserInputService")
+    local dragging, dragInput, dragStart, startPosition
+    title.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPosition = frame.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+    title.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            dragInput = input
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input == dragInput) then
+            local delta = input.Position - dragStart
+            frame.Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X,
+                startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
+        end
+    end)
+
+    local jsonPage = Instance.new("Frame")
+    jsonPage.Name = "JsonPage"
+    jsonPage.Size = UDim2.new(1, -24, 1, -88)
+    jsonPage.Position = UDim2.fromOffset(12, 48)
+    jsonPage.BackgroundTransparency = 1
+    jsonPage.Parent = frame
+
+    local jsonBox = Instance.new("TextBox")
+    jsonBox.Name = "BuildJSON"
+    jsonBox.Size = UDim2.new(1, 0, 1, -44)
+    jsonBox.Position = UDim2.fromOffset(0, 0)
+    jsonBox.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
+    jsonBox.TextColor3 = Color3.fromRGB(255, 70, 105)
+    jsonBox.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
+    jsonBox.TextStrokeTransparency = 0.25
+    jsonBox.PlaceholderText = "Paste the build JSON array here"
+    jsonBox.PlaceholderColor3 = Color3.fromRGB(165, 170, 180)
+    jsonBox.Text = ""
+    jsonBox.TextSize = 14
+    jsonBox.Font = Enum.Font.Code
+    jsonBox.TextXAlignment = Enum.TextXAlignment.Left
+    jsonBox.TextYAlignment = Enum.TextYAlignment.Top
+    jsonBox.TextWrapped = false
+    jsonBox.ClearTextOnFocus = false
+    jsonBox.MultiLine = true
+    jsonBox.Parent = jsonPage
+    addGlow(jsonBox, Color3.fromRGB(255, 25, 55), 2, 0.1)
+    addRound(jsonBox, 6)
+
+    local status = addText("TextLabel", "Status", "", UDim2.new(1, -110, 0, 34), UDim2.new(0, 0, 1, -36))
+    status.BackgroundTransparency = 1
+    status.TextXAlignment = Enum.TextXAlignment.Left
+    status.TextSize = 15
+
+    local nextButton = addText("TextButton", "Next", "Next: name build", UDim2.fromOffset(150, 34), UDim2.new(1, -150, 1, -36))
+    nextButton.BackgroundColor3 = Color3.fromRGB(125, 12, 35)
+    addGlow(nextButton, Color3.fromRGB(255, 35, 70), 2, 0.1)
+    addRound(nextButton, 6)
+
+    local namePage = Instance.new("Frame")
+    namePage.Name = "NamePage"
+    namePage.Size = jsonPage.Size
+    namePage.Position = jsonPage.Position
+    namePage.BackgroundTransparency = 1
+    namePage.Visible = false
+    namePage.Parent = frame
+
+    local nameLabel = addText("TextLabel", "NamePrompt", "Save name", UDim2.new(1, 0, 0, 30), UDim2.fromOffset(0, 12))
+    nameLabel.Parent = namePage
+    nameLabel.BackgroundTransparency = 1
+    nameLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+    local nameBox = Instance.new("TextBox")
+    nameBox.Name = "SaveName"
+    nameBox.Size = UDim2.new(1, 0, 0, 38)
+    nameBox.Position = UDim2.fromOffset(0, 48)
+    nameBox.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
+    nameBox.TextColor3 = Color3.fromRGB(255, 70, 105)
+    nameBox.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
+    nameBox.TextStrokeTransparency = 0.25
+    nameBox.PlaceholderText = "Enter a name for this build"
+    nameBox.Text = ""
+    nameBox.TextSize = 18
+    nameBox.Font = Enum.Font.SourceSans
+    nameBox.ClearTextOnFocus = false
+    nameBox.Parent = namePage
+    addGlow(nameBox, Color3.fromRGB(255, 25, 55), 2, 0.1)
+    addRound(nameBox, 6)
+
+    local saveStatus = addText("TextLabel", "SaveStatus", "", UDim2.new(1, 0, 0, 36), UDim2.fromOffset(0, 94))
+    saveStatus.Parent = namePage
+    saveStatus.BackgroundTransparency = 1
+    saveStatus.TextWrapped = true
+    saveStatus.TextSize = 15
+
+    local backButton = addText("TextButton", "Back", "Back", UDim2.fromOffset(90, 34), UDim2.new(0, 0, 1, -36))
+    backButton.Parent = namePage
+    local saveButton = addText("TextButton", "Save", "Save build", UDim2.fromOffset(140, 34), UDim2.new(1, -140, 1, -36))
+    saveButton.Parent = namePage
+    saveButton.BackgroundColor3 = Color3.fromRGB(150, 10, 35)
+    addGlow(saveButton, Color3.fromRGB(255, 35, 70), 2, 0.1)
+    addRound(saveButton, 6)
+    addGlow(backButton, Color3.fromRGB(255, 35, 70), 1, 0.3)
+    addRound(backButton, 6)
+
+    nextButton.MouseButton1Click:Connect(function()
+        if jsonBox.Text:match("^%s*$") then
+            status.Text = "Paste build JSON first."
+            return
+        end
+        status.Text = ""
+        jsonPage.Visible = false
+        namePage.Visible = true
+    end)
+
+    backButton.MouseButton1Click:Connect(function()
+        namePage.Visible = false
+        jsonPage.Visible = true
+    end)
+
+    saveButton.MouseButton1Click:Connect(function()
+        local name = cleanName(nameBox.Text)
+        if not name then
+            saveStatus.Text = "Enter a valid save name."
+            return
+        end
+
+        local decodedOK, data = pcall(function()
+            return HttpService:JSONDecode(jsonBox.Text)
+        end)
+        if not decodedOK or type(data) ~= "table" then
+            saveStatus.Text = "That JSON could not be read as a build."
+            return
+        end
+
+        for _, entry in ipairs(data) do
+            if type(entry) ~= "table" then
+                saveStatus.Text = "Build JSON must be an array of brick entries."
+                return
+            end
+            for i = 1, 6 do
+                if type(entry[i]) ~= "number" then
+                    saveStatus.Text = "Each brick needs numeric position and size values."
+                    return
+                end
+            end
+        end
+
+        safeSendChat("Saving that build")
+        saves[name] = data
+        persist(name, data)
+        saveStatus.Text = "Saved '" .. name .. "' (" .. #data .. " bricks)."
+    end)
+
+    local function refreshAccess()
+        gui.Enabled = isLeaderBot()
+    end
+    Players.PlayerAdded:Connect(refreshAccess)
+    Players.PlayerRemoving:Connect(function()
+        task.defer(refreshAccess)
+    end)
+end
+
+task.spawn(createBuildImportUI)
 
 local function findPlayerByQuery(query)
     local prefix, contains
@@ -1318,7 +1566,7 @@ end
 
 local COMMAND_LINES = {
     "Commands: !load <name> | !save <name> | !save <name> from <player>",
-    "!repair | !repair <name> | !stop | !blockcount | !deletesavebuild <name or all>",
+    "!copy <player> [as <save name>] | !repair | !repair <name> | !sb | !blockcount | !deletesavebuild <name> | !deletesavebuilds all",
     "!mod <name> | !unmod <name> | !mods | !dumptools | !commands",
 }
 
@@ -1363,9 +1611,30 @@ TextChatService.MessageReceived:Connect(function(message)
             local total = countBricks(sender)
             safeSendChat(sender.Name .. " has placed " .. tostring(total) .. " bricks")
         else
+                        local copyArg = text:match("^!copy%s+(.+)$")
             local saveArg = text:match("^!save%s+(.+)$")
             local loadArg = text:match("^!load%s+(.+)$")
-            if saveArg then
+            if copyArg then
+                local playerQuery, saveNameArg = copyArg:match("^(.-)%s+as%s+(.+)$")
+                playerQuery = playerQuery or copyArg
+                local query = playerQuery:match("^%s*@?(.-)%s*$")
+                local target = findPlayerByQuery(query)
+                if not target then
+                    safeSendChat("Player not found: " .. query)
+                    return
+                end
+
+                local name = cleanName(saveNameArg or ("copy-" .. target.Name))
+                if name then
+                    local total, jsonSaved = saveBuild(name, target.Name)
+                    if total > 0 then
+                        safeSendChat("Copying " .. target.Name .. "'s build as '" .. name .. "'")
+                        loadBuild(name)
+                    else
+                        safeSendChat("No bricks to copy for " .. target.Name)
+                    end
+                end
+            elseif saveArg then
                 local nameText, targetText = saveArg:match("^(.-)%s+from%s+(.+)$")
                 local name = cleanName(nameText or saveArg)
                 local ownerName = sender.Name
@@ -1375,7 +1644,7 @@ TextChatService.MessageReceived:Connect(function(message)
                     ownerName = target and target.Name or query
                 end
                 if name and ownerName ~= "" then
-                    local total = saveBuild(name, ownerName)
+                                        local total, jsonSaved = saveBuild(name, ownerName)
                     if total > 0 then
                         safeSendChat("Saved '" .. name .. "' from " .. ownerName .. " (" .. total .. " bricks)")
                     else
@@ -1388,7 +1657,8 @@ TextChatService.MessageReceived:Connect(function(message)
                     loadBuild(name)
                 end
             else
-                local deleteArg = text:match("^!deletesavebuild%s+(.+)$")
+                                local deleteArg = text:match("^!deletesavebuild%s+(.+)$")
+                    or text:match("^!deletesavebuilds%s+(all)$")
                 if deleteArg then
                     deleteArg = deleteArg:match("^%s*(.-)%s*$")
                     if deleteArg == "all" then
