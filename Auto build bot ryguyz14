@@ -1318,11 +1318,24 @@ local function createBuildImportUI()
     jsonPage.BackgroundTransparency = 1
     jsonPage.Parent = frame
 
+    local jsonScroll = Instance.new("ScrollingFrame")
+    jsonScroll.Name = "JSONScroll"
+    jsonScroll.Size = UDim2.new(1, 0, 1, -44)
+    jsonScroll.Position = UDim2.fromOffset(0, 0)
+    jsonScroll.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
+    jsonScroll.BorderSizePixel = 0
+    jsonScroll.ScrollBarThickness = 8
+    jsonScroll.ScrollingDirection = Enum.ScrollingDirection.Y
+    jsonScroll.CanvasSize = UDim2.new(0, 0, 0, 300)
+    jsonScroll.Parent = jsonPage
+    addGlow(jsonScroll, Color3.fromRGB(255, 25, 55), 2, 0.1)
+    addRound(jsonScroll, 6)
+
     local jsonBox = Instance.new("TextBox")
     jsonBox.Name = "BuildJSON"
-    jsonBox.Size = UDim2.new(1, 0, 1, -44)
-    jsonBox.Position = UDim2.fromOffset(0, 0)
-    jsonBox.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
+    jsonBox.Size = UDim2.new(1, -12, 0, 300)
+    jsonBox.Position = UDim2.fromOffset(6, 6)
+    jsonBox.BackgroundTransparency = 1
     jsonBox.TextColor3 = Color3.fromRGB(255, 70, 105)
     jsonBox.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
     jsonBox.TextStrokeTransparency = 0.25
@@ -1333,12 +1346,23 @@ local function createBuildImportUI()
     jsonBox.Font = Enum.Font.Code
     jsonBox.TextXAlignment = Enum.TextXAlignment.Left
     jsonBox.TextYAlignment = Enum.TextYAlignment.Top
-    jsonBox.TextWrapped = false
+    jsonBox.TextWrapped = true
     jsonBox.ClearTextOnFocus = false
     jsonBox.MultiLine = true
-    jsonBox.Parent = jsonPage
-    addGlow(jsonBox, Color3.fromRGB(255, 25, 55), 2, 0.1)
+    jsonBox.Parent = jsonScroll
+    addGlow(jsonBox, Color3.fromRGB(255, 25, 55), 1, 0.2)
     addRound(jsonBox, 6)
+
+    local function resizeJsonBox()
+        task.defer(function()
+            if not jsonBox.Parent then return end
+            local height = math.max(300, jsonBox.TextBounds.Y + 24)
+            jsonBox.Size = UDim2.new(1, -12, 0, height)
+            jsonScroll.CanvasSize = UDim2.new(0, 0, 0, height + 12)
+        end)
+    end
+    jsonBox:GetPropertyChangedSignal("Text"):Connect(resizeJsonBox)
+    jsonBox:GetPropertyChangedSignal("TextBounds"):Connect(resizeJsonBox)
 
     local status = addText("TextLabel", "Status", "", UDim2.new(1, -110, 0, 34), UDim2.new(0, 0, 1, -36))
     status.BackgroundTransparency = 1
@@ -1426,23 +1450,52 @@ local function createBuildImportUI()
             return
         end
 
+        if #data == 0 then
+            saveStatus.Text = "The build JSON needs at least one brick."
+            return
+        end
+
         for _, entry in ipairs(data) do
             if type(entry) ~= "table" then
                 saveStatus.Text = "Build JSON must be an array of brick entries."
                 return
             end
             for i = 1, 6 do
-                if type(entry[i]) ~= "number" then
-                    saveStatus.Text = "Each brick needs numeric position and size values."
+                if type(entry[i]) ~= "number" or entry[i] ~= entry[i] then
+                    saveStatus.Text = "Each brick needs valid numeric position and size values."
                     return
                 end
+            end
+            if entry[4] <= 0 or entry[5] <= 0 or entry[6] <= 0 then
+                saveStatus.Text = "Brick sizes must be greater than zero."
+                return
+            end
+            if entry[7] ~= nil and (type(entry[7]) ~= "string" or not colorFromHex(entry[7])) then
+                saveStatus.Text = "Brick colors must be valid hex colors, like #FF0000."
+                return
+            end
+            if entry[8] ~= nil and type(entry[8]) ~= "string" then
+                saveStatus.Text = "Brick materials must be text strings."
+                return
+            end
+            if entry[9] ~= nil and type(entry[9]) ~= "boolean" then
+                saveStatus.Text = "The collision setting must be true or false."
+                return
+            end
+            if entry[10] ~= nil and type(entry[10]) ~= "table" then
+                saveStatus.Text = "Brick sprays must be an array."
+                return
             end
         end
 
         safeSendChat("Saving that build")
         saves[name] = data
-        persist(name, data)
-        saveStatus.Text = "Saved '" .. name .. "' (" .. #data .. " bricks)."
+        local writtenToFile = persist(name, data)
+        if writtenToFile then
+            saveStatus.Text = "Saved '" .. name .. "' (" .. #data .. " bricks)."
+        else
+            saveStatus.Text = "Saved for this session, but file saving is unavailable."
+        end
     end)
 
     local function refreshAccess()
