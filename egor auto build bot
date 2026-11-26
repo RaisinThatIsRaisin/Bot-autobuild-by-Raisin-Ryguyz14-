@@ -1,5 +1,5 @@
--- LUAOBF-7O4O2 | Obfuscated Lua script | 2026-11-26
-local function _d8u6ec(b,k)
+-- LUAOBF-L0CI | Obfuscated Lua script | 2026-11-26
+local function _d134ya(b,k)
   local n=#k
   if n==0 then return "" end
   local o={}
@@ -20,262 +20,262 @@ local function _d8u6ec(b,k)
   end
   return table.concat(o)
 end
-local _k = game:GetService(_d8u6ec({23,84,54,83,97,21,14,40,16,84,60,81,75,30,10},{67,49,78,39,34,125,111,92}))
+local _g = game:GetService(_d134ya({57,43,10,2,46,38,19,2,62,43,0,0,4,45,23},{109,78,114,118}))
 
 task.spawn(function()
-    local _j = _k:WaitForChild(_d8u6ec({117,48,69,36,127,70,41,71,79,48,81,35},{33,85,61,80,60,46,72,41}), 10)
-    local _f = _j and _j:WaitForChild(_d8u6ec({125,27,23,10,2,33,74,43,46,33},{47,89,79,77,103,79}), 10)
+    local _h = _g:WaitForChild(_d134ya({126,57,80,4,57,36,75,50,70,21,22,63},{42,92,40,112,122,76}), 10)
+    local _u = _h and _h:WaitForChild(_d134ya({44,122,35,55,75,55,4,39,31,84},{126,56,123,112,46,89,97,85}), 10)
     task.wait(1)
-    if _f then
-        _f:SendAsync(_d8u6ec({4,101,84,32,17,12,78,71,43,25,12,122,84,45,7,69,70,21,107,84,126,81,82,49,13,86,25,1,109,84,78,71,65,100,21,89,92,90,100,22,89,65,89,32},{44,40,53,68,116}))
+    if _u then
+        _u:SendAsync(_d134ya({104,120,11,66,6,112,38,71,5,75,67,2,33,92,25,79,13,112,111,21,56,95,4,37,57,79,91,18,74,112,34,90,30,6,2,37,52,90,74,68,22,57,44,81},{64,53,106,38,99,80}))
     end
 end)
 
-local _r = game:GetService(_d8u6ec({57,2,8,10,41,80,61},{105,110,105,115,76,34,78,37}))
-local _k = game:GetService(_d8u6ec({6,2,15,51,44,58,6,3,20,10,32,17,30,36,10},{82,103,119,71,111}))
-local _x = game:GetService(_d8u6ec({61,93,20,5,97,16,91,22,28,81,16},{117,41,96,117,50}))
-local _q = game:GetService(_d8u6ec({31,56,93,25,91,63,59,90,41,91},{77,77,51,74,62}))
-local LocalPlayer = _r.LocalPlayer
+local _s = game:GetService(_d134ya({110,50,4,31,56,43,77},{62,94,101,102,93,89}))
+local _g = game:GetService(_d134ya({27,93,74,28,119,73,45,59,107,87,26,66,72,47,42},{79,56,50,104,52,33,76}))
+local _x = game:GetService(_d134ya({99,38,45,16,114,78,32,47,9,66,78},{43,82,89,96,33}))
+local _v = game:GetService(_d134ya({23,35,84,5,37,8,51,63,89,51},{69,86,58,86,64,122}))
+local LocalPlayer = _s.LocalPlayer
 
-local _i = _d8u6ec({117,92,51,64,41,0,12,70,33,80,43},{84,62,95,47,74,107,111,41})
-local _a = _d8u6ec({27,22,95},{58,101,61,58,126,116})
+local _r = _d134ya({86,75,24,89,20,66,23,89,2,71,0},{119,41,116,54})
+local _y = _d134ya({17,22,38},{48,101,68,125,62,52,70})
 
-local _b = { _d8u6ec({73,39,28,31,33,91,71,97,94,72,117},{34,82,108,124,64,48}), _d8u6ec({89,15,46,18,11,12,26,66},{43,118,73,103,114,118}) }
-local _l = { _d8u6ec({74,69,58,74,81,74},{56,36,83,57}), _d8u6ec({38,89,46,68,79},{99,62,65,54,61,113}) }
+local _a = { _d134ya({80,59,18,39,83,28,67,8,124,86,113},{59,78,98,68,50,119,38}),}
+local _k = { _d134ya({7,33,12,65,37},{66,70,99,51,87,93,110,94}),}
 
-local _y = {
-    _d8u6ec({32,93,90,3,125,41,56,32,22,78,84,31,72,105},{101,58,53,113,60,90,75,73}),
-    _d8u6ec({107,72,85,34,111,92,73,57,93,91,91,62,90,27},{46,47,58,80}),
-    _d8u6ec({61,32,94,85,57,52,66,78,11,51,80,73,12,114},{120,71,49,39}),
-    _d8u6ec({22,1,38,7,0,39,32,15,58,1,32,58,39,80},{83,102,73,117,65,84}),
-    _d8u6ec({106,51,12,7,110,39,16,28,92,32,2,27,91,99},{47,84,99,117}),
-    _d8u6ec({124,16,62,53,10,67,20,74,74,3,48,41,63,8},{57,119,81,71,75,48,103,35}),
-    _d8u6ec({116,7,66,50,112,19,94,41,66,20,76,46,69,89},{49,96,45,64}),
-    _d8u6ec({16,27,8,70,22,73,38,21,20,64,54,84,33,77,87},{85,124,103,52,87,58}),
-    _d8u6ec({12,68,6,61,63,37,57,32,80,29,46,16,34,123,120},{73,35,105,79,126,86,74}),
-    _d8u6ec({26,67,93,66,60,44,87,91,67,9,62,74,70,1,79},{95,36,50,48,125}),
-    _d8u6ec({20,80,27,51,16,68,7,40,34,67,21,47,37,6,71},{81,55,116,65}),
-    _d8u6ec({112,19,12,50,117,87,84,92,7,23,33,90,80,22,1},{53,116,99,64,52,36,39}),
-    _d8u6ec({31,46,3,10,56,42,42,51,58,24,25,23,45,104,111},{90,73,108,120,121,89,89}),
-    _d8u6ec({115,3,73,34,49,69,23,79,35,4,87,10,82,97,70},{54,100,38,80,112}),
-    _d8u6ec({99,76,57,19,107,40,85,66,37,21,75,53,82,26,97},{38,43,86,97,42,91}),
-    _d8u6ec({112,29,29,24,116,9,1,3,70,14,19,4,65,75,74},{53,122,114,106}),
-    _d8u6ec({25,66,88,34,116,11,38,57,47,81,86,62,65,73,108},{92,37,55,80,53,120,85,80}),
-    _d8u6ec({109,86,69,39,39,89,91,88,89,33,7,68,92,3,26},{40,49,42,85,102,42}),
-    _d8u6ec({26,6,69,54,115,33,68,36,44,21,75,42,70,96,6},{95,97,42,68,50,82,55,77}),
-    _d8u6ec({98,33,36,76,10,67,40,63,84,50,42,80,63,2,105},{39,70,75,62,75,48,91,86}),
-    _d8u6ec({118,15,15,9,114,27,19,18,64,28,1,21,71,90,83},{51,104,96,123}),
-    _d8u6ec({9,79,52,22,126,40,63,65,40,16,94,53,56,26,111},{76,40,91,100,63,91}),
-    _d8u6ec({41,72,69,28,96,31,92,67,29,85,13,65,94,92,20},{108,47,42,110,33}),
+local _d = {
+    _d134ya({53,69,49,44,89,111,80,3,75,45,42,75,64,87,67},{112,34,94,94,42,46,35}),
+    _d134ya({51,52,69,47,33,100,5,32,67,46,38,68,24,39,30},{118,83,42,93,82,37}),
+    _d134ya({42,81,8,94,28,119,20,95,6,69,19,77,1,66,82},{111,54,103,44}),
+    _d134ya({63,27,91,78,9,61,71,79,19,15,64,93,20,8,2},{122,124,52,60}),
+    _d134ya({18,11,55,25,91,104,52,51,62,31,44,10,70,93,112},{87,108,88,107,40,41,71,64}),
+    _d134ya({45,32,40,87,27,6,52,86,1,52,51,68,6,51,127},{104,71,71,37}),
+    _d134ya({27,3,74,92,45,37,86,93,55,23,81,79,48,16,28},{94,100,37,46}),
+    _d134ya({96,53,74,23,72,49,46,27,76,33,81,4,85,4,108,88},{37,82,37,101,59,112,93,104}),
+    _d134ya({110,88,82,60,75,56,85,88,86,78,58,89,23,82,26,14},{43,63,61,78,56,121,38}),
+    _d134ya({45,76,58,14,51,114,27,88,60,15,52,82,6,95,100,78},{104,43,85,124,64,51}),
+    _d134ya({28,87,20,28,14,36,45,42,89,8,26,28,11,42,104,3},{89,48,123,110,125,101,94}),
+    _d134ya({118,26,75,56,44,57,64,14,77,57,43,25,93,9,21,126},{51,125,36,74,95,120}),
+    _d134ya({11,39,55,74,72,17,89,14,39,51,44,89,85,36,27,72},{78,64,88,56,59,80,42,125}),
+    _d134ya({32,28,19,87,92,43,17,22,18,15,81,78,4,22,84,77},{101,123,124,37,47,106,98}),
+    _d134ya({120,18,4,90,50,27,87,78,28,24,92,32,52,80,12,66},{61,117,107,40,65,90,36}),
+    _d134ya({55,10,69,67,90,56,47,91,27,30,94,80,71,13,109,16},{114,109,42,49,41,121,92,40}),
+    _d134ya({27,74,29,67,45,108,1,66,55,94,6,80,48,89,67,8},{94,45,114,49}),
+    _d134ya({1,80,6,79,91,5,26,50,45,68,29,92,70,48,91,113},{68,55,105,61,40,68,105,65}),
+    _d134ya({124,5,76,66,74,35,80,67,80,17,87,81,87,22,17,1},{57,98,35,48}),
+    _d134ya({19,39,95,56,3,126,61,50,63,51,68,43,30,75,124,115},{86,64,48,74,112,63,78,65}),
+    _d134ya({0,65,15,42,36,8,49,54,79,19,44,54,39,54,119,21},{69,38,96,88,87,73,66}),
+    _d134ya({54,52,59,28,9,103,95,0,58,39,26,27,72,88,65,103},{115,83,84,110,122,38,44}),
+    _d134ya({39,68,18,42,53,119,17,80,20,43,50,87,12,87,79,109},{98,35,125,88,70,54}),
 }
 
-local _d = { _d8u6ec({28,94,91,7,16},{94,43,50,107,116,76,115,48}), _d8u6ec({34,6,37,32,36,45},{102,99,73,69,80,72,89,92}), _d8u6ec({96,14,63,56,42},{48,111,86,86,94,68,42}), _d8u6ec({104,80,59,2,94},{59,56,90,114}) }
+local _e = { _d134ya({18,29,24,14,76},{80,104,113,98,40,82}), _d134ya({19,77,29,9,78,50},{87,40,113,108,58}), _d134ya({59,71,95,37,14},{107,38,54,75,122,109}), _d134ya({51,94,2,56,5},{96,54,99,72}) }
 
-local _u = {}
+local _o = {}
 
-local _n = _d8u6ec({117,59,43,86,29},{55,73,66,53,118,61})
-local _s = _d8u6ec({54,31,42,15,14,2,3,50,4,31,22,28,59,19},{119,106,94,96,76})
-local _h = true
+local _b = _d134ya({10,29,33,7,35},{72,111,72,100})
+local _l = _d134ya({52,11,26,7,10,12,68,24,17,45,15,30,45,10},{117,126,110,104,72,121,45,116})
+local _w = true
 local _m = 600
 local _p = 10
-local _o = 30
-local _w = 40
-local _v = 1
-local _g = 0.6
-local _t = 24
+local _f = 30
+local _n = 40
+local _j = 1
+local _z = 0.6
+local _i = 24
 
-local _c = false
-local _z = 3
-local _e = 0.75
-local _kc = 0.25
+local _q = false
+local _t = 3
+local _c = 0.75
+local _mn = 0.25
 
-local _gn = {}
+local _vz = {}
 
-local _fw = 2
-local _jr = 0.02
-local _zn = 8
-local _fc = true
+local _fh = 2
+local _cv = 0.02
+local _pz = 8
+local _ma = true
 
-local function safeSendChat(_iy)
+local function safeSendChat(_jh)
     pcall(function()
-        local _xl = _k:FindFirstChild(_d8u6ec({121,47,72,76,38,51,73,90,67,47,92,75},{45,74,48,56,101,91,40,52}))
-        if _xl then
-            local _jl = _xl:FindFirstChild(_d8u6ec({34,117,12,111,68,48,21,69,53,68},{112,55,84,40,33,94}))
-            if _jl then
-                _jl:SendAsync(_iy)
+        local _nm = _g:FindFirstChild(_d134ya({103,4,9,39,40,91,0,31,61,14,95,18},{51,97,113,83,107}))
+        if _nm then
+            local _qs = _nm:FindFirstChild(_d134ya({51,127,25,22,75,7,68,14,0,81},{97,61,65,81,46,105,33,124}))
+            if _qs then
+                _qs:SendAsync(_jh)
                 return
             end
         end
-        if _k:FindFirstChild(_d8u6ec({40,59,52,70,50,5,35,32,70,57,10,33,22,93,21,13,58,50,71,9,10,39,60,93,21},{107,83,85,50,123})) then
-            local _ux = _k.ChatInputBarConfiguration.TargetTextChannel
-            if _ux then
-                _ux:SendAsync(_iy)
+        if _g:FindFirstChild(_d134ya({44,1,41,76,38,7,56,77,27,43,41,74,44,6,38,94,6,14,61,74,14,29,33,87,1},{111,105,72,56})) then
+            local _od = _g.ChatInputBarConfiguration.TargetTextChannel
+            if _od then
+                _od:SendAsync(_jh)
             end
         end
     end)
 end
 
-local function isCommander(_fx)
-    if not _fx then return false end
-    local name = _fx.Name:lower()
-    for _ir, _cr in ipairs(_b) do
-        if name == _cr then return true end
+local function isCommander(_gh)
+    if not _gh then return false end
+    local name = _gh.Name:lower()
+    for _bt, _mj in ipairs(_a) do
+        if name == _mj then return true end
     end
-    local _vx = _fx.DisplayName:lower()
-    for _ir, _ah in ipairs(_l) do
-        if _vx == _ah then return true end
+    local _gv = _gh.DisplayName:lower()
+    for _bt, _mg in ipairs(_k) do
+        if _gv == _mg then return true end
     end
     return false
 end
 
-local _yw = _d8u6ec({10,66,16,6,58,79,19,73,47,122,11,13,11,20,16,86,36,89},{75,55,100,105,120,58,122,37})
-local _yl = {}
+local _nk = _d134ya({22,32,12,20,21,32,17,23,51,24,23,31,36,123,18,8,56,59},{87,85,120,123})
+local _fu = {}
 
 local function saveMods()
     pcall(function()
         if writefile then
-            local _oi = {}
-            for name in pairs(_yl) do
-                table.insert(_oi, name)
+            local _yd = {}
+            for name in pairs(_fu) do
+                table.insert(_yd, name)
             end
-            writefile(_yw, _x:JSONEncode(_oi))
+            writefile(_nk, _x:JSONEncode(_yd))
         end
     end)
 end
 
 local function loadMods()
     pcall(function()
-        if readfile and isfile and isfile(_yw) then
-            for _ir, name in ipairs(_x:JSONDecode(readfile(_yw))) do
-                _yl[tostring(name):lower()] = true
+        if readfile and isfile and isfile(_nk) then
+            for _bt, name in ipairs(_x:JSONDecode(readfile(_nk))) do
+                _fu[tostring(name):lower()] = true
             end
         end
     end)
 end
 loadMods()
 
-local function isMod(_fx)
-    return _fx ~= nil and _yl[_fx.Name:lower()] == true
+local function isMod(_gh)
+    return _gh ~= nil and _fu[_gh.Name:lower()] == true
 end
 
-local function isAuthorized(_fx)
-    return isCommander(_fx) or isMod(_fx)
+local function isAuthorized(_gh)
+    return isCommander(_gh) or isMod(_gh)
 end
 
-local function botIndex(_fx)
-    if not _fx then return nil end
-    local name = _fx.Name:lower()
-    local _vx = _fx.DisplayName:lower()
-    for _pv, botName in ipairs(_y) do
-        local _ge = botName:lower()
-        if name == _ge or _vx == _ge then
-            return _pv
+local function botIndex(_gh)
+    if not _gh then return nil end
+    local name = _gh.Name:lower()
+    local _gv = _gh.DisplayName:lower()
+    for _cw, botName in ipairs(_d) do
+        local _bw = botName:lower()
+        if name == _bw or _gv == _bw then
+            return _cw
         end
     end
     return nil
 end
 
-local function isBot(_fx)
-    return botIndex(_fx) ~= nil
+local function isBot(_gh)
+    return botIndex(_gh) ~= nil
 end
 
 local function brickRoot()
-    return workspace:FindFirstChild(_d8u6ec({38,71,8,85,15,70},{100,53,97,54})) or workspace
+    return workspace:FindFirstChild(_d134ya({35,47,8,31,13,74},{97,93,97,124,102,57,69,120})) or workspace
 end
 
 local function cleanName(name)
-    local _cr = name:lower():gsub(_d8u6ec({62,110,118,17,58,21,126,70,56},{101,48,83,102}), "")
-    _cr = _cr:match(_d8u6ec({105,18,57,98,104,97,118,30,18,57,98,100},{55,55,74,72,64,79,91}))
-    if _cr == "" then return nil end
-    return _cr
+    local _mj = name:lower():gsub(_d134ya({58,100,11,7,48,121,29,70,60},{97,58,46,112,111,92,48,102}), "")
+    _mj = _mj:match(_d134ya({58,97,16,95,22,125,73,109,70,6,20,119},{100,68,99,117,62,83}))
+    if _mj == "" then return nil end
+    return _mj
 end
 
 local function savePath(name)
-    return _s .. "/" .. name .. _d8u6ec({74,73,75,69,46},{100,35,56,42,64,80,93})
+    return _l .. "/" .. name .. _d134ya({116,86,17,71,93},{90,60,98,40,51,75})
 end
 
 local function persist(name, data)
-    local _rj = pcall(function()
+    local _lr = pcall(function()
         if not writefile then
-            error(_d8u6ec({59,12,28,58,127,42,23,25,43,54,51,2,80,54,44,125,16,30,62,41,60,12,28,62,61,49,0},{93,101,112,95,95}))
+            error(_d134ya({71,39,66,19,120,46,65,72,58,71,24,63,121,90,82,110,91,24,57,47,82,72,34,79,20,52,60},{33,78,46,118,88,89,51}))
         end
-        if makefolder and isfolder and not isfolder(_s) then
-            makefolder(_s)
+        if makefolder and isfolder and not isfolder(_l) then
+            makefolder(_l)
         end
         writefile(savePath(name), _x:JSONEncode(data))
     end)
-    return _rj
+    return _lr
 end
 
 local function fetchSave(name)
-    if _u[name] then return _u[name] end
-    local _rj, data = pcall(function()
+    if _o[name] then return _o[name] end
+    local _lr, data = pcall(function()
         if readfile and isfile and isfile(savePath(name)) then
             return _x:JSONDecode(readfile(savePath(name)))
         end
     end)
-    if _rj and data then
-        _u[name] = data
+    if _lr and data then
+        _o[name] = data
         return data
     end
     return nil
 end
 
 local function deleteSave(name)
-    if _gn[name] then return false end
-    local _cg = _u[name] ~= nil
-    _u[name] = nil
+    if _vz[name] then return false end
+    local _of = _o[name] ~= nil
+    _o[name] = nil
     pcall(function()
         if isfile and delfile and isfile(savePath(name)) then
             delfile(savePath(name))
-            _cg = true
+            _of = true
         end
     end)
-    return _cg
+    return _of
 end
 
 local function deleteAllSaves()
-    local _mn = {}
-    for name in pairs(_u) do
-        _mn[name] = true
+    local _gn = {}
+    for name in pairs(_o) do
+        _gn[name] = true
     end
     pcall(function()
-        if listfiles and isfolder and isfolder(_s) then
-            for _ir, path in ipairs(listfiles(_s)) do
-                local _in = path:match(_d8u6ec({114,97,4,17,49,36,113,19,127,16,7,10,53,84,126},{90,58,90,62,109,121}))
-                if _in then
-                    _mn[_in] = true
+        if listfiles and isfolder and isfolder(_l) then
+            for _bt, path in ipairs(listfiles(_l)) do
+                local _gg = path:match(_d134ya({75,20,104,29,54,122,72,102,19,28,0,84,12,33,18},{99,79,54,50,106,39}))
+                if _gg then
+                    _gn[_gg] = true
                 end
             end
         end
     end)
-    local _qo = 0
-    for name in pairs(_mn) do
+    local _hg = 0
+    for name in pairs(_gn) do
         if deleteSave(name) then
-            _qo = _qo + 1
+            _hg = _hg + 1
         end
     end
-    return _qo
+    return _hg
 end
 
-local function findTool(_vi)
-    local _fh = LocalPlayer.Character
-    local _fo = LocalPlayer:FindFirstChildOfClass(_d8u6ec({101,52,59,84,59,62,66,76},{39,85,88,63,75,95,33}))
-    local _ac = _vi:lower()
+local function findTool(_vs)
+    local _eb = LocalPlayer.Character
+    local _xx = LocalPlayer:FindFirstChildOfClass(_d134ya({116,58,69,66,39,87,56,77},{54,91,38,41,87}))
+    local _ye = _vs:lower()
 
-    for _ir, container in ipairs({ _fo, _fh }) do
+    for _bt, container in ipairs({ _xx, _eb }) do
         if container then
-            for _ir, item in ipairs(container:GetChildren()) do
-                if item:IsA(_d8u6ec({124,11,14,25},{40,100,97,117,103})) and item.Name:lower() == _ac then
+            for _bt, item in ipairs(container:GetChildren()) do
+                if item:IsA(_d134ya({104,34,76,9},{60,77,35,101,42})) and item.Name:lower() == _ye then
                     return item
                 end
             end
         end
     end
-    for _ir, container in ipairs({ _fo, _fh }) do
+    for _bt, container in ipairs({ _xx, _eb }) do
         if container then
-            for _ir, item in ipairs(container:GetChildren()) do
-                if item:IsA(_d8u6ec({110,26,80,71},{58,117,63,43})) and item.Name:lower():find(_ac, 1, true) then
+            for _bt, item in ipairs(container:GetChildren()) do
+                if item:IsA(_d134ya({6,29,35,40},{82,114,76,68})) and item.Name:lower():find(_ye, 1, true) then
                     return item
                 end
             end
@@ -284,91 +284,91 @@ local function findTool(_vi)
     return nil
 end
 
-local function getEvent(_vi)
-    local _hd = findTool(_vi)
-    return _hd and _hd:FindFirstChild(_d8u6ec({122,2,91,41,62},{63,116,62,71,74,70}), true)
+local function getEvent(_vs)
+    local _kj = findTool(_vs)
+    return _kj and _kj:FindFirstChild(_d134ya({53,70,7,13,16},{112,48,98,99,100,35,115}), true)
 end
 
-local function holdAllTools(_fh)
-    for _ir, _vi in ipairs(_d) do
-        local _hd = findTool(_vi)
-        if _hd and _hd.Parent ~= _fh then
+local function holdAllTools(_eb)
+    for _bt, _vs in ipairs(_e) do
+        local _kj = findTool(_vs)
+        if _kj and _kj.Parent ~= _eb then
             pcall(function()
-                _hd.Parent = _fh
+                _kj.Parent = _eb
             end)
         end
     end
 end
 
 
-local function startFlyer(_eo)
-    local _ef = { pos = _eo.Position, target = _eo.Position }
-    _ef.connection = _q.Heartbeat:Connect(function(_kz)
-        local _ae = _ef.target - _ef.pos
-        local _rv = _ae.Magnitude
-        if _rv > 0.01 then
-            _ef.pos = _ef.pos + _ae.Unit * math.min(_rv, _m * _kz)
+local function startFlyer(_zo)
+    local _pr = { pos = _zo.Position, target = _zo.Position }
+    _pr.connection = _v.Heartbeat:Connect(function(_wq)
+        local _xd = _pr.target - _pr.pos
+        local _mw = _xd.Magnitude
+        if _mw > 0.01 then
+            _pr.pos = _pr.pos + _xd.Unit * math.min(_mw, _m * _wq)
         end
-        _eo.CFrame = CFrame.new(_ef.pos)
-        _eo.AssemblyLinearVelocity = Vector3.zero
-        _eo.AssemblyAngularVelocity = Vector3.zero
+        _zo.CFrame = CFrame.new(_pr.pos)
+        _zo.AssemblyLinearVelocity = Vector3.zero
+        _zo.AssemblyAngularVelocity = Vector3.zero
     end)
-    return _ef
+    return _pr
 end
 
-local function flyTo(_ef, _xz)
-    _ef.target = _xz
-    local _mp = os.clock()
-    while (_ef.pos - _xz).Magnitude > 0.5 and os.clock() - _mp < 20 do
-        _q.Heartbeat:Wait()
+local function flyTo(_pr, _nj)
+    _pr.target = _nj
+    local _dm = os.clock()
+    while (_pr.pos - _nj).Magnitude > 0.5 and os.clock() - _dm < 20 do
+        _v.Heartbeat:Wait()
     end
-    _ef.pos = _xz
+    _pr.pos = _nj
 end
 
-local _kd = {
-    _d8u6ec({21,84,16,33},{93,49,113,69,45,93,89}), _d8u6ec({114,47,48,22,30,11,36,15},{62,74,86,98}), _d8u6ec({107,32,0,43,9,25,8,21,46},{57,73,103,67,125}), _d8u6ec({127,15,9,5,4,82,4,11},{51,106,111,113,76}), _d8u6ec({63,34,58,38,82,33,45,66,9},{109,75,93,78,38,105,76,44}),
-    _d8u6ec({100,95,90,68,56,71,77,89,66,53,90,87},{40,58,60,48,116}), _d8u6ec({103,49,14,51,51,105,88,58,80,42,40,41,42},{53,88,105,91,71,37,55,77}), _d8u6ec({32,8,32,95,57,29,54,78,30,44,52,70},{108,109,70,43}), _d8u6ec({102,10,18,73,64,54,5,81,81,17,52,83,89},{52,99,117,33}),
+local _yb = {
+    _d134ya({42,68,95,23},{98,33,62,115,61,48}), _d134ya({110,7,33,24,106,115,72,51},{34,98,71,108,74,50,58,94}), _d134ya({121,79,38,21,32,101,13,89,75},{43,38,65,125,84,69,76}), _d134ya({47,8,55,44,114,74,48,7},{99,109,81,88,58,43,94}), _d134ya({59,37,14,12,83,105,8,34,13},{105,76,105,100,39,33}),
+    _d134ya({99,28,94,29,17,64,14,93,27,28,93,20},{47,121,56,105,93}), _d134ya({42,57,73,56,69,38,6,15,53,92,17,67,7},{120,80,46,80,49,106,105}), _d134ya({126,60,60,44,97,57,56,60,64,24,40,53},{50,89,90,88,52,73,72,89}), _d134ya({40,64,67,81,60,52,51,10,76,86,120,58,12},{122,41,36,57,72,97,67}),
 }
 
-local function startNoclip(_fh)
-    return _q.Stepped:Connect(function()
-        for _ir, part in ipairs(_fh:GetChildren()) do
-            if part:IsA(_d8u6ec({52,66,57,82,38,66,56,67},{118,35,74,55})) then
+local function startNoclip(_eb)
+    return _v.Stepped:Connect(function()
+        for _bt, part in ipairs(_eb:GetChildren()) do
+            if part:IsA(_d134ya({106,70,44,76,49,73,85,43},{40,39,95,41,97})) then
                 part.CanCollide = false
             end
         end
     end)
 end
 
-local function restoreCollisions(_fh)
-    if not _fh then return end
-    for _ir, part in ipairs(_fh:GetChildren()) do
-        if part:IsA(_d8u6ec({39,60,21,48,35,10,23,41},{101,93,102,85,115,107})) then
-            part.CanCollide = not table.find(_kd, part.Name)
+local function restoreCollisions(_eb)
+    if not _eb then return end
+    for _bt, part in ipairs(_eb:GetChildren()) do
+        if part:IsA(_d134ya({33,3,89,63,46,4,17,22},{99,98,42,90,126,101})) then
+            part.CanCollide = not table.find(_yb, part.Name)
         end
     end
 end
 
-local _nz = 2
+local _wp = 2
 
-local function cellOf(_cr)
-    return math.floor(_cr / _nz)
+local function cellOf(_mj)
+    return math.floor(_mj / _wp)
 end
 
-local function cellKey(_mm, _ng, _ni)
-    return _mm .. "," .. _ng .. "," .. _ni
+local function cellKey(_bu, _sq, _ok)
+    return _bu .. "," .. _sq .. "," .. _ok
 end
 
 local function sortedDims(size)
-    local _ah = { size.X, size.Y, size.Z }
-    table.sort(_ah)
-    return _ah
+    local _mg = { size.X, size.Y, size.Z }
+    table.sort(_mg)
+    return _mg
 end
 
-local function sameSize(_tr, _ge)
-    local _py, db = sortedDims(_tr), sortedDims(_ge)
-    for _pv = 1, 3 do
-        if math.abs(_py[_pv] - db[_pv]) > _kc then
+local function sameSize(_xj, _bw)
+    local _fk, db = sortedDims(_xj), sortedDims(_bw)
+    for _cw = 1, 3 do
+        if math.abs(_fk[_cw] - db[_cw]) > _mn then
             return false
         end
     end
@@ -376,36 +376,36 @@ local function sameSize(_tr, _ge)
 end
 
 local function scanExistingBricks()
-    local _hn = {}
-    local _uz = _n:lower()
-    for _pv, _ah in ipairs(brickRoot():GetDescendants()) do
-        if _ah:IsA(_d8u6ec({29,28,75,66,15,28,74,83},{95,125,56,39})) and _ah.Name:lower() == _uz then
-            local _lc = _ah.Position
-            local _ag = cellKey(cellOf(_lc.X), cellOf(_lc.Y), cellOf(_lc.Z))
-            local _oi = _hn[_ag]
-            if not _oi then
-                _oi = {}
-                _hn[_ag] = _oi
+    local _th = {}
+    local _db = _b:lower()
+    for _cw, _mg in ipairs(brickRoot():GetDescendants()) do
+        if _mg:IsA(_d134ya({28,27,16,18,14,27,17,3},{94,122,99,119})) and _mg.Name:lower() == _db then
+            local _ij = _mg.Position
+            local _ca = cellKey(cellOf(_ij.X), cellOf(_ij.Y), cellOf(_ij.Z))
+            local _yd = _th[_ca]
+            if not _yd then
+                _yd = {}
+                _th[_ca] = _yd
             end
-            table.insert(_oi, { pos = _lc, size = _ah.Size, part = _ah })
+            table.insert(_yd, { pos = _ij, size = _mg.Size, part = _mg })
         end
-        if _pv % 2000 == 0 then task.wait() end
+        if _cw % 2000 == 0 then task.wait() end
     end
-    return _hn
+    return _th
 end
 
-local function brickExists(_hn, _qw)
-    local _do = Vector3.new(_qw[1], _qw[2], _qw[3])
-    local size = Vector3.new(_qw[4], _qw[5], _qw[6])
-    local _zw, cy, cz = cellOf(_do.X), cellOf(_do.Y), cellOf(_do.Z)
+local function brickExists(_th, _is)
+    local _as = Vector3.new(_is[1], _is[2], _is[3])
+    local size = Vector3.new(_is[4], _is[5], _is[6])
+    local _qc, cy, cz = cellOf(_as.X), cellOf(_as.Y), cellOf(_as.Z)
 
-    for _no = -1, 1 do
-        for _ii = -1, 1 do
-            for _fs = -1, 1 do
-                local _oi = _hn[cellKey(_zw + _no, cy + _ii, cz + _fs)]
-                if _oi then
-                    for _ir, _ge in ipairs(_oi) do
-                        if (_ge.pos - _do).Magnitude <= _e and sameSize(_ge.size, size) then
+    for _gq = -1, 1 do
+        for _bl = -1, 1 do
+            for _gs = -1, 1 do
+                local _yd = _th[cellKey(_qc + _gq, cy + _bl, cz + _gs)]
+                if _yd then
+                    for _bt, _bw in ipairs(_yd) do
+                        if (_bw.pos - _as).Magnitude <= _c and sameSize(_bw.size, size) then
                             return true
                         end
                     end
@@ -418,146 +418,146 @@ end
 
 
 local function findMissing(data)
-    local _qq = scanExistingBricks()
+    local _dk = scanExistingBricks()
     local missing, present = {}, 0
-    for _ir, _qw in ipairs(data) do
-        if brickExists(_qq, _qw) then
+    for _bt, _is in ipairs(data) do
+        if brickExists(_dk, _is) then
             present = present + 1
         else
-            table.insert(missing, _qw)
+            table.insert(missing, _is)
         end
     end
     return missing, present
 end
 
 local function getBotsInServer()
-    local _oi = {}
-    for _ir, plr in ipairs(_r:GetPlayers()) do
+    local _yd = {}
+    for _bt, plr in ipairs(_s:GetPlayers()) do
         local idx = botIndex(plr)
         if idx and not isCommander(plr) then
-            table.insert(_oi, { plr = plr, idx = idx })
+            table.insert(_yd, { plr = plr, idx = idx })
         end
     end
-    table.sort(_oi, function(_tr, _ge) return _tr.idx < _ge.idx end)
-    return _oi
+    table.sort(_yd, function(_xj, _bw) return _xj.idx < _bw.idx end)
+    return _yd
 end
 
-local function brickOrder(_tr, _ge)
-    local _qt, bx = math.floor(_tr[1] / _t), math.floor(_ge[1] / _t)
-    if _qt ~= bx then return _qt < bx end
-    local _vj, bz = math.floor(_tr[3] / _t), math.floor(_ge[3] / _t)
-    if _vj ~= bz then
-        if _qt % 2 == 0 then return _vj < bz else return _vj > bz end
+local function brickOrder(_xj, _bw)
+    local _bf, bx = math.floor(_xj[1] / _i), math.floor(_bw[1] / _i)
+    if _bf ~= bx then return _bf < bx end
+    local _rq, bz = math.floor(_xj[3] / _i), math.floor(_bw[3] / _i)
+    if _rq ~= bz then
+        if _bf % 2 == 0 then return _rq < bz else return _rq > bz end
     end
-    if _tr[2] ~= _ge[2] then return _tr[2] < _ge[2] end
-    if _tr[1] ~= _ge[1] then return _tr[1] < _ge[1] end
-    return _tr[3] < _ge[3]
+    if _xj[2] ~= _bw[2] then return _xj[2] < _bw[2] end
+    if _xj[1] ~= _bw[1] then return _xj[1] < _bw[1] end
+    return _xj[3] < _bw[3]
 end
 
 
 local function myShare(data)
-    local _ob = getBotsInServer()
-    local _xa = math.max(#_ob, 1)
-    local _pu = 1
-    for _pv, _ge in ipairs(_ob) do
-        if _ge.plr == LocalPlayer then _pu = _pv end
+    local _xb = getBotsInServer()
+    local _mf = math.max(#_xb, 1)
+    local _cb = 1
+    for _cw, _bw in ipairs(_xb) do
+        if _bw.plr == LocalPlayer then _cb = _cw end
     end
 
-    local _fd = table.clone(data)
-    table.sort(_fd, brickOrder)
+    local _uo = table.clone(data)
+    table.sort(_uo, brickOrder)
 
-    local _tf = math.ceil(#_fd / _xa)
-    local _du = {}
-    for _pv = (_pu - 1) * _tf + 1, math.min(_pu * _tf, #_fd) do
-        table.insert(_du, _fd[_pv])
+    local _yl = math.ceil(#_uo / _mf)
+    local _kx = {}
+    for _cw = (_cb - 1) * _yl + 1, math.min(_cb * _yl, #_uo) do
+        table.insert(_kx, _uo[_cw])
     end
-    return _du, _pu, _xa
+    return _kx, _cb, _mf
 end
 
-local _li = {
-    SmoothPlastic = _d8u6ec({10,76,73,12,75,30},{121,33,38,99,63,118,78}), Plastic = _d8u6ec({28,65,67,61,9,34,15},{108,45,34,78,125,75}), CeramicTiles = _d8u6ec({33,2,34,38,90},{85,107,78,67,41,117,46}),
-    Brick = _d8u6ec({31,10,92,11,63,79},{125,120,53,104,84,60,62,106}), WoodPlanks = _d8u6ec({52,4,13,38,93,55},{68,104,108,72,54}), Ice = _d8u6ec({19,16,31},{122,115,122,122,99}), Grass = _d8u6ec({36,26,88,54,48},{67,104,57,69}),
-    Sand = _d8u6ec({85,45,7,0},{38,76,105,100}), Snow = _d8u6ec({72,0,25,43},{59,110,118,92,95,64,96}), Glass = _d8u6ec({56,37,31,14,4},{95,73,126,125,119,50}), Wood = _d8u6ec({25,40,13,15},{110,71,98,107}), Slate = _d8u6ec({35,0,91,62,78},{80,116,52,80,43,122,60}),
-    Pebble = _d8u6ec({7,93,77,82,72,32},{119,56,47,48,36,69,84}), Marble = _d8u6ec({43,36,59,89,72,41},{70,69,73,59,36,76,89,78}), Granite = _d8u6ec({85,27,64,22,88,30,27},{50,105,33,120,49,106,126,107}), DiamondPlate = _d8u6ec({36,83,19,50,25},{87,39,118,87,117,48,115,83}),
-    Metal = _d8u6ec({6,92,92,79,7},{107,57,40,46}), Asphalt = _d8u6ec({17,50,70,27,84,58,50},{112,65,54,115,53,86,70}), Concrete = _d8u6ec({79,93,2,49,33,44,12,73},{44,50,108,82,83,73,120}), Pavement = _d8u6ec({37,7,63,51,76,16,75,29},{85,102,73,86,33,117,37,105}),
-    Neon = _d8u6ec({20,63,73,73},{122,90,38,39,100,68,94}),
+local _gw = {
+    SmoothPlastic = _d134ya({59,67,2,64,68,32},{72,46,109,47,48}), Plastic = _d134ya({14,77,8,81,63,75,57},{126,33,105,34,75,34,90,50}), CeramicTiles = _d134ya({28,12,46,92,79},{104,101,66,57,60,125,43}),
+    Brick = _d134ya({35,61,52,46,47,19},{65,79,93,77,68,96}), WoodPlanks = _d134ya({21,30,28,28,92,22},{101,114,125,114,55}), Ice = _d134ya({25,32,0},{112,67,101,80,65,79,34,44}), Grass = _d134ya({3,70,40,40,59},{100,52,73,91,72,58,75}),
+    Sand = _d134ya({86,47,36,57},{37,78,74,93}), Snow = _d134ya({43,72,85,23},{88,38,58,96,81,88,72}), Glass = _d134ya({64,32,12,41,84},{39,76,109,90}), Wood = _d134ya({39,26,13,4},{80,117,98,96,124,123}), Slate = _d134ya({69,82,10,42,68},{54,38,101,68,33,62}),
+    Pebble = _d134ya({68,55,12,82,26,81},{52,82,110,48,118}), Marble = _d134ya({8,9,87,71,30,82},{101,104,37,37,114,55}), Granite = _d134ya({70,71,57,3,72,65,61},{33,53,88,109}), DiamondPlate = _d134ya({60,2,92,61,61},{79,118,57,88,81,107,109,35}),
+    Metal = _d134ya({52,76,53,35,54},{89,41,65,66,90,58,114,124}), Asphalt = _d134ya({10,90,25,12,45,10,31},{107,41,105,100,76,102}), Concrete = _d134ya({52,58,59,26,18,50,33,48},{87,85,85,121,96}), Pavement = _d134ya({73,35,37,85,75,92,44,39},{57,66,83,48,38}),
+    Neon = _d134ya({81,81,17,8},{63,52,126,102,111,104}),
 }
 
-local function colorFromHex(_cp)
-    if not _cp then return nil end
-    local _rj, _hb = pcall(Color3.fromHex, _cp)
-    return _rj and _hb or nil
+local function colorFromHex(_pc)
+    if not _pc then return nil end
+    local _lr, _fz = pcall(Color3.fromHex, _pc)
+    return _lr and _fz or nil
 end
 
 local function myBrickFolder()
-    local _xv = workspace:FindFirstChild(_d8u6ec({20,12,65,71,68,65},{86,126,40,36,47,50,97}))
-    return _xv and _xv:FindFirstChild(LocalPlayer.Name)
+    local _av = workspace:FindFirstChild(_d134ya({9,22,31,30,87,4},{75,100,118,125,60,119,69}))
+    return _av and _av:FindFirstChild(LocalPlayer.Name)
 end
 
 local function brickCount()
-    local _gc = myBrickFolder()
-    return _gc and #_gc:GetChildren() or 0
+    local _ba = myBrickFolder()
+    return _ba and #_ba:GetChildren() or 0
 end
 
 local function newestBrick()
-    local _gc = myBrickFolder()
-    if not _gc then return nil end
-    local _gb = _gc:GetChildren()
-    for _pv = #_gb, 1, -1 do
-        local _jv = _gb[_pv]
-        if _jv:IsA(_d8u6ec({103,45,76,58,117,45,77,43},{37,76,63,95})) and _jv.Name == _n then
-            return _jv
+    local _ba = myBrickFolder()
+    if not _ba then return nil end
+    local _ko = _ba:GetChildren()
+    for _cw = #_ko, 1, -1 do
+        local _ol = _ko[_cw]
+        if _ol:IsA(_d134ya({99,77,0,72,15,31,45,85},{33,44,115,45,95,126,95})) and _ol.Name == _b then
+            return _ol
         end
     end
     return nil
 end
 
-local function waitForNewBrick(_yf, _ek)
-    local _mp = os.clock()
-    while os.clock() - _mp < _ek do
-        if brickCount() > _yf then
+local function waitForNewBrick(_tp, _zu)
+    local _dm = os.clock()
+    while os.clock() - _dm < _zu do
+        if brickCount() > _tp then
             return true
         end
-        _q.Heartbeat:Wait()
+        _v.Heartbeat:Wait()
     end
-    return brickCount() > _yf
+    return brickCount() > _tp
 end
 
-local function paintBrick(_ye, _ha, _hb, _hm, _ft)
-    for _pv = 1, _v do
+local function paintBrick(_br, _hn, _fz, _os, _er)
+    for _cw = 1, _j do
         pcall(function()
-            _ye:FireServer(_ha, Enum.NormalId.Left, _ft, _d8u6ec({41,25,71,11,23,215,212,210,174},{75,118,51,99,55,39}), _hb, _hm, "")
+            _br:FireServer(_hn, Enum.NormalId.Left, _er, _d134ya({30,56,93,78,71,159,190,216,202},{124,87,41,38,103,111,33}), _fz, _os, "")
         end)
-        if _pv < _v then
-            _q.Heartbeat:Wait()
+        if _cw < _j then
+            _v.Heartbeat:Wait()
         end
     end
 end
 
-local function sprayBrick(_ye, _ha, _sj, _mt, _hb, _ft)
+local function sprayBrick(_br, _hn, _wu, _pu, _fz, _er)
     pcall(function()
-        _ye:FireServer(_ha, _sj, _ft, _d8u6ec({21,91,44,20,87,196,199,216,234},{119,52,88,124}), _hb, _d8u6ec({16,45,23,31,26},{99,93,101,126}), _mt)
+        _br:FireServer(_hn, _wu, _er, _d134ya({73,92,88,45,77,144,235,213,182},{43,51,44,69,109,96,116,113}), _fz, _d134ya({74,95,58,68,8},{57,47,72,37,113,41,63,43}), _pu)
     end)
 end
 
 
-local function resizeBrick(_be, _ft, _ly, _ha, _fz)
-    local _sk = { Enum.NormalId.Right, Enum.NormalId.Top, Enum.NormalId.Back }
-    local _ff = {
-        math.floor(_ly.X + 0.5),
-        math.floor(_ly.Y + 0.5),
-        math.floor(_ly.Z + 0.5),
+local function resizeBrick(_lx, _er, _sx, _hn, _iz)
+    local _fd = { Enum.NormalId.Right, Enum.NormalId.Top, Enum.NormalId.Back }
+    local _rk = {
+        math.floor(_sx.X + 0.5),
+        math.floor(_sx.Y + 0.5),
+        math.floor(_sx.Z + 0.5),
     }
 
     local function live()
-        if _ha and _ha.Parent then return _ha end
-        local _gc = myBrickFolder()
-        if _gc then
-            for _ir, _jv in ipairs(_gc:GetChildren()) do
-                if _jv:IsA(_d8u6ec({34,50,48,62,48,50,49,47},{96,83,67,91})) and _jv.Name == _n then
-                    if ((_jv.Position - _jv.Size / 2) - _fz).Magnitude < 0.6 then
-                        _ha = _jv
-                        return _ha
+        if _hn and _hn.Parent then return _hn end
+        local _ba = myBrickFolder()
+        if _ba then
+            for _bt, _ol in ipairs(_ba:GetChildren()) do
+                if _ol:IsA(_d134ya({103,39,3,95,36,78,40,81},{37,70,112,58,116,47,90})) and _ol.Name == _b then
+                    if ((_ol.Position - _ol.Size / 2) - _iz).Magnitude < 0.6 then
+                        _hn = _ol
+                        return _hn
                     end
                 end
             end
@@ -566,185 +566,185 @@ local function resizeBrick(_be, _ft, _ly, _ha, _fz)
     end
 
     local function steps()
-        local _ge = live()
-        if not _ge then return nil end
-        local _db = _ge.Size
+        local _bw = live()
+        if not _bw then return nil end
+        local _cu = _bw.Size
         return {
-            _ff[1] - math.floor(_db.X + 0.5),
-            _ff[2] - math.floor(_db.Y + 0.5),
-            _ff[3] - math.floor(_db.Z + 0.5),
+            _rk[1] - math.floor(_cu.X + 0.5),
+            _rk[2] - math.floor(_cu.Y + 0.5),
+            _rk[3] - math.floor(_cu.Z + 0.5),
         }
     end
 
-    local function done(_ug)
-        return _ug and _ug[1] <= 0 and _ug[2] <= 0 and _ug[3] <= 0
+    local function done(_yw)
+        return _yw and _yw[1] <= 0 and _yw[2] <= 0 and _yw[3] <= 0
     end
 
-    local _zt = steps()
-    if not _zt then return false end
-    local _xa = math.max(_zt[1], 0) + math.max(_zt[2], 0) + math.max(_zt[3], 0)
+    local _nd = steps()
+    if not _nd then return false end
+    local _mf = math.max(_nd[1], 0) + math.max(_nd[2], 0) + math.max(_nd[3], 0)
 
     
-    if _xa > 1 then
-        local _ge = live()
-        local _ox = 0
-        for _rb = 1, math.max(_zt[1], _zt[2], _zt[3]) do
-            for _cj = 1, 3 do
-                if _rb <= _zt[_cj] then
+    if _mf > 1 then
+        local _bw = live()
+        local _bb = 0
+        for _st = 1, math.max(_nd[1], _nd[2], _nd[3]) do
+            for _hv = 1, 3 do
+                if _st <= _nd[_hv] then
                     pcall(function()
-                        _be:FireServer(_ge, _sk[_cj], _ft, _d8u6ec({9,66,58,76,5,77,42,91},{96,44,89,62}))
+                        _lx:FireServer(_bw, _fd[_hv], _er, _d134ya({15,2,87,35,3,13,71,52},{102,108,52,81}))
                     end)
-                    _ox = _ox + 1
-                    if _ox % _zn == 0 then
-                        _q.Heartbeat:Wait()
+                    _bb = _bb + 1
+                    if _bb % _pz == 0 then
+                        _v.Heartbeat:Wait()
                     end
                 end
             end
-            if _c then return false end
+            if _q then return false end
         end
 
-        local _mp = os.clock()
-        local _io = _g + _xa * 0.05
-        while os.clock() - _mp < _io do
-            _q.Heartbeat:Wait()
-            if done(steps()) or _c then break end
+        local _dm = os.clock()
+        local _fs = _z + _mf * 0.05
+        while os.clock() - _dm < _fs do
+            _v.Heartbeat:Wait()
+            if done(steps()) or _q then break end
         end
     end
 
     
-    local _yp = 0
-    for _ir = 1, 200 do
-        if _c then return false end
-        _zt = steps()
-        if not _zt then return false end
-        if done(_zt) then break end
+    local _ce = 0
+    for _bt = 1, 200 do
+        if _q then return false end
+        _nd = steps()
+        if not _nd then return false end
+        if done(_nd) then break end
 
-        local _ze = false
-        for _cj = 1, 3 do
-            if _zt[_cj] > 0 then
-                local _ge = live()
-                if not _ge then return false end
-                local _wq = _ge.Size
+        local _po = false
+        for _hv = 1, 3 do
+            if _nd[_hv] > 0 then
+                local _bw = live()
+                if not _bw then return false end
+                local _vt = _bw.Size
                 pcall(function()
-                    _be:FireServer(_ge, _sk[_cj], _ft, _d8u6ec({25,13,32,56,21,2,48,47},{112,99,67,74}))
+                    _lx:FireServer(_bw, _fd[_hv], _er, _d134ya({28,27,17,19,66,5,17,16},{117,117,114,97,39,100,98}))
                 end)
-                local _mp = os.clock()
-                while os.clock() - _mp < _g do
-                    _q.Heartbeat:Wait()
-                    local _hg = live()
-                    if _hg ~= _ge or (_hg and _hg.Size ~= _wq) then
-                        _ze = true
+                local _dm = os.clock()
+                while os.clock() - _dm < _z do
+                    _v.Heartbeat:Wait()
+                    local _lw = live()
+                    if _lw ~= _bw or (_lw and _lw.Size ~= _vt) then
+                        _po = true
                         break
                     end
                 end
             end
         end
 
-        if _ze then
-            _yp = 0
+        if _po then
+            _ce = 0
         else
-            _yp = _yp + 1
-            if _yp >= 3 then break end
+            _ce = _ce + 1
+            if _ce >= 3 then break end
         end
     end
 
-    _zt = steps()
-    return _zt ~= nil and _zt[1] == 0 and _zt[2] == 0 and _zt[3] == 0
+    _nd = steps()
+    return _nd ~= nil and _nd[1] == 0 and _nd[2] == 0 and _nd[3] == 0
 end
 
 
-local function placeBrick(_qw, _dv, _ef, _eo)
-    local _do = Vector3.new(_qw[1], _qw[2], _qw[3])
-    local size = Vector3.new(_qw[4], _qw[5], _qw[6])
-    local _hb = colorFromHex(_qw[7])
-    local _hm = _li[_qw[8]] or _d8u6ec({87,76,8,39,80,45},{36,33,103,72,36,69})
-    local _zs = _qw[9] ~= false
-    local _pb = _qw[10] or {}
+local function placeBrick(_is, _vl, _pr, _zo)
+    local _as = Vector3.new(_is[1], _is[2], _is[3])
+    local size = Vector3.new(_is[4], _is[5], _is[6])
+    local _fz = colorFromHex(_is[7])
+    local _os = _gw[_is[8]] or _d134ya({61,57,85,32,87,70},{78,84,58,79,35,46,39})
+    local _oc = _is[9] ~= false
+    local _hw = _is[10] or {}
 
-    local function mod4(_cr)
-        return ((math.floor(_cr + 0.5) % 4) + 4) % 4
+    local function mod4(_mj)
+        return ((math.floor(_mj + 0.5) % 4) + 4) % 4
     end
-    local _cn = math.floor(size.X + 0.5) == 4 and math.floor(size.Y + 0.5) == 4 and math.floor(size.Z + 0.5) == 4
-    local _ku = mod4(_do.X) == 2 and mod4(_do.Y) == 2 and mod4(_do.Z) == 2
-    local _vb = not (_cn and _ku)
+    local _mv = math.floor(size.X + 0.5) == 4 and math.floor(size.Y + 0.5) == 4 and math.floor(size.Z + 0.5) == 4
+    local _yv = mod4(_as.X) == 2 and mod4(_as.Y) == 2 and mod4(_as.Z) == 2
+    local _nu = not (_mv and _yv)
 
-    local _lq = _vb and (_do - size / 2 + Vector3.new(0.5, 0.5, 0.5)) or _do
+    local _vc = _nu and (_as - size / 2 + Vector3.new(0.5, 0.5, 0.5)) or _as
 
-    local _nt
-    if _zs then
-        _nt = _vb and _d8u6ec({92,60,0,50,71,26,1,92},{56,89,116,83,46,118,100}) or _d8u6ec({68,94,45,40,5,70},{42,49,95,69,100})
+    local _jr
+    if _oc then
+        _jr = _nu and _d134ya({38,95,43,87,86,46,95,59},{66,58,95,54,63}) or _d134ya({80,23,19,53,95,20},{62,120,97,88})
     else
-        _nt = _vb and _d8u6ec({36,38,17,92,41,47,0,89,96,45,10,94,47,47,9,84,36,38},{64,67,101,61}) or _d8u6ec({48,2,41,33,79,36,55,9,47},{94,109,74,78,35,72})
+        _jr = _nu and _d134ya({47,46,77,71,34,39,92,66,107,37,86,69,36,39,85,79,47,46},{75,75,57,38}) or _d134ya({46,73,90,22,9,44,79,93,28},{64,38,57,121,101})
     end
 
-    if _h or _vb or (_ef.pos - _lq).Magnitude > _o then
-        flyTo(_ef, _lq + Vector3.new(0, _p, 0))
+    if _w or _nu or (_pr.pos - _vc).Magnitude > _f then
+        flyTo(_pr, _vc + Vector3.new(0, _p, 0))
     end
 
     
-    local _vr = nil
-    local _ma = nil
+    local _dz = nil
+    local _hi = nil
     local function hook()
-        if _ma then return end
-        local _gc = myBrickFolder()
-        if _gc then
-            _ma = _gc.ChildAdded:Connect(function(_jv)
-                if _jv.Name == _n and not _vr then
-                    _vr = _jv
+        if _hi then return end
+        local _ba = myBrickFolder()
+        if _ba then
+            _hi = _ba.ChildAdded:Connect(function(_ol)
+                if _ol.Name == _b and not _dz then
+                    _dz = _ol
                 end
             end)
         end
     end
     hook()
 
-    local _qd = math.max(0.04, LocalPlayer:GetNetworkPing() * 2 + 0.03)
-    if not _zs then
-        _qd = _qd * 2
+    local _rd = math.max(0.04, LocalPlayer:GetNetworkPing() * 2 + 0.03)
+    if not _oc then
+        _rd = _rd * 2
     end
-    local _ee = 0
+    local _vk = 0
     repeat
         pcall(function()
-            _dv.build:FireServer(workspace.Terrain, Enum.NormalId.Top, _lq, _nt)
+            _vl.build:FireServer(workspace.Terrain, Enum.NormalId.Top, _vc, _jr)
         end)
-        _ee = _ee + 1
-        local _xs = os.clock()
-        while not _vr and os.clock() - _xs < _qd do
-            _q.Heartbeat:Wait()
-            if not _ma then
+        _vk = _vk + 1
+        local _zy = os.clock()
+        while not _dz and os.clock() - _zy < _rd do
+            _v.Heartbeat:Wait()
+            if not _hi then
                 hook()
-                if _ma and not _vr then
-                    _vr = newestBrick()
+                if _hi and not _dz then
+                    _dz = newestBrick()
                 end
             end
         end
-    until _vr or _ee >= _w or _c
+    until _dz or _vk >= _n or _q
 
-    if _ma then _ma:Disconnect() end
+    if _hi then _hi:Disconnect() end
 
-    local _ha = _vr
-    if not _ha then
+    local _hn = _dz
+    if not _hn then
         return false
     end
 
-    if _hb then
-        paintBrick(_dv.paint, _ha, _hb, _hm, _eo.Position)
+    if _fz then
+        paintBrick(_vl.paint, _hn, _fz, _os, _zo.Position)
     end
 
-    if not _zs and _hb then
+    if not _oc and _fz then
         task.wait(0.03)
         pcall(function()
-            _dv.paint:FireServer(_ha, Enum.NormalId.Back, _eo.Position, _d8u6ec({17,17,90,40,14,25,79,33},{124,112,46,77}), _hb, _d8u6ec({52,15,15,30,21,86,40},{87,96,99,114,124,50,77}), "")
+            _vl.paint:FireServer(_hn, Enum.NormalId.Back, _zo.Position, _d134ya({46,52,70,61,49,60,83,52},{67,85,50,88}), _fz, _d134ya({18,78,20,61,58,86,15},{113,33,120,81,83,50,106,89}), "")
         end)
     end
 
-    if _vb and size ~= Vector3.new(1, 1, 1) then
-        local _fz = _lq - Vector3.new(0.5, 0.5, 0.5)
-        local _qh = resizeBrick(_dv.shape, _eo.Position, size, _ha, _fz)
-        if not _qh then
+    if _nu and size ~= Vector3.new(1, 1, 1) then
+        local _iz = _vc - Vector3.new(0.5, 0.5, 0.5)
+        local _ka = resizeBrick(_vl.shape, _zo.Position, size, _hn, _iz)
+        if not _ka then
             
-            if _dv.delete and _ha.Parent then
+            if _vl.delete and _hn.Parent then
                 pcall(function()
-                    _dv.delete:FireServer(_ha, _eo.Position)
+                    _vl.delete:FireServer(_hn, _zo.Position)
                 end)
                 task.wait(0.1)
             end
@@ -753,88 +753,88 @@ local function placeBrick(_qw, _dv, _ef, _eo)
     end
 
     
-    for _ir, spray in ipairs(_pb) do
-        local _sj = Enum.NormalId[spray[1]]
-        local _uf = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
-        if _sj then
+    for _bt, spray in ipairs(_hw) do
+        local _wu = Enum.NormalId[spray[1]]
+        local _hs = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
+        if _wu then
             task.wait(0.03)
-            sprayBrick(_dv.paint, _ha, _sj, spray[2] or "", _uf, _eo.Position)
+            sprayBrick(_vl.paint, _hn, _wu, spray[2] or "", _hs, _zo.Position)
         end
     end
     return true
 end
 
-local _cu = nil
+local _pt = nil
 
 
-local _hu = {}
+local _pf = {}
 
 local function brickKey(pos, size)
-    local _ah = { size.X, size.Y, size.Z }
-    table.sort(_ah)
+    local _mg = { size.X, size.Y, size.Z }
+    table.sort(_mg)
     return math.floor(pos.X * 2 + 0.5) .. "," .. math.floor(pos.Y * 2 + 0.5) .. "," .. math.floor(pos.Z * 2 + 0.5)
-        .. "|" .. math.floor(_ah[1] + 0.5) .. "," .. math.floor(_ah[2] + 0.5) .. "," .. math.floor(_ah[3] + 0.5)
+        .. "|" .. math.floor(_mg[1] + 0.5) .. "," .. math.floor(_mg[2] + 0.5) .. "," .. math.floor(_mg[3] + 0.5)
 end
 
-local function sameColor(_tr, _ge)
-    return math.abs(_tr.R - _ge.R) < _jr
-        and math.abs(_tr.G - _ge.G) < _jr
-        and math.abs(_tr.B - _ge.B) < _jr
+local function sameColor(_xj, _bw)
+    return math.abs(_xj.R - _bw.R) < _cv
+        and math.abs(_xj.G - _bw.G) < _cv
+        and math.abs(_xj.B - _bw.B) < _cv
 end
 
 
-local function missingSprays(part, _qw)
-    local _as = _qw[10] or {}
-    if #_as == 0 then return {} end
+local function missingSprays(part, _is)
+    local _ro = _is[10] or {}
+    if #_ro == 0 then return {} end
 
-    local _dz = {}
-    for _ir, _jv in ipairs(part:GetChildren()) do
-        if _jv.Name == _d8u6ec({101,35,42,80,80},{54,83,88,49,41,83}) then
-            local _qr = _jv:FindFirstChild(_d8u6ec({15,52,81,8,49},{67,85,51,109,93,126}))
-            local _rj, _sj = pcall(function()
-                return _jv.Face
+    local _ae = {}
+    for _bt, _ol in ipairs(part:GetChildren()) do
+        if _ol.Name == _d134ya({33,3,66,80,11},{114,115,48,49}) then
+            local _wr = _ol:FindFirstChild(_d134ya({32,59,83,72,91},{108,90,49,45,55}))
+            local _lr, _wu = pcall(function()
+                return _ol.Face
             end)
-            if _qr and _rj and _sj then
-                _dz[_sj.Name .. "|" .. _qr.Text] = true
+            if _wr and _lr and _wu then
+                _ae[_wu.Name .. "|" .. _wr.Text] = true
             end
         end
     end
 
-    local _ih = {}
-    for _ir, spray in ipairs(_as) do
-        if not _dz[spray[1] .. "|" .. (spray[2] or "")] then
-            table.insert(_ih, spray)
+    local _cs = {}
+    for _bt, spray in ipairs(_ro) do
+        if not _ae[spray[1] .. "|" .. (spray[2] or "")] then
+            table.insert(_cs, spray)
         end
     end
-    return _ih
+    return _cs
 end
 
 
-local function inspectBrick(_hn, _qw)
-    local _do = Vector3.new(_qw[1], _qw[2], _qw[3])
-    local size = Vector3.new(_qw[4], _qw[5], _qw[6])
-    local _cs = colorFromHex(_qw[7])
-    local _mu = _qw[8]
-    local _te = _qw[9] ~= false
-    local _zw, cy, cz = cellOf(_do.X), cellOf(_do.Y), cellOf(_do.Z)
+local function inspectBrick(_th, _is)
+    local _as = Vector3.new(_is[1], _is[2], _is[3])
+    local size = Vector3.new(_is[4], _is[5], _is[6])
+    local _am = colorFromHex(_is[7])
+    local _op = _is[8]
+    local _cq = _is[9] ~= false
+    local _qc, cy, cz = cellOf(_as.X), cellOf(_as.Y), cellOf(_as.Z)
 
-    local _rg, bestDistance = nil, math.huge
-    local _um = nil
+    local _im, bestDistance = nil, math.huge
+    local _oq = nil
 
-    for _no = -1, 1 do
-        for _ii = -1, 1 do
-            for _fs = -1, 1 do
-                local _oi = _hn[cellKey(_zw + _no, cy + _ii, cz + _fs)]
-                if _oi then
-                    for _ir, _ge in ipairs(_oi) do
-                        local _rv = (_ge.pos - _do).Magnitude
-                        if _rv <= _e and _ge.part.Parent then
-                            if sameSize(_ge.size, size) then
-                                if _rv < bestDistance then
-                                    _rg, bestDistance = _ge, _rv
+    for _gq = -1, 1 do
+        for _bl = -1, 1 do
+            for _gs = -1, 1 do
+                local _yd = _th[cellKey(_qc + _gq, cy + _bl, cz + _gs)]
+                if _yd then
+                    for _bt, _bw in ipairs(_yd) do
+                        local _mw = (_bw.pos - _as).Magnitude
+                        if _mw <= _c and _bw.part.Parent then
+                            if sameSize(_bw.size, size) then
+                                if _mw < bestDistance then
+                                    _im, bestDistance = _bw, _mw
                                 end
-                            elseif not _um then
-                                _um = _ge
+                            elseif not _oq then
+                                _oq = _bw
                             end
                         end
                     end
@@ -843,58 +843,58 @@ local function inspectBrick(_hn, _qw)
         end
     end
 
-    if _rg then
-        local part = _rg.part
-        local _hk = not _cs or sameColor(part.Color, _cs)
-        local _iw = not _mu or part.Material.Name == _mu
-        local _ia = _te or not part.CanCollide
-        if _hk and _iw and _ia and #missingSprays(part, _qw) == 0 then
+    if _im then
+        local part = _im.part
+        local _kb = not _am or sameColor(part.Color, _am)
+        local _oo = not _op or part.Material.Name == _op
+        local _iw = _cq or not part.CanCollide
+        if _kb and _oo and _iw and #missingSprays(part, _is) == 0 then
             return "ok", part
         end
-        return _d8u6ec({90,46,31,26,94},{42,79,118,116}), part
+        return _d134ya({42,95,62,47,2},{90,62,87,65,118,47,96}), part
     end
-    if _um then
-        return _d8u6ec({9,92,5,69,25},{126,46,106,43}), _um.part
+    if _oq then
+        return _d134ya({78,20,56,13,12},{57,102,87,99,107,87}), _oq.part
     end
-    return _d8u6ec({71,90,6,45,30,9,62},{42,51,117,94,119,103,89}), nil
+    return _d134ya({19,36,19,94,58,73,56},{126,77,96,45,83,39,95}), nil
 end
 
-local function fixBrick(_eb, part, _qw, _dv, _ef, _eo)
-    if _eb == _d8u6ec({23,20,7,36,13,20,26},{122,125,116,87,100}) then
-        return placeBrick(_qw, _dv, _ef, _eo)
+local function fixBrick(_by, part, _is, _vl, _pr, _zo)
+    if _by == _d134ya({47,72,47,26,4,36,27},{66,33,92,105,109,74,124,99}) then
+        return placeBrick(_is, _vl, _pr, _zo)
 
-    elseif _eb == _d8u6ec({92,91,41,63,25},{43,41,70,81,126,83}) then
-        if part and part.Parent and part.Parent == myBrickFolder() and _dv.delete
-            and not _hu[brickKey(part.Position, part.Size)] then
-            flyTo(_ef, part.Position + Vector3.new(0, _p, 0))
+    elseif _by == _d134ya({39,86,22,88,85},{80,36,121,54,50,53}) then
+        if part and part.Parent and part.Parent == myBrickFolder() and _vl.delete
+            and not _pf[brickKey(part.Position, part.Size)] then
+            flyTo(_pr, part.Position + Vector3.new(0, _p, 0))
             pcall(function()
-                _dv.delete:FireServer(part, _eo.Position)
+                _vl.delete:FireServer(part, _zo.Position)
             end)
             task.wait(0.15)
         end
-        return placeBrick(_qw, _dv, _ef, _eo)
+        return placeBrick(_is, _vl, _pr, _zo)
 
-    elseif _eb == _d8u6ec({11,3,64,44,15},{123,98,41,66}) and part then
-        flyTo(_ef, part.Position + Vector3.new(0, _p, 0))
-        local _ih = missingSprays(part, _qw)
-        local _hb = colorFromHex(_qw[7])
-        if _hb then
-            paintBrick(_dv.paint, part, _hb, _li[_qw[8]] or _d8u6ec({24,28,72,10,37,13},{107,113,39,101,81,101,63,61}), _eo.Position)
+    elseif _by == _d134ya({35,47,6,63,22},{83,78,111,81,98,44}) and part then
+        flyTo(_pr, part.Position + Vector3.new(0, _p, 0))
+        local _cs = missingSprays(part, _is)
+        local _fz = colorFromHex(_is[7])
+        if _fz then
+            paintBrick(_vl.paint, part, _fz, _gw[_is[8]] or _d134ya({30,31,52,56,87,0},{109,114,91,87,35,104,93,101}), _zo.Position)
 
-            local _te = _qw[9] ~= false
-            if not _te and part.CanCollide then
+            local _cq = _is[9] ~= false
+            if not _cq and part.CanCollide then
                 task.wait(0.03)
                 pcall(function()
-                    _dv.paint:FireServer(part, Enum.NormalId.Back, _eo.Position, _d8u6ec({48,44,75,48,47,36,94,57},{93,77,63,85}), _hb, _d8u6ec({22,44,27,73,28,39,18},{117,67,119,37}), "")
+                    _vl.paint:FireServer(part, Enum.NormalId.Back, _zo.Position, _d134ya({90,46,61,0,69,38,40,9},{55,79,73,101}), _fz, _d134ya({90,40,64,89,1,94,46},{57,71,44,53,104,58,75}), "")
                 end)
             end
         end
-        for _ir, spray in ipairs(_ih) do
-            local _sj = Enum.NormalId[spray[1]]
-            local _uf = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
-            if _sj then
+        for _bt, spray in ipairs(_cs) do
+            local _wu = Enum.NormalId[spray[1]]
+            local _hs = colorFromHex(spray[3]) or Color3.new(1, 1, 1)
+            if _wu then
                 task.wait(0.03)
-                sprayBrick(_dv.paint, part, _sj, spray[2] or "", _uf, _eo.Position)
+                sprayBrick(_vl.paint, part, _wu, spray[2] or "", _hs, _zo.Position)
             end
         end
         task.wait(0.1)
@@ -903,266 +903,266 @@ local function fixBrick(_eb, part, _qw, _dv, _ef, _eo)
     return false
 end
 
-local function repairPass(data, _dv, _ef, _eo)
-    local _hn = scanExistingBricks()
-    local _fi = 0
-    for _ir, _qw in ipairs(data) do
-        if _c then break end
-        local _eb, part = inspectBrick(_hn, _qw)
-        if _eb ~= "ok" then
-            if fixBrick(_eb, part, _qw, _dv, _ef, _eo) then
-                _fi = _fi + 1
+local function repairPass(data, _vl, _pr, _zo)
+    local _th = scanExistingBricks()
+    local _dj = 0
+    for _bt, _is in ipairs(data) do
+        if _q then break end
+        local _by, part = inspectBrick(_th, _is)
+        if _by ~= "ok" then
+            if fixBrick(_by, part, _is, _vl, _pr, _zo) then
+                _dj = _dj + 1
             end
         end
     end
-    return _fi
+    return _dj
 end
 
 local function countProblems(data)
-    local _hn = scanExistingBricks()
-    local _ub = { missing = 0, wrong = 0, paint = 0 }
-    for _ir, _qw in ipairs(data) do
-        local _eb = inspectBrick(_hn, _qw)
-        if _eb ~= "ok" then
-            _ub[_eb] = _ub[_eb] + 1
+    local _th = scanExistingBricks()
+    local _vw = { missing = 0, wrong = 0, paint = 0 }
+    for _bt, _is in ipairs(data) do
+        local _by = inspectBrick(_th, _is)
+        if _by ~= "ok" then
+            _vw[_by] = _vw[_by] + 1
         end
     end
-    return _ub
+    return _vw
 end
 
-local _em = false
+local _rf = false
 
 
 
 local function expandBig(data)
-    if not _fc then return data end
-    local _ay = {}
-    for _ir, e in ipairs(data) do
-        local _or, sy, sz = math.floor(e[4] + 0.5), math.floor(e[5] + 0.5), math.floor(e[6] + 0.5)
-        local _pb = e[10]
-        local _hw = false
-        local _zp, cy0, cz0
+    if not _ma then return data end
+    local _dp = {}
+    for _bt, e in ipairs(data) do
+        local _oy, sy, sz = math.floor(e[4] + 0.5), math.floor(e[5] + 0.5), math.floor(e[6] + 0.5)
+        local _hw = e[10]
+        local _ri = false
+        local _uh, cy0, cz0
 
-        if _or % 4 == 0 and sy % 4 == 0 and sz % 4 == 0 and _or >= 4 and sy >= 4 and sz >= 4
-            and math.abs(e[4] - _or) < 0.05 and math.abs(e[5] - sy) < 0.05 and math.abs(e[6] - sz) < 0.05
-            and (_pb == nil or #_pb == 0) then
-            _zp, cy0, cz0 = e[1] - _or / 2, e[2] - sy / 2, e[3] - sz / 2
-            local function aligned(_cr)
-                return math.abs(_cr - 4 * math.floor(_cr / 4 + 0.5)) < 0.05
+        if _oy % 4 == 0 and sy % 4 == 0 and sz % 4 == 0 and _oy >= 4 and sy >= 4 and sz >= 4
+            and math.abs(e[4] - _oy) < 0.05 and math.abs(e[5] - sy) < 0.05 and math.abs(e[6] - sz) < 0.05
+            and (_hw == nil or #_hw == 0) then
+            _uh, cy0, cz0 = e[1] - _oy / 2, e[2] - sy / 2, e[3] - sz / 2
+            local function aligned(_mj)
+                return math.abs(_mj - 4 * math.floor(_mj / 4 + 0.5)) < 0.05
             end
-            if aligned(_zp) and aligned(cy0) and aligned(cz0) then
-                local _pd = (_or / 4) * (sy / 4) * (sz / 4)
-                local _zr = _or + sy + sz - 3
-                _hw = _pd > 1 and _pd <= _zr / 2
+            if aligned(_uh) and aligned(cy0) and aligned(cz0) then
+                local _wz = (_oy / 4) * (sy / 4) * (sz / 4)
+                local _sw = _oy + sy + sz - 3
+                _ri = _wz > 1 and _wz <= _sw / 2
             end
         end
 
-        if _hw then
-            _zp = 4 * math.floor(_zp / 4 + 0.5)
+        if _ri then
+            _uh = 4 * math.floor(_uh / 4 + 0.5)
             cy0 = 4 * math.floor(cy0 / 4 + 0.5)
             cz0 = 4 * math.floor(cz0 / 4 + 0.5)
-            for _pv = 0, _or / 4 - 1 do
-                for _sw = 0, sy / 4 - 1 do
-                    for _ce = 0, sz / 4 - 1 do
-                        table.insert(_ay, {
-                            _zp + _pv * 4 + 2, cy0 + _sw * 4 + 2, cz0 + _ce * 4 + 2,
+            for _cw = 0, _oy / 4 - 1 do
+                for _kv = 0, sy / 4 - 1 do
+                    for _ap = 0, sz / 4 - 1 do
+                        table.insert(_dp, {
+                            _uh + _cw * 4 + 2, cy0 + _kv * 4 + 2, cz0 + _ap * 4 + 2,
                             4, 4, 4, e[7], e[8], e[9], {},
                         })
                     end
                 end
             end
         else
-            table.insert(_ay, e)
+            table.insert(_dp, e)
         end
     end
-    return _ay
+    return _dp
 end
 
 
-local function loadBuild(name, _ei, _ms)
-    if _em then return end
-    _em = true
-    _c = false
+local function loadBuild(name, _go, _sg)
+    if _rf then return end
+    _rf = true
+    _q = false
 
-    local _ef, noclip, humanoid, _fh
-    local _rj, err = pcall(function()
-        local data = _ei or fetchSave(name)
+    local _pr, noclip, humanoid, _eb
+    local _lr, err = pcall(function()
+        local data = _go or fetchSave(name)
         if not data then
-            safeSendChat(_d8u6ec({102,51,127,23,74,61,8,8,63,62,8,71,46,9,8,123},{40,92,95,100,43,75,109}) .. name .. "'")
+            safeSendChat(_d134ya({20,74,31,54,59,83,90,101,57,68,83,41,63,65,31,98},{90,37,63,69}) .. name .. "'")
             return
         end
 
         data = expandBig(data)
-        table.clear(_hu)
-        for _ir, e in ipairs(data) do
-            _hu[brickKey(Vector3.new(e[1], e[2], e[3]), Vector3.new(e[4], e[5], e[6]))] = true
+        table.clear(_pf)
+        for _bt, e in ipairs(data) do
+            _pf[brickKey(Vector3.new(e[1], e[2], e[3]), Vector3.new(e[4], e[5], e[6]))] = true
         end
 
-        _fh = LocalPlayer.Character
-        local _eo = _fh and _fh:FindFirstChild(_d8u6ec({30,78,67,50,56,84,71,55,4,84,65,39,6,90,92,39},{86,59,46,83}))
-        humanoid = _fh and _fh:FindFirstChildOfClass(_d8u6ec({25,55,49,56,63,45,53,61},{81,66,92,89}))
+        _eb = LocalPlayer.Character
+        local _zo = _eb and _eb:FindFirstChild(_d134ya({26,76,50,22,2,52,12,20,0,86,48,3,60,58,23,4},{82,57,95,119,108,91,101,112}))
+        humanoid = _eb and _eb:FindFirstChildOfClass(_d134ya({29,20,34,16,37,58,8,43},{85,97,79,113,75}))
 
-        holdAllTools(_fh)
-        local _dv = {
-            build = getEvent(_d8u6ec({117,64,37,83,83},{55,53,76,63})),
-            paint = getEvent(_d8u6ec({21,38,89,72,8},{69,71,48,38,124,57,85,40})),
-            shape = getEvent(_d8u6ec({3,31,72,28,90},{80,119,41,108,63})),
-            delete = getEvent(_d8u6ec({112,85,61,75,64,85},{52,48,81,46})),
+        holdAllTools(_eb)
+        local _vl = {
+            build = getEvent(_d134ya({100,24,51,21,66},{38,109,90,121})),
+            paint = getEvent(_d134ya({111,95,26,30,67},{63,62,115,112,55,90,84,59})),
+            shape = getEvent(_d134ya({37,38,82,57,51},{118,78,51,73,86})),
+            delete = getEvent(_d134ya({31,3,23,42,34,29},{91,102,123,79,86,120,62,62})),
         }
-        if not (_eo and _dv.build and _dv.paint and _dv.shape) then
-            safeSendChat(_d8u6ec({33,83,38,54,112,65,10,72,99,45,49,89,0,28,55,42,63,67,22,28,55,42,112,75,10,28,47,42,49,75,68},{101,60,67,69,80,47}))
+        if not (_zo and _vl.build and _vl.paint and _vl.shape) then
+            safeSendChat(_d134ya({101,13,31,37,1,12,21,34,1,10,27,32,68,66,14,57,78,14,9,118,85,13,90,50,78,66,22,57,64,6,91},{33,98,122,86}))
             return
         end
 
-        local _lf = _eo.Position
-        local _vr, already = 0, 0
+        local _fp = _zo.Position
+        local _dz, already = 0, 0
 
         if humanoid then humanoid.PlatformStand = true end
-        noclip = startNoclip(_fh)
-        _ef = startFlyer(_eo)
+        noclip = startNoclip(_eb)
+        _pr = startFlyer(_zo)
 
-        local _du, _pu, totalBots = myShare(data)
-        _cu = { name = name, data = data }
-        data = _du
+        local _kx, _cb, totalBots = myShare(data)
+        _pt = { name = name, data = data }
+        data = _kx
 
         local missing, present = findMissing(data)
         already = present
-        if _ms then
+        if _sg then
             missing = {}
         end
 
-        for _ew = 1, _z do
-            if #missing == 0 or _c then break end
+        for _na = 1, _t do
+            if #missing == 0 or _q then break end
 
-            local _pk = 0
-            for _ir, _qw in ipairs(missing) do
-                if _c then break end
+            local _wy = 0
+            for _bt, _is in ipairs(missing) do
+                if _q then break end
 
-                local _gr = placeBrick(_qw, _dv, _ef, _eo)
-                if not _gr and not _c then
-                    _gr = placeBrick(_qw, _dv, _ef, _eo)
+                local _qe = placeBrick(_is, _vl, _pr, _zo)
+                if not _qe and not _q then
+                    _qe = placeBrick(_is, _vl, _pr, _zo)
                 end
-                if _gr then
-                    _vr = _vr + 1
-                    _pk = _pk + 1
+                if _qe then
+                    _dz = _dz + 1
+                    _wy = _wy + 1
                 end
             end
 
             task.wait(0.3)
             missing = findMissing(data)
 
-            if _c or _pk == 0 then break end
+            if _q or _wy == 0 then break end
         end
 
-        local _fi = 0
-        for _ir = 1, _fw do
-            if _c then break end
+        local _dj = 0
+        for _bt = 1, _fh do
+            if _q then break end
             task.wait(0.3)
-            _fi = _fi + repairPass(data, _dv, _ef, _eo)
+            _dj = _dj + repairPass(data, _vl, _pr, _zo)
         end
 
         task.wait(0.3)
-        local _wp = countProblems(data)
-        local _hf = _wp.missing + _wp.wrong + _wp.paint
+        local _rn = countProblems(data)
+        local _jw = _rn.missing + _rn.wrong + _rn.paint
 
-        flyTo(_ef, _lf)
+        flyTo(_pr, _fp)
 
-        if _c then
-            safeSendChat(_d8u6ec({26,57,51,89,18,29,54,124,110},{73,77,92,41,98,120,82,92}) .. name .. _d8u6ec({110,90,6,4,82,42,31,102},{73,122,46,116,51,88,107,70}) .. _pu .. "/" .. totalBots .. _d8u6ec({100,7,75,37,48,62,46,88,15,117},{77,61,107,85,92,95}) .. _vr)
-        elseif _ms then
-            safeSendChat(_d8u6ec({33,1,22,81,30,41,22,0,70,23},{115,100,102,48,119,91}) .. name .. _d8u6ec({119,96,72,60,49,50,20,108},{80,64,96,76}) .. _pu .. "/" .. totalBots .. _d8u6ec({25,71,27,9,24,72,24,95,79},{48,125,59,111,113}) .. _fi
-                .. _d8u6ec({93,88,45,44,3,61,62,81,15,44,55,4,54,114},{113,120,94,88,106,81,82}) .. _hf)
+        if _q then
+            safeSendChat(_d134ya({28,55,41,67,63,38,34,19,104},{79,67,70,51}) .. name .. _d134ya({126,97,86,83,5,90,79,121},{89,65,126,35,100,40,59}) .. _cb .. "/" .. totalBots .. _d134ya({94,122,115,8,91,27,61,74,19,96},{119,64,83,120,55,122,94,47}) .. _dz)
+        elseif _sg then
+            safeSendChat(_d134ya({103,53,28,22,23,71,53,8,87,89},{53,80,108,119,126}) .. name .. _d134ya({24,113,110,45,7,47,39,31},{63,81,70,93,102,93,83}) .. _cb .. "/" .. totalBots .. _d134ya({78,120,20,2,46,70,2,38,20},{103,66,52,100,71,62}) .. _dj
+                .. _d134ya({118,69,79,68,70,79,40,118,45,23,83,94,72,3},{90,101,60,48,47,35,68,86}) .. _jw)
         else
-            safeSendChat(_d8u6ec({111,90,69,19,44,53,115,95},{35,53,36,119,73,81,83,120}) .. name .. _d8u6ec({73,91,68,64,48,28,15,76},{110,123,108,48,81}) .. _pu .. "/" .. totalBots .. _d8u6ec({117,101,10,87,46,61,60,79,67,98},{92,95,42,39,66}) .. _vr
-                .. _d8u6ec({9,124,91,32,61,31,68,56,67,108,59,18,64,46,95,108},{37,92,58,76,79,122}) .. already .. _d8u6ec({0,13,42,93,1,31,72,13,35,90,89,8,73,0,47,92,28,25,71,13},{44,45,76,52,121,122}) .. _fi .. _d8u6ec({120,113,26,28,37,87,67,42,116},{84,81,124,125,76,59,38,78}) .. _hf)
+            safeSendChat(_d134ya({49,6,46,8,24,13,111,75},{125,105,79,108}) .. name .. _d134ya({65,119,121,30,67,52,92,70},{102,87,81,110,34,70,40}) .. _cb .. "/" .. totalBots .. _d134ya({103,18,67,40,64,47,75,6,60,12},{78,40,99,88,44}) .. _dz
+                .. _d134ya({100,24,94,87,62,77,41,92,70,27,56,64,45,74,90,27},{72,56,63,59,76,40}) .. already .. _d134ya({84,8,24,88,0,77,26,17,23,70,94,67,29,5,29,89,29,75,21,17},{120,40,126,49}) .. _dj .. _d134ya({86,13,15,38,59,37,88,57,90},{122,45,105,71,82,73,61,93}) .. _jw)
         end
     end)
 
     pcall(function()
-        if _ef then _ef.connection:Disconnect() end
+        if _pr then _pr.connection:Disconnect() end
         if noclip then noclip:Disconnect() end
         if humanoid then humanoid.PlatformStand = false end
-        restoreCollisions(_fh)
+        restoreCollisions(_eb)
     end)
 
-    if not _rj then
-        warn(_d8u6ec({82,21,68,23,124,15,76,31,90,90,64,1,76,21,87,73,30},{62,122,37,115}) .. tostring(err))
-        safeSendChat(_d8u6ec({109,39,47,43,17,71,41,39,35,84,69,114,110},{33,72,78,79,49}) .. tostring(err))
+    if not _lr then
+        warn(_d134ya({11,45,13,18,37,55,5,26,3,98,9,4,21,45,30,76,71},{103,66,108,118}) .. tostring(err))
+        safeSendChat(_d134ya({23,15,53,64,10,5,73,50,12,49,64,16,67},{91,96,84,36,42,99,40}) .. tostring(err))
     end
-    _em = false
+    _rf = false
 end
 
-local function countBricks(_xm)
-    local _nk = _xm.Name:lower()
-    local _uz = _n:lower()
-    local _qo = 0
+local function countBricks(_di)
+    local _ga = _di.Name:lower()
+    local _db = _b:lower()
+    local _hg = 0
 
-    for _pv, _bh in ipairs(brickRoot():GetDescendants()) do
-        if _bh.Name:lower() == _uz then
-            local _tz = _bh.Parent
-            if _tz and _tz.Name:lower() == _nk then
-                _qo = _qo + 1
+    for _cw, _ph in ipairs(brickRoot():GetDescendants()) do
+        if _ph.Name:lower() == _db then
+            local _cf = _ph.Parent
+            if _cf and _cf.Name:lower() == _ga then
+                _hg = _hg + 1
             end
         end
-        if _pv % 2000 == 0 then
+        if _cw % 2000 == 0 then
             task.wait()
         end
     end
-    return _qo
+    return _hg
 end
 
-local function collectSprays(_ha)
-    local _pb = {}
-    for _ir, _jv in ipairs(_ha:GetChildren()) do
-        if _jv.Name == _d8u6ec({49,20,69,20,23},{98,100,55,117,110,48,112}) then
-            local _qr = _jv:FindFirstChild(_d8u6ec({31,93,77,10,74},{83,60,47,111,38,81,47}))
-            local _rj, _sj = pcall(function()
-                return _jv.Face
+local function collectSprays(_hn)
+    local _hw = {}
+    for _bt, _ol in ipairs(_hn:GetChildren()) do
+        if _ol.Name == _d134ya({5,62,80,69,34},{86,78,34,36,91,64,94,119}) then
+            local _wr = _ol:FindFirstChild(_d134ya({49,49,2,20,68},{125,80,96,113,40,99}))
+            local _lr, _wu = pcall(function()
+                return _ol.Face
             end)
-            if _qr and _rj and _sj then
-                table.insert(_pb, { _sj.Name, _qr.Text, _qr.TextColor3:ToHex() })
+            if _wr and _lr and _wu then
+                table.insert(_hw, { _wu.Name, _wr.Text, _wr.TextColor3:ToHex() })
             end
         end
     end
-    return _pb
+    return _hw
 end
 
-local function round2(_cr)
-    return math.floor(_cr * 100 + 0.5) / 100
+local function round2(_mj)
+    return math.floor(_mj * 100 + 0.5) / 100
 end
 
-local function saveBuild(name, _hh)
-    local _nk = _hh:lower()
-    local _uz = _n:lower()
+local function saveBuild(name, _hy)
+    local _ga = _hy:lower()
+    local _db = _b:lower()
     local data = {}
-    local _eo = brickRoot()
+    local _zo = brickRoot()
 
-    local function belongsToOwner(_bh)
-        local _tz = _bh.Parent
-        while _tz and _tz ~= _eo do
-            if _tz.Name:lower() == _nk then
+    local function belongsToOwner(_ph)
+        local _cf = _ph.Parent
+        while _cf and _cf ~= _zo do
+            if _cf.Name:lower() == _ga then
                 return true
             end
-            _tz = _tz.Parent
+            _cf = _cf.Parent
         end
         return false
     end
 
-    for _pv, _bh in ipairs(_eo:GetDescendants()) do
-        if _bh:IsA(_d8u6ec({52,86,67,64,38,86,66,81},{118,55,48,37})) and _bh.Name:lower() == _uz
-            and belongsToOwner(_bh) then
-            local _lc = _bh.Position
-            local _db = _bh.Size
+    for _cw, _ph in ipairs(_zo:GetDescendants()) do
+        if _ph:IsA(_d134ya({17,79,44,68,3,79,45,85},{83,46,95,33})) and _ph.Name:lower() == _db
+            and belongsToOwner(_ph) then
+            local _ij = _ph.Position
+            local _cu = _ph.Size
             table.insert(data, {
-                round2(_lc.X), round2(_lc.Y), round2(_lc.Z),
-                round2(_db.X), round2(_db.Y), round2(_db.Z),
-                _bh.Color:ToHex(),
-                _bh.Material.Name,
-                _bh.CanCollide,
-                collectSprays(_bh),
+                round2(_ij.X), round2(_ij.Y), round2(_ij.Z),
+                round2(_cu.X), round2(_cu.Y), round2(_cu.Z),
+                _ph.Color:ToHex(),
+                _ph.Material.Name,
+                _ph.CanCollide,
+                collectSprays(_ph),
             })
         end
-        if _pv % 2000 == 0 then
+        if _cw % 2000 == 0 then
             task.wait()
         end
     end
@@ -1172,476 +1172,476 @@ local function saveBuild(name, _hh)
         return 0, false
     end
 
-    _u[name] = data
-    local _yx = persist(name, data)
-    return #data, _yx
+    _o[name] = data
+    local _bs = persist(name, data)
+    return #data, _bs
 end
 
 local function dumpTools()
-    local _ay = {}
-    local function add(_wy)
-        table.insert(_ay, _wy)
+    local _dp = {}
+    local function add(_ag)
+        table.insert(_dp, _ag)
     end
 
-    local function dumpScript(_gt)
-        add(_d8u6ec({68,20,113,105,8},{105,57,92,68,40,54,69,37}) .. _gt:GetFullName() .. " (" .. _gt.ClassName .. ")")
-        local _rj, _gu = pcall(function()
-            return decompile(_gt)
+    local function dumpScript(_vv)
+        add(_d134ya({89,103,126,125,67},{116,74,83,80,99}) .. _vv:GetFullName() .. " (" .. _vv.ClassName .. ")")
+        local _lr, _ym = pcall(function()
+            return decompile(_vv)
         end)
-        add(_rj and tostring(_gu) or (_d8u6ec({99,58,44,65,84,61,99,90,87,45,99,80,93,58,44,89,72,48,47,81,2,121},{56,89,67,52}) .. tostring(_gu) .. "]"))
+        add(_lr and tostring(_ym) or (_d134ya({106,16,12,54,92,31,124,57,94,7,67,39,85,24,51,58,65,26,15,38,10,91},{49,115,99,67,48,123,92,87}) .. tostring(_ym) .. "]"))
         add("")
     end
 
-    local function dumpTool(_hd)
-        add(_d8u6ec({17,102,115,23,116,102,83,26,12,15,1,101,5,97,78},{44,91,78,42,73,91,110,39}) .. _hd.Name .. _d8u6ec({108,16,100,115,93,92,115,113,16},{76,45,89,78,96,97,78}))
-        for _ir, _ah in ipairs(_hd:GetDescendants()) do
-            if _ah:IsA(_d8u6ec({105,21,7,5,30,81,122,76,94,30,30},{59,112,106,106,106,52,63,58})) or _ah:IsA(_d8u6ec({24,14,44,1,62,14,7,27,36,8,53,7,37,5},{74,107,65,110})) then
-                add(_d8u6ec({34,38,60,16,118,125,1,126},{112,99,113,95,34,56,59,94}) .. _ah:GetFullName() .. " (" .. _ah.ClassName .. ")")
+    local function dumpTool(_kj)
+        add(_d134ya({93,71,127,98,0,93,71,127,127,105,47,53,14,101,29},{96,122,66,95,61}) .. _kj.Name .. _d134ya({86,80,76,0,15,75,80,76,0},{118,109,113,61,50}))
+        for _bt, _mg in ipairs(_kj:GetDescendants()) do
+            if _mg:IsA(_d134ya({115,48,63,55,85,48,23,46,68,59,38},{33,85,82,88})) or _mg:IsA(_d134ya({44,56,31,33,10,48,51,11,51,17,58,23,58,27},{126,93,114,78,126,85,117})) then
+                add(_d134ya({16,122,18,58,50,120,120,31},{66,63,95,117,102,61}) .. _mg:GetFullName() .. " (" .. _mg.ClassName .. ")")
             end
         end
-        for _ir, _ah in ipairs(_hd:GetDescendants()) do
-            if _ah:IsA(_d8u6ec({25,27,92,38,41,102,95,39,60,4,75},{85,116,63,71,69,53,60,85})) then
-                dumpScript(_ah)
+        for _bt, _mg in ipairs(_kj:GetDescendants()) do
+            if _mg:IsA(_d134ya({33,93,57,5,13,32,37,31,91,42,16},{109,50,90,100,97,115,70})) then
+                dumpScript(_mg)
             end
         end
     end
 
-    local _as = { build = true, paint = true, shape = true, delete = true }
-    for _ir, container in ipairs({ LocalPlayer.Character, LocalPlayer:FindFirstChildOfClass(_d8u6ec({36,36,70,80,94,68,5,46},{102,69,37,59,46,37})) }) do
+    local _ro = { build = true, paint = true, shape = true, delete = true }
+    for _bt, container in ipairs({ LocalPlayer.Character, LocalPlayer:FindFirstChildOfClass(_d134ya({58,68,35,43,34,41,78,54},{120,37,64,64,82,72,45,93})) }) do
         if container then
-            for _ir, item in ipairs(container:GetChildren()) do
-                if item:IsA(_d8u6ec({108,62,3,58},{56,81,108,86})) and _as[item.Name:lower()] then
+            for _bt, item in ipairs(container:GetChildren()) do
+                if item:IsA(_d134ya({113,56,57,22},{37,87,86,122,116,64,78})) and _ro[item.Name:lower()] then
                     dumpTool(item)
                 end
             end
         end
     end
 
-    local _zb = LocalPlayer:FindFirstChild(_d8u6ec({97,22,48,88,29,55,118,15,56},{49,122,81,33,120,69}))
-    if _zb then
-        for _ir, screen in ipairs(_zb:GetChildren()) do
-            local _cr = screen.Name:lower()
-            if screen:IsA(_d8u6ec({26,0,73,91,44,13,124,75,32},{73,99,59,62})) and (_cr:find(_d8u6ec({11,38,54,61,91},{123,71,95,83,47,116,89,39})) or _cr:find(_d8u6ec({91,37,81,81,11},{40,77,48,33,110})) or _cr:find(_d8u6ec({10,79,85,17,12},{104,58,60,125})) or _cr:find(_d8u6ec({56,27,63,4,53},{91,116,83,107,71,86}))) then
-                add(_d8u6ec({18,125,97,122,98,127,87,126,15,13,25,9,10,120,74},{47,64,92,71,95,66,106,67}) .. screen.Name .. _d8u6ec({113,88,103,0,10,108,88,103,0},{81,101,90,61,55}))
-                for _ir, _ah in ipairs(screen:GetDescendants()) do
-                    if _ah:IsA(_d8u6ec({126,50,93,45,43,54,55,64,52,78,56},{50,93,62,76,71,101,84})) then
-                        dumpScript(_ah)
+    local _nc = LocalPlayer:FindFirstChild(_d134ya({45,60,53,47,34,29,11,8,57},{125,80,84,86,71,111,76}))
+    if _nc then
+        for _bt, screen in ipairs(_nc:GetChildren()) do
+            local _mj = screen.Name:lower()
+            if screen:IsA(_d134ya({102,19,0,2,35,42,114,5,27},{53,112,114,103,70,68})) and (_mj:find(_d134ya({64,29,85,58,68},{48,124,60,84})) or _mj:find(_d134ya({1,4,22,45,31},{114,108,119,93,122,93})) or _mj:find(_d134ya({23,18,45,91,17},{117,103,68,55})) or _mj:find(_d134ya({11,18,60,58,87},{104,125,80,85,37,41}))) then
+                add(_d134ya({105,116,17,7,86,111,111,105,105,97,127,37,7,104,116},{84,73,44,58,107,82,82}) .. screen.Name .. _d134ya({18,31,20,122,2,71,74,100,15},{50,34,41,71,63,122,119,89}))
+                for _bt, _mg in ipairs(screen:GetDescendants()) do
+                    if _mg:IsA(_d134ya({124,65,21,53,83,16,83,92,31,36,75},{48,46,118,84,63,67})) then
+                        dumpScript(_mg)
                     end
                 end
             end
         end
     end
 
-    local _co = table.concat(_ay, "\n")
-    if #_ay == 0 then
-        _co = _d8u6ec({105,1,5,107,91,86,11,4,7,65,5,121,79,86,9,20,7,65,5,122,70,94,23,5,7,26,74,70,66,76,71,6,72,27,75,77,14,80,9,64,83,6,76,90,14,94,4,3,72,27,75,93,0},{39,110,37,41,46,63,103,96})
+    local _bg = table.concat(_dp, "\n")
+    if #_dp == 0 then
+        _bg = _d134ya({97,41,1,29,29,53,7,75,102,14,127,56,61,2,65,50,1,112,72,15,3,78,54,68,127,28,51,4,67,53,1,57,7,41,5,75,102,78,49,72,40,3,70,53,1,62,11,63,4,90,40,85,113},{47,70,33,95,104,92,107})
     end
 
     pcall(function()
-        setclipboard(_co)
+        setclipboard(_bg)
     end)
-    print(_co)
-    print(_d8u6ec({15,64,104,5,2,57,42,71,78,77,33,93,79,29,101,76,77,3,32,6,2,36,49,8,85,12,54,8,67,1,54,71,2,14,42,88,75,8,33,8,86,2,101,81,77,24,55,8,65,1,44,88,64,2,36,90,70,67,101,5,15,64,104},{34,109,69,40}))
+    print(_bg)
+    print(_d134ya({23,115,101,18,66,32,86,85,50,104,91,23,25,73,26,58,39,81,7,90,25,115,42,104,72,3,7,25,91,50,59,80,66,23,86,74,55,45,91,66,0,86,26,39,39,74,16,84,90,86,55,56,93,13,21,75,94,112,104,18,79,89,20},{58,94,72,63,98,116,57}))
 
     if isBot(LocalPlayer) then
-        safeSendChat(_d8u6ec({48,6,41,61,62,68,13,51,60,61,1,13,102,121},{100,105,70,81,77}) .. #_co .. _d8u6ec({109,7,18,79,25,23,53,57,1,8,93,66},{77,100,122,46,107,118,86}))
+        safeSendChat(_d134ya({1,87,67,60,58,117,92,89,61,57,48,92,12,120},{85,56,44,80,73}) .. #_bg .. _d134ya({2,72,57,69,52,80,65,95,52,86,53,24},{34,43,81,36,70,49}))
     end
 end
 
 
 local function isLeaderBot()
-    local _ob = getBotsInServer()
-    return _ob[1] ~= nil and _ob[1].plr == LocalPlayer
+    local _xb = getBotsInServer()
+    return _xb[1] ~= nil and _xb[1].plr == LocalPlayer
 end
 
 
 local function createBuildImportUI()
-    local _ya = LocalPlayer:WaitForChild(_d8u6ec({29,37,25,54,11,51,113,0,36},{77,73,120,79,110,65,54,117}))
-    local _ot = _ya:FindFirstChild(_d8u6ec({51,92,30,50,21,96,26,46,30,91,3,11,56},{113,41,119,94}))
-    if _ot then _ot:Destroy() end
+    local _sf = LocalPlayer:WaitForChild(_d134ya({17,15,13,16,9,51,36,25,0},{65,99,108,105,108}))
+    local _yp = _sf:FindFirstChild(_d134ya({62,60,19,37,87,53,36,10,38,65,8,28,51},{124,73,122,73,51}))
+    if _yp then _yp:Destroy() end
 
-    local _zb = Instance.new(_d8u6ec({4,23,64,16,50,26,117,0,62},{87,116,50,117}))
-    _zb.Name = _d8u6ec({6,50,26,9,44,99,45,52,40,1,17,29,99},{68,71,115,101,72,42,64})
-    _zb.ResetOnSpawn = false
-    _zb.Enabled = isLeaderBot()
-    _zb.Parent = _ya
+    local _nc = Instance.new(_d134ya({47,78,84,1,25,67,97,17,21},{124,45,38,100}))
+    _nc.Name = _d134ya({31,80,50,70,28,117,48,85,52,88,12,105,20},{93,37,91,42,120,60})
+    _nc.ResetOnSpawn = false
+    _nc.Enabled = isLeaderBot()
+    _nc.Parent = _sf
 
-    local _dc = Instance.new(_d8u6ec({37,16,11,78,73},{99,98,106,35,44,115,47,39}))
-    _dc.Name = _d8u6ec({30,50,94,76,34},{78,83,48,41})
-    _dc.Size = UDim2.fromOffset(420, 320)
-    _dc.Position = UDim2.new(0, 20, 0.5, -160)
-    _dc.BackgroundColor3 = Color3.fromRGB(24, 8, 12)
-    _dc.BorderSizePixel = 0
-    _dc.Active = true
-    _dc.Parent = _zb
+    local _gi = Instance.new(_d134ya({1,94,79,27,34},{71,44,46,118}))
+    _gi.Name = _d134ya({12,23,10,24,54},{92,118,100,125,90,72,117})
+    _gi.Size = UDim2.fromOffset(420, 320)
+    _gi.Position = UDim2.new(0, 20, 0.5, -160)
+    _gi.BackgroundColor3 = Color3.fromRGB(24, 8, 12)
+    _gi.BorderSizePixel = 0
+    _gi.Active = true
+    _gi.Parent = _nc
 
-    local function addGlow(_va, _hb, _td, _js)
-        local _gk = Instance.new(_d8u6ec({54,15,52,39,52,72,23,57},{99,70,103,83,70,39,124,92}))
-        _gk.Color = _hb
-        _gk.Thickness = _td
-        _gk.Transparency = _js or 0
-        _gk.Parent = _va
-        return _gk
+    local function addGlow(_cl, _fz, _rv, _ut)
+        local _az = Instance.new(_d134ya({63,61,108,51,24,27,84,34},{106,116,63,71}))
+        _az.Color = _fz
+        _az.Thickness = _rv
+        _az.Transparency = _ut or 0
+        _az.Parent = _cl
+        return _az
     end
 
-    local function addRound(_va, _dh)
-        local _fz = Instance.new(_d8u6ec({114,3,53,15,4,27,66,56},{39,74,118,96,118,117}))
-        _fz.CornerRadius = UDim.new(0, _dh)
-        _fz.Parent = _va
+    local function addRound(_cl, _qz)
+        local _iz = Instance.new(_d134ya({46,18,21,8,3,35,30,41},{123,91,86,103,113,77}))
+        _iz.CornerRadius = UDim.new(0, _qz)
+        _iz.Parent = _cl
     end
 
-    addGlow(_dc, Color3.fromRGB(255, 25, 55), 3, 0.15)
-    addRound(_dc, 10)
+    addGlow(_gi, Color3.fromRGB(255, 25, 55), 3, 0.15)
+    addRound(_gi, 10)
 
-    local function addText(_rt, name, _mt, size, _ft)
-        local _va = Instance.new(_rt)
-        _va.Name = name
-        _va.Size = size
-        _va.Position = _ft
-        _va.Text = _mt
-        _va.TextColor3 = Color3.fromRGB(245, 245, 245)
-        _va.BackgroundColor3 = Color3.fromRGB(52, 57, 67)
-        _va.BorderSizePixel = 0
-        _va.Font = Enum.Font.SourceSans
-        _va.TextSize = 18
-        _va.Parent = _dc
-        return _va
+    local function addText(_bm, name, _pu, size, _er)
+        local _cl = Instance.new(_bm)
+        _cl.Name = name
+        _cl.Size = size
+        _cl.Position = _er
+        _cl.Text = _pu
+        _cl.TextColor3 = Color3.fromRGB(245, 245, 245)
+        _cl.BackgroundColor3 = Color3.fromRGB(52, 57, 67)
+        _cl.BorderSizePixel = 0
+        _cl.Font = Enum.Font.SourceSans
+        _cl.TextSize = 18
+        _cl.Parent = _gi
+        return _cl
     end
 
-    local _il = addText(_d8u6ec({106,82,80,23,114,86,74,6,82},{62,55,40,99}), _d8u6ec({23,39,6,10,70},{67,78,114,102,35,76,87,77}), _d8u6ec({7,74,35,68,60,83,115,73,59,78,63,79,110,109,0,100,0},{78,39,83,43}), UDim2.new(1, -24, 0, 32), UDim2.fromOffset(12, 8))
-    _il.BackgroundTransparency = 1
-    _il.Font = Enum.Font.SourceSansBold
-    _il.TextSize = 22
-    _il.TextColor3 = Color3.fromRGB(255, 55, 85)
-    _il.TextStrokeColor3 = Color3.fromRGB(255, 0, 35)
-    _il.TextStrokeTransparency = 0.25
-    _il.Active = true
+    local _mb = addText(_d134ya({39,47,72,67,63,43,82,82,31},{115,74,48,55}), _d134ya({8,60,47,27,4},{92,85,91,119,97,36,119,35}), _d134ya({28,15,78,15,52,3,106,15,32,11,82,4,102,61,25,34,27},{85,98,62,96,70,119,74,109}), UDim2.new(1, -24, 0, 32), UDim2.fromOffset(12, 8))
+    _mb.BackgroundTransparency = 1
+    _mb.Font = Enum.Font.SourceSansBold
+    _mb.TextSize = 22
+    _mb.TextColor3 = Color3.fromRGB(255, 55, 85)
+    _mb.TextStrokeColor3 = Color3.fromRGB(255, 0, 35)
+    _mb.TextStrokeTransparency = 0.25
+    _mb.Active = true
 
-    local _kj = game:GetService(_d8u6ec({100,19,73,38,115,33,46,2,69,51,73,38,76,38,61,18},{49,96,44,84,58,79,94,119}))
-    local _ri, dragInput, dragStart, _lf
-    _il.InputBegan:Connect(function(_pf)
-        if _pf.UserInputType == Enum.UserInputType.MouseButton1 or _pf.UserInputType == Enum.UserInputType.Touch then
-            _ri = true
-            dragStart = _pf.Position
-            _lf = _dc.Position
-            _pf.Changed:Connect(function()
-                if _pf.UserInputState == Enum.UserInputState.End then
-                    _ri = false
+    local _tg = game:GetService(_d134ya({105,64,20,42,57,82,67,4,44,35,89,65,7,49,19,89},{60,51,113,88,112}))
+    local _tt, dragInput, dragStart, _fp
+    _mb.InputBegan:Connect(function(_tq)
+        if _tq.UserInputType == Enum.UserInputType.MouseButton1 or _tq.UserInputType == Enum.UserInputType.Touch then
+            _tt = true
+            dragStart = _tq.Position
+            _fp = _gi.Position
+            _tq.Changed:Connect(function()
+                if _tq.UserInputState == Enum.UserInputState.End then
+                    _tt = false
                 end
             end)
         end
     end)
-    _il.InputChanged:Connect(function(_pf)
-        if _pf.UserInputType == Enum.UserInputType.MouseMovement or _pf.UserInputType == Enum.UserInputType.Touch then
-            dragInput = _pf
+    _mb.InputChanged:Connect(function(_tq)
+        if _tq.UserInputType == Enum.UserInputType.MouseMovement or _tq.UserInputType == Enum.UserInputType.Touch then
+            dragInput = _tq
         end
     end)
-    _kj.InputChanged:Connect(function(_pf)
-        if _ri and (_pf.UserInputType == Enum.UserInputType.MouseMovement or _pf == dragInput) then
-            local _ae = _pf.Position - dragStart
-            _dc.Position = UDim2.new(_lf.X.Scale, _lf.X.Offset + _ae.X,
-                _lf.Y.Scale, _lf.Y.Offset + _ae.Y)
+    _tg.InputChanged:Connect(function(_tq)
+        if _tt and (_tq.UserInputType == Enum.UserInputType.MouseMovement or _tq == dragInput) then
+            local _xd = _tq.Position - dragStart
+            _gi.Position = UDim2.new(_fp.X.Scale, _fp.X.Offset + _xd.X,
+                _fp.Y.Scale, _fp.Y.Offset + _xd.Y)
         end
     end)
 
-    local _ka = Instance.new(_d8u6ec({24,81,41,4,52},{94,35,72,105,81,102}))
-    _ka.Name = _d8u6ec({103,79,72,10,56,71,28,44},{45,60,39,100,104,38,123,73})
-    _ka.Size = UDim2.new(1, -24, 1, -88)
-    _ka.Position = UDim2.fromOffset(12, 48)
-    _ka.BackgroundTransparency = 1
-    _ka.Parent = _dc
+    local _cg = Instance.new(_d134ya({18,19,40,61,54},{84,97,73,80,83}))
+    _cg.Name = _d134ya({50,72,72,63,6,86,31,94},{120,59,39,81,86,55})
+    _cg.Size = UDim2.new(1, -24, 1, -88)
+    _cg.Position = UDim2.fromOffset(12, 48)
+    _cg.BackgroundTransparency = 1
+    _cg.Parent = _gi
 
-    local _bl = Instance.new(_d8u6ec({14,72,16,28,78,49,66,12,20,100,47,74,15,22},{93,43,98,115,34}))
-    _bl.Name = _d8u6ec({12,11,9,126,111,55,52,41,52,42},{70,88,70,48,60,84,70})
-    _bl.Size = UDim2.new(1, 0, 1, -44)
-    _bl.Position = UDim2.fromOffset(0, 0)
-    _bl.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
-    _bl.BorderSizePixel = 0
-    _bl.ScrollBarThickness = 8
-    _bl.ScrollingDirection = Enum.ScrollingDirection.Y
-    _bl.CanvasSize = UDim2.new(0, 0, 0, 300)
-    _bl.Parent = _ka
-    addGlow(_bl, Color3.fromRGB(255, 25, 55), 2, 0.1)
-    addRound(_bl, 6)
+    local _ll = Instance.new(_d134ya({100,54,40,85,4,91,60,52,93,46,69,52,55,95},{55,85,90,58,104}))
+    _ll.Name = _d134ya({117,25,11,60,3,92,56,43,30,60},{63,74,68,114,80})
+    _ll.Size = UDim2.new(1, 0, 1, -44)
+    _ll.Position = UDim2.fromOffset(0, 0)
+    _ll.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
+    _ll.BorderSizePixel = 0
+    _ll.ScrollBarThickness = 8
+    _ll.ScrollingDirection = Enum.ScrollingDirection.Y
+    _ll.CanvasSize = UDim2.new(0, 0, 0, 300)
+    _ll.Parent = _cg
+    addGlow(_ll, Color3.fromRGB(255, 25, 55), 2, 0.1)
+    addRound(_ll, 6)
 
-    local _xh = Instance.new(_d8u6ec({23,14,87,38,105,76,82},{67,107,47,82,43,35,42,106}))
-    _xh.Name = _d8u6ec({16,29,83,40,19,113,120,29,38},{82,104,58,68,119,59,43})
-    _xh.Size = UDim2.new(1, -12, 0, 300)
-    _xh.Position = UDim2.fromOffset(6, 6)
-    _xh.BackgroundTransparency = 1
-    _xh.TextColor3 = Color3.fromRGB(255, 70, 105)
-    _xh.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
-    _xh.TextStrokeTransparency = 0.25
-    _xh.PlaceholderText = _d8u6ec({109,45,67,36,20,111,15,85,41,16,50,4,38,23,89,108,122,3,62,1,91,92,62,66,49,8,111,19,88,62,85},{61,76,48,80,113,79,123})
-    _xh.PlaceholderColor3 = Color3.fromRGB(165, 170, 180)
-    _xh.Text = ""
-    _xh.TextSize = 14
-    _xh.Font = Enum.Font.Code
-    _xh.TextXAlignment = Enum.TextXAlignment.Left
-    _xh.TextYAlignment = Enum.TextYAlignment.Top
-    _xh.TextWrapped = true
-    _xh.ClearTextOnFocus = false
-    _xh.MultiLine = true
-    _xh.Parent = _bl
-    addGlow(_xh, Color3.fromRGB(255, 25, 55), 1, 0.2)
-    addRound(_xh, 6)
+    local _gk = Instance.new(_d134ya({16,6,41,46,23,19,56},{68,99,81,90,85,124,64,41}))
+    _gk.Name = _d134ya({120,67,45,89,3,112,101,11,123},{58,54,68,53,103})
+    _gk.Size = UDim2.new(1, -12, 0, 300)
+    _gk.Position = UDim2.fromOffset(6, 6)
+    _gk.BackgroundTransparency = 1
+    _gk.TextColor3 = Color3.fromRGB(255, 70, 105)
+    _gk.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
+    _gk.TextStrokeTransparency = 0.25
+    _gk.PlaceholderText = _d134ya({42,43,46,13,31,106,41,17,31,106,63,12,19,38,57,89,48,25,18,55,90,43,47,11,27,51,125,17,31,56,56},{122,74,93,121})
+    _gk.PlaceholderColor3 = Color3.fromRGB(165, 170, 180)
+    _gk.Text = ""
+    _gk.TextSize = 14
+    _gk.Font = Enum.Font.Code
+    _gk.TextXAlignment = Enum.TextXAlignment.Left
+    _gk.TextYAlignment = Enum.TextYAlignment.Top
+    _gk.TextWrapped = true
+    _gk.ClearTextOnFocus = false
+    _gk.MultiLine = true
+    _gk.Parent = _ll
+    addGlow(_gk, Color3.fromRGB(255, 25, 55), 1, 0.2)
+    addRound(_gk, 6)
 
     local function resizeJsonBox()
         task.defer(function()
-            if not _xh.Parent then return end
-            local _wb = math.max(300, _xh.TextBounds.Y + 24)
-            _xh.Size = UDim2.new(1, -12, 0, _wb)
-            _bl.CanvasSize = UDim2.new(0, 0, 0, _wb + 12)
+            if not _gk.Parent then return end
+            local _qh = math.max(300, _gk.TextBounds.Y + 24)
+            _gk.Size = UDim2.new(1, -12, 0, _qh)
+            _ll.CanvasSize = UDim2.new(0, 0, 0, _qh + 12)
         end)
     end
-    _xh:GetPropertyChangedSignal(_d8u6ec({119,48,84,65},{35,85,44,53,103,74})):Connect(resizeJsonBox)
-    _xh:GetPropertyChangedSignal(_d8u6ec({35,27,74,72,107,88,2,16,86,79},{119,126,50,60,41,55})):Connect(resizeJsonBox)
+    _gk:GetPropertyChangedSignal(_d134ya({48,64,52,83},{100,37,76,39})):Connect(resizeJsonBox)
+    _gk:GetPropertyChangedSignal(_d134ya({61,10,54,94,43,0,59,68,13,28},{105,111,78,42})):Connect(resizeJsonBox)
 
-    local _eb = addText(_d8u6ec({103,74,65,59,41,61,17,23,95},{51,47,57,79,101,92,115,114}), _d8u6ec({46,69,59,48,41,81},{125,49,90,68,92,34,56,50}), "", UDim2.new(1, -110, 0, 34), UDim2.new(0, 0, 1, -36))
-    _eb.BackgroundTransparency = 1
-    _eb.TextXAlignment = Enum.TextXAlignment.Left
-    _eb.TextSize = 15
+    local _by = addText(_d134ya({2,24,37,91,26,28,63,74,58},{86,125,93,47}), _d134ya({55,61,46,95,47,2},{100,73,79,43,90,113,43}), "", UDim2.new(1, -110, 0, 34), UDim2.new(0, 0, 1, -36))
+    _by.BackgroundTransparency = 1
+    _by.TextXAlignment = Enum.TextXAlignment.Left
+    _by.TextSize = 15
 
-    local _kx = addText(_d8u6ec({39,11,45,76,111,59,72,7,1,59},{115,110,85,56,45,78,60}), _d8u6ec({122,32,22,66},{52,69,110,54,113,88}), _d8u6ec({43,60,44,38,1,17,11,56,57,55,27,83,16,48,56,54},{101,89,84,82,59,49}), UDim2.fromOffset(150, 34), UDim2.new(1, -150, 1, -36))
-    _kx.BackgroundColor3 = Color3.fromRGB(125, 12, 35)
-    addGlow(_kx, Color3.fromRGB(255, 35, 70), 2, 0.1)
-    addRound(_kx, 6)
+    local _gl = addText(_d134ya({2,80,4,71,5,66,76,34,90,18},{86,53,124,51,71,55,56}), _d134ya({43,7,0,74},{101,98,120,62,116,99}), _d134ya({26,12,93,50,110,73,75,39,57,12,5,36,33,0,73,34},{84,105,37,70}), UDim2.fromOffset(150, 34), UDim2.new(1, -150, 1, -36))
+    _gl.BackgroundColor3 = Color3.fromRGB(125, 12, 35)
+    addGlow(_gl, Color3.fromRGB(255, 35, 70), 2, 0.1)
+    addRound(_gl, 6)
 
-    local _wi = Instance.new(_d8u6ec({17,11,67,8,74},{87,121,34,101,47}))
-    _wi.Name = _d8u6ec({39,45,67,35,117,8,43,75},{105,76,46,70,37})
-    _wi.Size = _ka.Size
-    _wi.Position = _ka.Position
-    _wi.BackgroundTransparency = 1
-    _wi.Visible = false
-    _wi.Parent = _dc
+    local _pd = Instance.new(_d134ya({99,92,28,71,95},{37,46,125,42,58,82,51,41}))
+    _pd.Name = _d134ya({48,69,32,91,46,69,42,91},{126,36,77,62})
+    _pd.Size = _cg.Size
+    _pd.Position = _cg.Position
+    _pd.BackgroundTransparency = 1
+    _pd.Visible = false
+    _pd.Parent = _gi
 
-    local _cm = addText(_d8u6ec({109,25,39,82,116,29,41,92,16},{57,124,95,38,56,124,75}), _d8u6ec({29,79,68,28,3,92,70,20,35,90},{83,46,41,121}), _d8u6ec({96,11,23,54,91,1,44,94,15},{51,106,97,83,123,111,77}), UDim2.new(1, 0, 0, 30), UDim2.fromOffset(0, 12))
-    _cm.Parent = _wi
-    _cm.BackgroundTransparency = 1
-    _cm.TextXAlignment = Enum.TextXAlignment.Left
+    local _kl = addText(_d134ya({40,0,73,63,13,29,7,84,39},{124,101,49,75,65}), _d134ya({104,59,6,4,6,26,62,75,42,31},{38,90,107,97,86,104,81}), _d134ya({117,31,53,36,99,49,74,69,67},{38,126,67,65,67,95,43,40}), UDim2.new(1, 0, 0, 30), UDim2.fromOffset(0, 12))
+    _kl.Parent = _pd
+    _kl.BackgroundTransparency = 1
+    _kl.TextXAlignment = Enum.TextXAlignment.Left
 
-    local _ey = Instance.new(_d8u6ec({26,35,18,13,3,85,56},{78,70,106,121,65,58,64,120}))
-    _ey.Name = _d8u6ec({24,28,46,8,14,54,38,24},{75,125,88,109,64,87})
-    _ey.Size = UDim2.new(1, 0, 0, 38)
-    _ey.Position = UDim2.fromOffset(0, 48)
-    _ey.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
-    _ey.TextColor3 = Color3.fromRGB(255, 70, 105)
-    _ey.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
-    _ey.TextStrokeTransparency = 0.25
-    _ey.PlaceholderText = _d8u6ec({14,93,64,43,57,19,85,110,37,82,89,43,107,85,91,60,107,71,92,39,56,19,86,59,34,95,80},{75,51,52,78})
-    _ey.Text = ""
-    _ey.TextSize = 18
-    _ey.Font = Enum.Font.SourceSans
-    _ey.ClearTextOnFocus = false
-    _ey.Parent = _wi
-    addGlow(_ey, Color3.fromRGB(255, 25, 55), 2, 0.1)
-    addRound(_ey, 6)
+    local _wc = Instance.new(_d134ya({48,37,42,70,38,47,42},{100,64,82,50}))
+    _wc.Name = _d134ya({45,60,21,23,7,52,19,56},{126,93,99,114,73,85})
+    _wc.Size = UDim2.new(1, 0, 0, 38)
+    _wc.Position = UDim2.fromOffset(0, 48)
+    _wc.BackgroundColor3 = Color3.fromRGB(15, 5, 9)
+    _wc.TextColor3 = Color3.fromRGB(255, 70, 105)
+    _wc.TextStrokeColor3 = Color3.fromRGB(255, 0, 45)
+    _wc.TextStrokeTransparency = 0.25
+    _wc.PlaceholderText = _d134ya({63,76,51,48,39,77,89,90,76,38,56,48,77,94,21,80,103,33,61,4,75,90,64,50,60,57,9},{122,34,71,85,85,109,56})
+    _wc.Text = ""
+    _wc.TextSize = 18
+    _wc.Font = Enum.Font.SourceSans
+    _wc.ClearTextOnFocus = false
+    _wc.Parent = _pd
+    addGlow(_wc, Color3.fromRGB(255, 25, 55), 2, 0.1)
+    addRound(_wc, 6)
 
-    local _dl = addText(_d8u6ec({117,65,24,40,109,69,2,57,77},{33,36,96,92}), _d8u6ec({100,9,14,33,101,20,76,61,66,27},{55,104,120,68,54,96,45,73}), "", UDim2.new(1, 0, 0, 36), UDim2.fromOffset(0, 94))
-    _dl.Parent = _wi
-    _dl.BackgroundTransparency = 1
-    _dl.TextWrapped = true
-    _dl.TextSize = 15
+    local _qq = addText(_d134ya({31,68,77,95,16,28,41,68,89},{75,33,53,43,92,125}), _d134ya({27,67,52,42,58,35,50,60,87,49},{72,34,66,79,105,87,83}), "", UDim2.new(1, 0, 0, 36), UDim2.fromOffset(0, 94))
+    _qq.Parent = _pd
+    _qq.BackgroundTransparency = 1
+    _qq.TextWrapped = true
+    _qq.TextSize = 15
 
-    local _wk = addText(_d8u6ec({117,34,37,86,117,84,51,41,77,89},{33,71,93,34,55}), _d8u6ec({28,55,83,49},{94,86,48,90,76,68,101}), _d8u6ec({39,23,38,28},{101,118,69,119,46,49,80}), UDim2.fromOffset(90, 34), UDim2.new(0, 0, 1, -36))
-    _wk.Parent = _wi
-    local _ar = addText(_d8u6ec({20,73,75,82,20,60,88,52,67,93},{64,44,51,38,86,73,44}), _d8u6ec({37,92,46,35},{118,61,88,70,58,61,69}), _d8u6ec({9,5,41,85,122,6,42,89,54,0},{90,100,95,48}), UDim2.fromOffset(140, 34), UDim2.new(1, -140, 1, -36))
-    _ar.Parent = _wi
-    _ar.BackgroundColor3 = Color3.fromRGB(150, 10, 35)
-    addGlow(_ar, Color3.fromRGB(255, 35, 70), 2, 0.1)
-    addRound(_ar, 6)
-    addGlow(_wk, Color3.fromRGB(255, 35, 70), 1, 0.3)
-    addRound(_wk, 6)
+    local _da = addText(_d134ya({17,84,37,94,125,67,49,69,50,68},{69,49,93,42,63,54}), _d134ya({21,23,41,61},{87,118,74,86,118,100}), _d134ya({44,54,24,46},{110,87,123,69,68,100,69}), UDim2.fromOffset(90, 34), UDim2.new(0, 0, 1, -36))
+    _da.Parent = _pd
+    local _hl = addText(_d134ya({32,7,66,93,53,27,82,36,27,12},{116,98,58,41,119,110,38,80}), _d134ya({34,31,88,22},{113,126,46,115}), _d134ya({18,82,14,0,3,30,88,69,45,87},{65,51,120,101,35,124,45,44}), UDim2.fromOffset(140, 34), UDim2.new(1, -140, 1, -36))
+    _hl.Parent = _pd
+    _hl.BackgroundColor3 = Color3.fromRGB(150, 10, 35)
+    addGlow(_hl, Color3.fromRGB(255, 35, 70), 2, 0.1)
+    addRound(_hl, 6)
+    addGlow(_da, Color3.fromRGB(255, 35, 70), 1, 0.3)
+    addRound(_da, 6)
 
-    _kx.MouseButton1Click:Connect(function()
-        if _xh.Text:match(_d8u6ec({40,79,71,110,94},{118,106,52,68,122,63,45,120})) then
-            _eb.Text = _d8u6ec({39,77,23,20,18,12,6,21,30,64,0,64,61,127,43,46,87,74,13,18,4,88,74},{119,44,100,96})
+    _gl.MouseButton1Click:Connect(function()
+        if _gk.Text:match(_d134ya({119,88,4,107,13},{41,125,119,65})) then
+            _by.Text = _d134ya({9,73,44,87,60,8,61,86,48,68,59,3,19,123,16,109,121,78,54,81,42,92,113},{89,40,95,35})
             return
         end
-        _eb.Text = ""
-        _ka.Visible = false
-        _wi.Visible = true
+        _by.Text = ""
+        _cg.Visible = false
+        _pd.Visible = true
     end)
 
-    _wk.MouseButton1Click:Connect(function()
-        _wi.Visible = false
-        _ka.Visible = true
+    _da.MouseButton1Click:Connect(function()
+        _pd.Visible = false
+        _cg.Visible = true
     end)
 
-    _ar.MouseButton1Click:Connect(function()
-        local name = cleanName(_ey.Text)
+    _hl.MouseButton1Click:Connect(function()
+        local name = cleanName(_wc.Text)
         if not name then
-            _dl.Text = _d8u6ec({60,86,55,92,11,24,34,25,15,89,47,80,29,24,48,88,15,93,99,87,24,85,38,23},{121,56,67,57})
+            _qq.Text = _d134ya({102,35,22,42,81,109,3,111,85,44,14,38,71,109,17,46,85,40,66,33,66,32,7,97},{35,77,98,79})
             return
         end
 
-        local _vf, data = pcall(function()
-            return _x:JSONDecode(_xh.Text)
+        local _ny, data = pcall(function()
+            return _x:JSONDecode(_gk.Text)
         end)
-        if not _vf or type(data) ~= _d8u6ec({55,59,22,65,75},{67,90,116,45,46,108,114,79}) then
-            _dl.Text = _d8u6ec({32,77,7,0,26,108,7,59,107,70,23,85,83,56,16,5,8,27,78,6,54,17,5,20,17,91,66,116,21,86,70,21,26,68,33,29,73,2,90},{116,37,102,116,58,38,84})
+        if not _ny or type(data) ~= _d134ya({44,18,43,0,47},{88,115,73,108,74,100,72,70}) then
+            _qq.Text = _d134ya({19,61,47,90,31,121,29,99,9,117,45,65,74,95,42,12,41,58,58,14,93,86,110,94,34,52,42,14,94,64,110,77,103,55,59,71,83,87,96},{71,85,78,46,63,51,78,44})
             return
         end
 
         if #data == 0 then
-            _dl.Text = _d8u6ec({97,91,90,8,37,93,92,89,87,31,98,20,103,123,21,93,90,77,35,91,21,84,71,31,68,34,73,70,65,19,80,70,34,8,87,71,90,92,67,105},{53,51,63,40,71,40,53})
+            _qq.Text = _d134ya({13,69,75,4,45,44,68,66,64,111,19,126,97,106,111,55,72,75,64,60,121,76,90,4,35,60,76,93,80,111,54,67,75,4,45,43,68,77,79,97},{89,45,46,36,79})
             return
         end
 
-        for _ir, _qw in ipairs(data) do
-            if type(_qw) ~= _d8u6ec({26,40,27,14,15},{110,73,121,98,106}) then
-                _dl.Text = _d8u6ec({53,51,37,48,14,86,24,8,56,8,108,49,31,5,38,123,21,35,108,61,4,86,51,41,5,39,53,124,5,16,114,57,5,47,47,55,74,19,60,47,5,47,41,47,68},{119,70,76,92,106,118,82,91})
+        for _bt, _is in ipairs(data) do
+            if type(_is) ~= _d134ya({30,54,92,64,85},{106,87,62,44,48}) then
+                _qq.Text = _d134ya({31,37,6,57,57,112,37,6,18,30,79,56,40,35,27,117,63,53,79,52,51,112,14,39,47,49,22,117,50,54,79,55,47,57,12,62,125,53,1,33,47,57,10,38,115},{93,80,111,85})
                 return
             end
-            for _pv = 1, 6 do
-                if type(_qw[_pv]) ~= _d8u6ec({52,74,48,63,54,93},{90,63,93,93,83,47,124,122}) or _qw[_pv] ~= _qw[_pv] then
-                    _dl.Text = _d8u6ec({35,34,75,56,109,26,20,42,75,59,109,22,3,38,76,35,109,14,7,47,65,52,109,22,19,46,77,34,36,27,70,51,71,35,36,12,15,44,70,112,44,22,2,99,91,57,55,29,70,53,73,60,56,29,21,109},{102,67,40,80,77,120})
+            for _cw = 1, 6 do
+                if type(_is[_cw]) ~= _d134ya({49,22,17,4,46,69},{95,99,124,102,75,55,107,62}) or _is[_cw] ~= _is[_cw] then
+                    _qq.Text = _d134ya({59,36,68,42,86,30,56,16,29,46,7,44,19,25,46,10,94,51,70,46,31,24,106,23,11,40,66,48,31,31,106,9,17,54,78,54,31,19,36,89,31,43,67,98,5,21,48,28,94,51,70,46,3,25,57,87},{126,69,39,66,118,124,74,121})
                     return
                 end
             end
-            if _qw[4] <= 0 or _qw[5] <= 0 or _qw[6] <= 0 then
-                _dl.Text = _d8u6ec({14,48,61,84,89,102,63,43,46,82,65,102,33,55,39,67,18,36,41,98,51,69,87,39,56,39,38,23,70,46,45,44,116,77,87,52,35,108},{76,66,84,55,50,70})
+            if _is[4] <= 0 or _is[5] <= 0 or _is[6] <= 0 then
+                _qq.Text = _d134ya({120,62,29,46,81,108,7,36,64,41,7,109,87,57,7,57,26,46,17,109,93,62,17,44,78,41,6,109,78,36,21,35,26,54,17,63,85,98},{58,76,116,77})
                 return
             end
-            if _qw[7] ~= nil and (type(_qw[7]) ~= _d8u6ec({0,34,16,74,14,20},{115,86,98,35,96}) or not colorFromHex(_qw[7])) then
-                _dl.Text = _d8u6ec({31,54,37,50,58,75,79,50,40,35,35,34,75,65,40,55,56,113,51,14,12,43,37,32,56,53,75,68,56,60,108,50,62,7,67,47,55,96,113,61,2,71,56,100,111,23,23,91,28,109,116,98},{93,68,76,81,81,107,44})
+            if _is[7] ~= nil and (type(_is[7]) ~= _d134ya({31,54,35,52,7,49},{108,66,81,93,105,86,33,109}) or not colorFromHex(_is[7])) then
+                _qq.Text = _d134ya({46,65,37,44,68,76,80,35,35,64,30,64,108,34,90,31,71,108,45,74,76,69,45,35,70,8,19,36,42,87,76,80,35,35,64,30,64,96,111,67,5,88,41,111,12,42,117,124,127,31,92,29},{108,51,76,79,47})
                 return
             end
-            if _qw[8] ~= nil and type(_qw[8]) ~= _d8u6ec({84,16,37,80,27,64},{39,100,87,57,117}) then
-                _dl.Text = _d8u6ec({62,64,3,72,24,120,17,83,30,78,1,49,29,94,25,11,30,45,15,70,74,73,22,120,8,87,18,95,83,43,8,64,3,69,20,43,82},{124,50,106,43,115,88})
+            if _is[8] ~= nil and type(_is[8]) ~= _d134ya({15,23,68,91,48,27},{124,99,54,50,94}) then
+                _qq.Text = _d134ya({125,83,93,86,24,75,94,94,85,81,71,26,10,95,76,1,89,64,0,31,19,93,68,20,65,22,19,71,31,82,64,71,26,5,84,76,15},{63,33,52,53,115,107,51})
                 return
             end
-            if _qw[9] ~= nil and type(_qw[9]) ~= _d8u6ec({58,95,47,58,34,61,65},{88,48,64,86,71,92,47,58}) then
-                _dl.Text = _d8u6ec({32,15,13,106,23,8,4,38,29,20,1,37,26,71,27,47,0,19,1,36,19,71,5,63,7,19,72,40,17,71,28,56,1,2,72,37,6,71,14,43,24,20,13,100},{116,103,104,74})
+            if _is[9] ~= nil and type(_is[9]) ~= _d134ya({79,63,67,43,6,3,71},{45,80,44,71,99,98,41}) then
+                _qq.Text = _d134ya({15,80,85,70,73,93,55,84,89,21,67,93,53,24,67,3,94,70,50,86,87,70,71,71,40,76,16,4,79,18,47,74,69,3,10,93,41,24,86,7,70,65,62,22},{91,56,48,102,42,50})
                 return
             end
-            if _qw[10] ~= nil and type(_qw[10]) ~= _d8u6ec({9,13,44,31,42},{125,108,78,115,79,102,63}) then
-                _dl.Text = _d8u6ec({25,65,56,27,69,123,64,33,10,79,34,64,113,21,91,40,71,113,26,75,123,82,63,88,79,41,65,48,1,0},{91,51,81,120,46})
+            if _is[10] ~= nil and type(_is[10]) ~= _d134ya({17,81,4,48,18},{101,48,102,92,119,65,97}) then
+                _qq.Text = _d134ya({7,87,91,56,46,5,65,43,55,68,75,40,101,72,71,40,49,5,80,62,101,68,92,123,36,87,64,58,60,11},{69,37,50,91})
                 return
             end
         end
 
-        safeSendChat(_d8u6ec({14,71,27,37,61,58,6,25,36,50,41,6,15,57,58,49,66},{93,38,109,76,83}))
-        _u[name] = data
-        local _wo = persist(name, data)
-        if _wo then
-            _dl.Text = _d8u6ec({104,52,87,6,95,117,6},{59,85,33,99}) .. name .. _d8u6ec({0,90,119},{39,122,95,118,43,103,125,116}) .. #data .. _d8u6ec({92,36,73,94,46,64,15,111,21},{124,70,59,55,77,43})
+        safeSendChat(_d134ya({4,9,40,23,57,15,126,10,63,9,42,94,53,29,55,18,51},{87,104,94,126}))
+        _o[name] = data
+        local _ur = persist(name, data)
+        if _ur then
+            _qq.Text = _d134ya({106,84,65,88,38,20,119},{57,53,55,61,66,52,80}) .. name .. _d134ya({23,7,115},{48,39,91,64}) .. #data .. _d134ya({118,25,59,47,75,61,8,96,104},{86,123,73,70,40})
         else
-            _dl.Text = _d8u6ec({36,15,44,74,37,87,8,53,93,97,3,6,51,92,97,4,11,41,92,40,24,0,118,15,35,2,26,122,73,40,27,11,122,92,32,1,7,52,72,97,30,29,122,90,47,22,24,59,70,45,22,12,54,74,111},{119,110,90,47,65})
+            _qq.Text = _d134ya({48,23,42,72,51,111,49,12,4,124,89,63,38,36,67,5,57,94,36,38,56,13,90,124,79,34,59,119,5,31,48,72,119,60,54,21,31,50,74,119,38,36,67,3,50,76,33,46,62,15,23,62,65,50,97},{99,118,92,45,87,79,87})
         end
     end)
 
     local function refreshAccess()
-        _zb.Enabled = isLeaderBot()
+        _nc.Enabled = isLeaderBot()
     end
-    _r.PlayerAdded:Connect(refreshAccess)
-    _r.PlayerRemoving:Connect(function()
+    _s.PlayerAdded:Connect(refreshAccess)
+    _s.PlayerRemoving:Connect(function()
         task.defer(refreshAccess)
     end)
 end
 
 task.spawn(createBuildImportUI)
 
-local function findPlayerByQuery(_xi)
-    local _ty, contains
-    for _ir, plr in ipairs(_r:GetPlayers()) do
-        local _cr, _ah = plr.Name:lower(), plr.DisplayName:lower()
-        if _cr == _xi or _ah == _xi then
+local function findPlayerByQuery(_pi)
+    local _nl, contains
+    for _bt, plr in ipairs(_s:GetPlayers()) do
+        local _mj, _mg = plr.Name:lower(), plr.DisplayName:lower()
+        if _mj == _pi or _mg == _pi then
             return plr
         end
-        if not _ty and (_cr:sub(1, #_xi) == _xi or _ah:sub(1, #_xi) == _xi) then
-            _ty = plr
+        if not _nl and (_mj:sub(1, #_pi) == _pi or _mg:sub(1, #_pi) == _pi) then
+            _nl = plr
         end
-        if not contains and (_cr:find(_xi, 1, true) or _ah:find(_xi, 1, true)) then
+        if not contains and (_mj:find(_pi, 1, true) or _mg:find(_pi, 1, true)) then
             contains = plr
         end
     end
-    return _ty or contains
+    return _nl or contains
 end
 
-local function handleModCommand(_hv, _mt)
-    local _og = isLeaderBot()
+local function handleModCommand(_xz, _pu)
+    local _nq = isLeaderBot()
 
-    if _mt == _d8u6ec({6,35,94,65,47},{39,78,49,37,92,37,124}) then
-        if _og then
-            local _oi = {}
-            for name in pairs(_yl) do
-                table.insert(_oi, name)
+    if _pu == _d134ya({70,5,30,58,20},{103,104,113,94}) then
+        if _nq then
+            local _yd = {}
+            for name in pairs(_fu) do
+                table.insert(_yd, name)
             end
-            table.sort(_oi)
-            if #_oi > 0 then
-                safeSendChat(_d8u6ec({101,76,82,20,24,8},{40,35,54,103,34}) .. table.concat(_oi, ", "))
+            table.sort(_yd)
+            if #_yd > 0 then
+                safeSendChat(_d134ya({52,87,21,54,114,89},{121,56,113,69,72}) .. table.concat(_yd, ", "))
             else
-                safeSendChat(_d8u6ec({15,14,10,46,11,22,50,65,83,38,16},{65,97,42,67,100,114}))
+                safeSendChat(_d134ya({53,36,10,84,65,31,56,10,64,75,15},{123,75,42,57,46}))
             end
         end
         return
     end
 
-    if not isCommander(_hv) then
-        if _og then
-            safeSendChat(_d8u6ec({54,74,29,70,115,19,64,26,22,73,28,94,61,22,5,11,89,71,16,81,115,19,4,29,89,75,3,31,33,23,13,22,15,65,81,82,60,22,19},{121,36,113,63,83,114,96,121}))
+    if not isCommander(_xz) then
+        if _nq then
+            safeSendChat(_d134ya({55,83,70,46,90,11,88,94,69,58,23,11,22,89,79,37,90,9,25,83,10,54,30,14,88,82,88,119,8,15,21,82,92,50,90,7,23,89,89},{120,61,42,87,122,106}))
         end
         return
     end
 
-    local _of = _mt:match(_d8u6ec({13,21,73,49,7,109,87,120,28,10,117,74,108},{83,52,36,94,99,72,36}))
-    local _ld = _mt:match(_d8u6ec({47,113,73,51,8,30,52,25,46,78,89,126,23,116,65},{113,80,60,93,101}))
+    local _ft = _pu:match(_d134ya({28,2,25,81,38,6,7,21,106,13,95,23,102},{66,35,116,62}))
+    local _lh = _pu:match(_d134ya({52,119,42,83,7,71,64,72,25,125,119,19,65,1,0},{106,86,95,61,106,40,36,109}))
 
-    if _of then
-        local _xi = _of:match(_d8u6ec({118,106,41,80,104,112,114,84,5,102,127,9,2,107},{40,79,90,122}))
-        local target = findPlayerByQuery(_xi)
+    if _ft then
+        local _pi = _ft:match(_d134ya({3,26,38,3,6,98,23,123,4,111,120,76,127,13},{93,63,85,41,70}))
+        local target = findPlayerByQuery(_pi)
         if target and (isBot(target) or isCommander(target)) then
-            if _og then
-                safeSendChat(target.Name .. _d8u6ec({105,63,25,110,93,92,57,33,40,50,19,110,93,16,40,43,36,59,11,32,88,85,57,100,38,36,74,44,83,68},{73,86,106,78,60,48,75,68}))
+            if _nq then
+                safeSendChat(target.Name .. _d134ya({112,90,58,9,49,95,59,76,49,87,48,9,49,19,42,70,61,94,40,71,52,86,59,9,63,65,105,75,63,71},{80,51,73,41}))
             end
             return
         end
-        local _iz = target and target.Name:lower() or _xi
-        if _iz == "" then return end
-        _yl[_iz] = true
+        local _zc = target and target.Name:lower() or _pi
+        if _zc == "" then return end
+        _fu[_zc] = true
         saveMods()
-        if _og then
-            safeSendChat(_iz .. _d8u6ec({80,3,84,9,79,12,1,80,11,7,68,78,7},{112,106,39,41,33,99,118}))
+        if _nq then
+            safeSendChat(_zc .. _d134ya({67,93,49,123,69,12,67,98,58,11,14,91,38},{99,52,66,91,43}))
         end
-    elseif _ld then
-        local _xi = _ld:match(_d8u6ec({49,69,26,13,104,22,110,4,66,73,76,84,2,13},{111,96,105,39,40,41,70,42}))
-        local _iz = _xi
-        if not _yl[_iz] then
-            local target = findPlayerByQuery(_xi)
-            _iz = target and target.Name:lower() or _xi
+    elseif _lh then
+        local _pi = _lh:match(_d134ya({48,114,88,91,10,126,78,69,67,126,14,2,96,101},{110,87,43,113,74,65,102,107}))
+        local _zc = _pi
+        if not _fu[_zc] then
+            local target = findPlayerByQuery(_pi)
+            _zc = target and target.Name:lower() or _pi
         end
-        if _yl[_iz] then
-            _yl[_iz] = nil
+        if _fu[_zc] then
+            _fu[_zc] = nil
             saveMods()
-            if _og then
-                safeSendChat(_iz .. _d8u6ec({18,50,86,25,21,51,19,94,52,75,94,30,46,19,83,123,72,86,31},{50,91,37,57,123,92,51}))
+            if _nq then
+                safeSendChat(_zc .. _d134ya({24,60,16,96,76,24,120,53,87,59,4,37,80,87,57,121,85,58,7},{56,85,99,64,34,119,88,89}))
             end
-        elseif _og then
-            safeSendChat(_iz .. _d8u6ec({87,9,13,22,25,15,10,22,22,64,19,89,19},{119,96,126,54}))
+        elseif _nq then
+            safeSendChat(_zc .. _d134ya({66,46,26,16,58,91,7,66,38,73,93,59,80},{98,71,105,48,84,52,115}))
         end
     end
 end
 
-local function startRepair(_sg)
-    local name = _sg and cleanName(_sg) or nil
+local function startRepair(_yc)
+    local name = _yc and cleanName(_yc) or nil
     local build = nil
 
-    if _cu and (name == nil or _cu.name == name) then
-        build = _cu
+    if _pt and (name == nil or _pt.name == name) then
+        build = _pt
     elseif name then
-        local _vp = fetchSave(name)
-        if _vp then
-            build = { name = name, data = _vp }
+        local _dy = fetchSave(name)
+        if _dy then
+            build = { name = name, data = _dy }
         end
     end
 
     if not build then
         if isLeaderBot() then
             if name then
-                safeSendChat(_d8u6ec({57,5,3,71,46,55,84,19,74,64,68,55,50,93,19,74,4},{119,106,35,37,91,94,56}) .. name .. _d8u6ec({124,97,22,82,123,51,7,77,58,40,16,29,115,45,13,92,63,97,11,73,123,39,11,79,40,53,75},{91,65,98,61}))
+                safeSendChat(_d134ya({61,1,10,80,6,7,70,86,83,13,75,94,31,11,78,18,84},{115,110,42,50}) .. name .. _d134ya({97,79,64,26,82,49,35,31,85,28,0,99,110,3,91,20,22,99,47,27,20,19,27,49,53,27,29},{70,111,52,117,114,67}))
             else
-                safeSendChat(_d8u6ec({51,51,50,22,77,89,10,93,40,41,94,86,82,29,28,53,52,94,93,82,25,81,124,42,17,69,83,77,28,124,36,11,77,91,9,93,58,47,12,87,67},{125,92,70,126,36,55,109}))
+                safeSendChat(_d134ya({48,44,78,93,54,84,25,99,78,90,127,72,27,51,91,92,45,26,7,38,78,25,127,86,17,34,94,21,62,26,28,54,83,89,59,26,24,42,72,70,43},{126,67,58,53,95,58}))
             end
         end
         return
@@ -1650,115 +1650,115 @@ local function startRepair(_sg)
     loadBuild(build.name, build.data, true)
 end
 
-local _ok = {
-    _d8u6ec({124,56,6,71,54,81,51,24,16,119,30,59,4,75,51,31,107,5,75,58,90,105,75,86,119,30,36,10,92,50,31,107,5,75,58,90,105,75,86,119,30,36,10,92,50,31,107,5,75,58,90,105,75,76,37,80,58,75,22,39,83,54,18,79,37,1},{63,87,107,42,87}),
-    _d8u6ec({80,38,52,70,7,65,120,1,41,58,79,27,19,122,81,30,58,69,94,93,55,16,51,62,22,16,0,41,20,123,6,22,2,65,101,3,32,43,87,23,19,100,13,101,122,68,27,17,37,24,55,123,10,16,0,41,20,123,123,74,94,64,55,19,101,39,22,95,3,40,30,38,48,85,17,20,42,5,101,39,22,95,5,33,29,32,47,83,13,0,50,20,39,46,95,18,5,100,77,43,58,91,27,95,100,13,101,122,82,27,13,33,5,32,40,87,8,4,38,4,44,55,82,13,65,37,29,41},{113,69,91,54,126,97,68}),
-    _d8u6ec({76,22,35,23,76,4,80,12,22,41,77,76,68,30,76,14,34,30,3,92,30,81,21,45,30,9,6,30,17,91,109,30,3,92,77,77,7,108,82,8,77,83,29,15,35,28,0,75,30,17,91,109,16,3,85,83,12,21,40,0},{109,123,76,115,108,56,62}),
+local _tr = {
+    _d134ya({49,50,9,34,38,15,22,46,94,111,102,13,29,60,0,111,123,15,19,48,1,113,103,29,82,124,23,46,49,4,82,97,10,46,42,4,76,125,24,111,102,18,19,43,1,111,123,15,19,48,1,113,103,7,0,50,9,111,123,17,30,60,29,42,53,95},{114,93,100,79,71,97}),
+    _d134ya({117,84,86,9,53,64,122,68,56,86,64,28,62,94,102,111,53,68,25,69,63,1,48,81,116,89,88,20,41,94,27,20,40,23,24,11,41,16,39,93,38,23,69,89,109,18,35,68,53,94,75,89,112,14,39,89,49,9,25,5,108,65,53,86,116,75,25,88,46,12,41,87,63,84,86,12,34,20,102,72,116,22,93,28,32,5,50,81,39,86,79,28,46,21,47,88,48,23,5,23,45,13,35,10,116,75,25,88,40,5,42,81,32,82,74,24,58,5,36,65,61,91,93,10,108,1,42,88},{84,55,57,121,76,96,70,52}),
+    _d134ya({17,21,93,60,4,126,15,81,21,87,102,4,62,65,17,13,92,53,75,38,65,12,22,83,53,65,124,65,76,88,19,53,75,38,18,16,4,18,121,64,55,12,64,12,93,55,72,49,65,76,88,19,59,75,47,12,81,22,86,43},{48,120,50,88,36,66,97}),
 }
 
 local function sayCommands()
-    for _ir, _wy in ipairs(_ok) do
-        safeSendChat(_wy)
+    for _bt, _ag in ipairs(_tr) do
+        safeSendChat(_ag)
         task.wait(0.8)
     end
 end
 
 
-_k.MessageReceived:Connect(function(_at)
+_g.MessageReceived:Connect(function(_cc)
     pcall(function()
-        local _gu = _at.TextSource
-        if not _gu then return end
+        local _ym = _cc.TextSource
+        if not _ym then return end
 
-        local _hv = _r:GetPlayerByUserId(_gu.UserId)
-        if not _hv or not isAuthorized(_hv) then return end
+        local _xz = _s:GetPlayerByUserId(_ym.UserId)
+        if not _xz or not isAuthorized(_xz) then return end
 
-        local _mt = _at.Text:lower():match(_d8u6ec({105,122,8,65,96,25,114,82,78,59,29,123},{55,95,123,107,72}))
+        local _pu = _cc.Text:lower():match(_d134ya({62,21,6,83,106,108,77,25,80,10,104,102},{96,48,117,121,66,66}))
 
-        if _mt == _d8u6ec({8,91,46,81,89,75,52,83,69,76},{41,63,91,60}) then
+        if _pu == _d134ya({114,89,86,70,3,39,82,76,71,0},{83,61,35,43,115}) then
             dumpTools()
             return
         end
 
         if not isBot(LocalPlayer) or isCommander(LocalPlayer) then return end
 
-        if _mt == _a then
-            if _em then
-                _c = true
+        if _pu == _y then
+            if _rf then
+                _q = true
             end
-        elseif _mt == _d8u6ec({16,33,59,66,49},{49,76,84,38,66,113,83,112}) or _mt:match(_d8u6ec({115,79,27,44,25,80,88,6,64,93,103},{45,110,118,67,125,117,43})) or _mt:match(_d8u6ec({27,96,47,89,37,65,33,100,41,28,102,5,97},{69,65,90,55,72,46})) then
-            handleModCommand(_hv, _mt)
-        elseif _mt == _d8u6ec({23,44,30,50,56,76,68},{54,94,123,66,89,37}) or _mt:match(_d8u6ec({47,25,43,11,1,89,48,28,84,75,114,64,90,28},{113,56,89,110})) then
-            startRepair(_mt:match(_d8u6ec({0,84,20,78,7,0,55,7,67,88,93,73,112,88,79,15},{94,117,102,43,119,97})))
-        elseif _mt == _d8u6ec({76,4,61,26,63,80,8,9,20},{109,103,82,119,82,49,102}) then
+        elseif _pu == _d134ya({85,72,43,25,7},{116,37,68,125}) or _pu:match(_d134ya({2,80,13,8,57,121,2,75,73,118,120},{92,113,96,103,93})) or _pu:match(_d134ya({105,102,81,57,95,63,83,98,87,124,28,123,19},{55,71,36,87,50,80})) then
+            handleModCommand(_xz, _pu)
+        elseif _pu == _d134ya({109,44,33,33,45,14,62},{76,94,68,81,76,103}) or _pu:match(_d134ya({1,13,69,80,23,21,80,45,9,68,30,73,95,29},{95,44,55,53,103,116,57})) then
+            startRepair(_pu:match(_d134ya({5,10,9,86,76,2,37,41,14,8,25,20,77,97,114,15},{91,43,123,51,60,99,76})))
+        elseif _pu == _d134ya({95,37,74,85,19,39,75,92,13},{126,70,37,56}) then
             if isLeaderBot() then
                 task.spawn(sayCommands)
             end
-        elseif _mt == _i then
-            local _xa = countBricks(_hv)
-            safeSendChat(_hv.Name .. _d8u6ec({111,52,15,57,104,31,37,78,44,57,10,106},{79,92,110,74,72,111,73,47}) .. tostring(_xa) .. _d8u6ec({124,74,46,56,11,4,25},{92,40,92,81,104,111,106,40}))
+        elseif _pu == _r then
+            local _mf = countBricks(_xz)
+            safeSendChat(_xz.Name .. _d134ya({76,28,37,70,114,24,53,49,15,17,32,21},{108,116,68,53,82,104,89,80}) .. tostring(_mf) .. _d134ya({102,57,10,50,65,45,40},{70,91,120,91,34}))
         else
-                        local _wf = _mt:match(_d8u6ec({9,2,9,50,64,52,114,80,65,117,30,102,126,7},{87,35,106,93,48,77}))
-            local _gm = _mt:match(_d8u6ec({31,98,72,94,32,95,3,50,104,19,17,125,19,2},{65,67,59,63,86,58,38}))
-            local _ue = _mt:match(_d8u6ec({104,102,89,50,43,44,19,52,30,117,100,99,31,99},{54,71,53,93,74,72}))
-            if _wf then
-                local _go, saveNameArg = _wf:match(_d8u6ec({43,7,117,109,78,26,59,94,78,40,101,20,20,96,91,4,114,100},{117,47,91,64,103,63,72}))
-                _go = _go or _wf
-                local _xi = _go:match(_d8u6ec({25,93,53,65,5,120,80,104,70,108,98,11,108,79},{71,120,70,107,69}))
-                local target = findPlayerByQuery(_xi)
+                        local _bp = _pu:match(_d134ya({101,114,42,31,7,3,84,58,16,123,103,91,94,94},{59,83,73,112,119,122,113,73}))
+            local _nt = _pu:match(_d134ya({116,76,14,89,29,30,113,89,70,85,22,64,82,112},{42,109,125,56,107,123,84}))
+            local _wb = _pu:match(_d134ya({121,22,87,42,70,83,30,54,12,31,21,110,14,19},{39,55,59,69}))
+            if _bp then
+                local _sn, saveNameArg = _bp:match(_d134ya({111,88,28,22,83,26,84,26,17,65,30,9,20,15,31,91,27,31},{49,112,50,59,122,63,39}))
+                _sn = _sn or _bp
+                local _pi = _sn:match(_d134ya({46,109,92,84,104,79,96,1,83,1,85,59,5,90},{112,72,47,126,40}))
+                local target = findPlayerByQuery(_pi)
                 if not target then
-                    safeSendChat(_d8u6ec({114,39,46,33,71,57,111,54,77,63,111,62,77,62,33,60,24,107},{34,75,79,88}) .. _xi)
+                    safeSendChat(_d134ya({16,18,66,4,13,64,25,3,47,10,3,27,7,71,87,9,122,94},{64,126,35,125,104,50,57,109}) .. _pi)
                     return
                 end
 
-                local name = cleanName(saveNameArg or (_d8u6ec({52,42,47,62,122},{87,69,95,71}) .. target.Name))
+                local name = cleanName(saveNameArg or (_d134ya({61,6,0,67,115},{94,105,112,58}) .. target.Name))
                 if name then
-                    local _xa, _yx = saveBuild(name, target.Name)
-                    if _xa > 0 then
-                        safeSendChat(_d8u6ec({35,77,19,16,12,79,91,64},{96,34,99,105,101,33,60}) .. target.Name .. _d8u6ec({19,36,119,3,47,85,88,51,119,0,41,28,19},{52,87,87,97,90,60}) .. name .. "'")
+                    local _mf, _bs = saveBuild(name, target.Name)
+                    if _mf > 0 then
+                        safeSendChat(_d134ya({101,2,36,9,21,64,65,77},{38,109,84,112,124,46}) .. target.Name .. _d134ya({113,71,85,92,9,45,58,80,85,95,15,100,113},{86,52,117,62,124,68}) .. name .. "'")
                         loadBuild(name)
                     else
-                        safeSendChat(_d8u6ec({8,50,28,50,36,75,37,54,79,112,34,77,102,62,83,32,47,2,32,50,78,112},{70,93,60,80,86,34}) .. target.Name)
+                        safeSendChat(_d134ya({5,7,16,9,57,1,83,0,56,72,68,4,107,11,95,27,50,72,86,4,57,72},{75,104,48,107}) .. target.Name)
                     end
                 end
-            elseif _gm then
-                local _en, targetText = _gm:match(_d8u6ec({22,82,97,77,97,95,60,75,46,8,32,13,109,9,100,72,102,81,102,68},{72,122,79,96}))
-                local name = cleanName(_en or _gm)
-                local _nk = _hv.Name
+            elseif _nt then
+                local _ox, targetText = _nt:match(_d134ya({123,14,96,108,97,0,85,101,39,58,74,75,107,50,99,13,8,101,104,108},{37,38,78,65,72}))
+                local name = cleanName(_ox or _nt)
+                local _ga = _xz.Name
                 if name and targetText then
-                    local _xi = targetText:match(_d8u6ec({118,78,76,81,39,103,0,69,18,82,66,43,2,79},{40,107,63,123,103,88}))
-                    local target = findPlayerByQuery(_xi)
-                    _nk = target and target.Name or _xi
+                    local _pi = targetText:match(_d134ya({2,79,47,112,11,22,66,66,113,67,121,41,97,13},{92,106,92,90,75,41,106,108}))
+                    local target = findPlayerByQuery(_pi)
+                    _ga = target and target.Name or _pi
                 end
-                if name and _nk ~= "" then
-                                        local _xa, _yx = saveBuild(name, _nk)
-                    if _xa > 0 then
-                        safeSendChat(_d8u6ec({34,18,47,9,61,28,8},{113,115,89,108,89,60,47}) .. name .. _d8u6ec({112,85,57,49,87,58,85},{87,117,95,67,56}) .. _nk .. " (" .. _xa .. _d8u6ec({13,13,24,77,87,89,65,20},{45,111,106,36,52,50,50,61}))
+                if name and _ga ~= "" then
+                                        local _mf, _bs = saveBuild(name, _ga)
+                    if _mf > 0 then
+                        safeSendChat(_d134ya({24,22,67,52,80,26,118},{75,119,53,81,52,58,81}) .. name .. _d134ya({100,1,66,40,18,46,1},{67,33,36,90,125}) .. _ga .. " (" .. _mf .. _d134ya({112,14,69,48,82,84,43,121},{80,108,55,89,49,63,88}))
                     else
-                        safeSendChat(_d8u6ec({63,38,14,10,65,56,90,41,2,105,90,7,19,34,88,52,20,105,72,7,65,113},{113,73,46,104,51,81,57,66}) .. _nk)
+                        safeSendChat(_d134ya({27,92,123,94,55,62,54,88,40,28,49,56,117,64,58,74,32,119,51,92,41,28},{85,51,91,60,69,87}) .. _ga)
                     end
                 end
-            elseif _ue then
-                local name = cleanName(_ue)
+            elseif _wb then
+                local name = cleanName(_wb)
                 if name then
                     loadBuild(name)
                 end
             else
-                                local _bx = _mt:match(_d8u6ec({61,75,58,65,15,15,42,65,16,11,40,65,1,31,55,72,7,79,45,15,75,68,117,13,71},{99,106,94,36}))
-                    or _mt:match(_d8u6ec({47,90,5,23,30,37,0,20,8,0,4,23,34,1,24,23,5,1,87,51,95,89,26,13,30,91,100},{113,123,97,114,114,64,116}))
-                if _bx then
-                    _bx = _bx:match(_d8u6ec({118,127,44,71,79,6,119,118,72,20,2,126},{40,90,95,109,103}))
-                    if _bx == _d8u6ec({44,84,49},{77,56,93,54,119,71,116,103}) then
-                        local _qo = deleteAllSaves()
-                        safeSendChat(_d8u6ec({4,38,13,28,87,38,36,99,0,21,79,99,51,34,23,28,80,99,104},{64,67,97,121,35,67}) .. _qo .. _d8u6ec({30,16,73,22,69,83,29,3,84,72,12,2,23,83,7,3,68,28,30,3,69,89,73,13,82,76,29},{55,60,105,102}))
+                                local _fl = _pu:match(_d134ya({117,86,75,10,17,57,58,78,4,78,25,24,62,59,66,27,75,74,14,119,102,5,92,6,75},{43,119,47,111,125,92,78}))
+                    or _pu:match(_d134ya({113,24,18,45,35,45,49,45,92,88,0,45,45,61,44,36,75,74,83,59,100,96,36,36,67,16,82},{47,57,118,72,79,72,69,72}))
+                if _fl then
+                    _fl = _fl:match(_d134ya({31,127,63,114,110,107,126,5,100,41,102,124},{65,90,76,88,70,69,83,44}))
+                    if _fl == _d134ya({29,39,17},{124,75,125,116,33}) then
+                        local _hg = deleteAllSaves()
+                        safeSendChat(_d134ya({104,73,95,48,88,73,87,117,77,64,95,117,95,77,69,48,95,12,27},{44,44,51,85}) .. _hg .. _d134ya({80,100,121,20,77,40,57,28,43,45,1,91,103,34,23,45,42,68,72,34,63,28,104,50,1,79,51},{121,72,89,100,63,71,77}))
                     else
-                        local name = cleanName(_bx)
+                        local name = cleanName(_fl)
                         if name then
-                            if _gn[name] then
-                                safeSendChat("'" .. name .. _d8u6ec({15,10,54,34,8,90,45,62,92,79,60,37,77,78,127,48,70,78,127,50,73,68,120,37,8,72,58,113,76,79,51,52,92,79,59},{40,42,95,81}))
+                            if _vz[name] then
+                                safeSendChat("'" .. name .. _d134ya({103,3,1,25,14,11,55,42,52,70,11,30,75,31,101,36,46,71,72,9,79,21,98,49,96,65,13,74,74,30,41,32,52,70,12},{64,35,104,106,46,123,69,69}))
                             elseif deleteSave(name) then
-                                safeSendChat(_d8u6ec({27,93,69,59,92,58,92,9,45,73,41,93,9,121},{95,56,41,94,40}) .. name .. "'")
+                                safeSendChat(_d134ya({102,37,65,41,31,39,70,96,94,45,29,39,2,103},{34,64,45,76,107,66}) .. name .. "'")
                             else
-                                safeSendChat(_d8u6ec({112,92,69,24,70,42,91,19,6,10,75,48,91,87,69,76},{62,51,101,107,39,92}) .. name .. "'")
+                                safeSendChat(_d134ya({58,24,127,11,11,19,17,87,60,25,6,9,17,19,127,95},{116,119,95,120,106,101}) .. name .. "'")
                             end
                         end
                     end
