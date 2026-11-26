@@ -34,6 +34,10 @@ local BOT_NAMES = {
     "Raisin_helper10",
     "Raisin_helper11",
     "Raisin_helper12",
+    "Rasin_helper13",
+    "Raisin_helepr14,
+    "Raisin_helper15,
+    "Raisin_helepr16
 }
 
 local TOOL_NAMES = { "Build", "Delete", "Paint", "Shape" }
@@ -43,12 +47,12 @@ local saves = {}
 local BRICK_NAME = "Brick"
 local SAVE_FOLDER = "AutoBuildSaves"
 local ALWAYS_FLY = true
-local FLY_SPEED = 600
+local FLY_SPEED = 1000
 local BUILD_HEIGHT_OFFSET = 10
 local REACH = 30
 local MAX_PLACE_ATTEMPTS = 40
 local PAINT_REPEATS = 1
-local RESIZE_TIMEOUT = 0.6
+local RESIZE_TIMEOUT = 0.25
 local SPLIT_CHUNK = 24
 
 local stopRequested = false
@@ -60,7 +64,7 @@ local PROTECTED_SAVES = {}
 
 local VERIFY_CHECKS = 2
 local COLOR_TOLERANCE = 0.02
-local BURST_PER_FRAME = 8
+local BURST_PER_FRAME = 24
 local SPLIT_BIG = true
 
 local function safeSendChat(messageText)
@@ -571,7 +575,7 @@ local function resizeBrick(shapeEvent, position, targetSize, brick, corner)
         end
 
         local startTime = os.clock()
-        local limit = RESIZE_TIMEOUT + total * 0.05
+        local limit = RESIZE_TIMEOUT + total * 0.02
         while os.clock() - startTime < limit do
             RunService.Heartbeat:Wait()
             if done(steps()) or stopRequested then break end
@@ -664,7 +668,7 @@ local function placeBrick(entry, tools, flyer, root)
     end
     hook()
 
-    local retryDelay = math.max(0.04, LocalPlayer:GetNetworkPing() * 2 + 0.03)
+    local retryDelay = math.max(0.025, LocalPlayer:GetNetworkPing() * 1.5 + 0.015)
     if not canCollide then
         retryDelay = retryDelay * 2
     end
@@ -1099,12 +1103,15 @@ local function round2(n)
 end
 
 local function saveBuild(name, ownerAccountName)
-    local ownerName = ownerAccountName:lower()
+    local ownerName = ownerAccountName and ownerAccountName:lower() or nil
     local brickName = BRICK_NAME:lower()
     local data = {}
     local root = brickRoot()
 
     local function belongsToOwner(descendant)
+        if not ownerName or ownerName == "all" then
+            return true
+        end
         local parent = descendant.Parent
         while parent and parent ~= root do
             if parent.Name:lower() == ownerName then
@@ -1114,6 +1121,7 @@ local function saveBuild(name, ownerAccountName)
         end
         return false
     end
+
 
     for i, descendant in ipairs(root:GetDescendants()) do
         if descendant:IsA("BasePart") and descendant.Name:lower() == brickName
@@ -1619,7 +1627,7 @@ end
 
 local COMMAND_LINES = {
     "Commands: !load <name> | !save <name> | !save <name> from <player>",
-    "!copy <player> [as <save name>] | !repair | !repair <name> | !sb | !blockcount | !deletesavebuild <name> | !deletesavebuilds all",
+    "!copy <player> [as <save name>] | !copy all [as <save name>] | !repair | !repair <name> | !sb | !blockcount | !deletesavebuild <name> | !deletesavebuilds all",
     "!mod <name> | !unmod <name> | !mods | !dumptools | !commands",
 }
 
@@ -1670,7 +1678,23 @@ TextChatService.MessageReceived:Connect(function(message)
             if copyArg then
                 local playerQuery, saveNameArg = copyArg:match("^(.-)%s+as%s+(.+)$")
                 playerQuery = playerQuery or copyArg
-                local query = playerQuery:match("^%s*@?(.-)%s*$")
+                                local query = playerQuery:match("^%s*@?(.-)%s*$")
+                if query == "all" then
+                    local name = cleanName(saveNameArg)
+                    if saveNameArg and not name then
+                        return
+                    end
+                    if not name then
+                        local copyNumber = 1
+                        repeat
+                            name = "copy " .. copyNumber
+                            copyNumber = copyNumber + 1
+                        until not fetchSave(name)
+                    end
+                    saveBuild(name, "all")
+                    return
+                end
+
                 local target = findPlayerByQuery(query)
                 if not target then
                     safeSendChat("Player not found: " .. query)
@@ -1687,6 +1711,7 @@ TextChatService.MessageReceived:Connect(function(message)
                         safeSendChat("No bricks to copy for " .. target.Name)
                     end
                 end
+
             elseif saveArg then
                 local nameText, targetText = saveArg:match("^(.-)%s+from%s+(.+)$")
                 local name = cleanName(nameText or saveArg)
